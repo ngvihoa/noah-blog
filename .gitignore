@@ -5,3 +5,4 @@ dist/
 *.local
 .now/
 documents/
+prompts/
