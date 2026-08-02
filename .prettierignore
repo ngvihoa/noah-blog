@@ -1,0 +1,7 @@
+.now/
+dist/
+docs/
+documents/
+node_modules/
+prompts/
+src/routeTree.gen.ts
