@@ -1,5 +1,3 @@
-import { ArrowRight } from 'lucide-react'
-
 const workflow = [
   { label: 'Discover', detail: 'Problem & users', focus: false },
   { label: 'Define', detail: 'Requirements & flow', focus: false },
@@ -10,11 +8,21 @@ const workflow = [
 
 export function WorkflowDiagram() {
   return (
-    <div className="workflow" aria-labelledby="workflow-title">
+    <div
+      className="workflow"
+      aria-labelledby="workflow-title"
+      aria-describedby="workflow-description"
+    >
       <div className="workflow__heading">
-        <p className="eyebrow" id="workflow-title">
-          How I contribute
-        </p>
+        <div>
+          <p className="eyebrow" id="workflow-title">
+            How I contribute
+          </p>
+          <p className="workflow__description" id="workflow-description">
+            I contribute across the process, with a primary focus on design,
+            build, and refinement.
+          </p>
+        </div>
         <span className="workflow__legend">
           <span className="workflow__legend-dot" /> Primary focus
         </span>
@@ -40,7 +48,10 @@ export function WorkflowDiagram() {
               <span>{step.detail}</span>
             </div>
             {index < workflow.length - 1 ? (
-              <ArrowRight className="workflow-step__arrow" aria-hidden="true" />
+              <span className="workflow-step__connector" aria-hidden="true">
+                <span className="workflow-step__line" />
+                <span className="workflow-step__arrow" />
+              </span>
             ) : null}
           </li>
         ))}

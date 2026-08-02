@@ -321,6 +321,16 @@ h3 {
   margin-bottom: 0;
 }
 
+.workflow__description {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
 .workflow__legend {
   display: inline-flex;
   align-items: center;
@@ -385,14 +395,35 @@ h3 {
     0 0 18px rgb(108 92 231 / 24%);
 }
 
+.workflow-step__connector {
+  position: absolute;
+  top: 26px;
+  right: 14px;
+  left: 25px;
+  height: 2px;
+}
+
+.workflow-step__line {
+  position: absolute;
+  inset: 0 5px 0 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: #c9c3b8;
+  animation: workflow-line 420ms ease-out forwards;
+  animation-delay: calc(320ms + var(--step-index) * 120ms);
+}
+
 .workflow-step__arrow {
   position: absolute;
-  top: 19px;
-  right: 12px;
-  width: calc(100% - 42px);
-  height: 15px;
-  color: #c9c3b8;
-  stroke-width: 1.2;
+  top: -3px;
+  right: 0;
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg) scale(0);
+  border-top: 1.5px solid #aaa295;
+  border-right: 1.5px solid #aaa295;
+  animation: workflow-arrow 180ms ease-out forwards;
+  animation-delay: calc(650ms + var(--step-index) * 120ms);
 }
 
 .workflow-step__copy {
@@ -418,6 +449,18 @@ h3 {
   from {
     transform: translateY(10px);
     opacity: 0;
+  }
+}
+
+@keyframes workflow-line {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes workflow-arrow {
+  to {
+    transform: rotate(45deg) scale(1);
   }
 }
 
@@ -682,6 +725,7 @@ h3 {
   .project-card:last-child {
     grid-column: 1 / -1;
     width: calc(50% - 12px);
+    justify-self: center;
   }
 }
 
@@ -765,14 +809,28 @@ h3 {
     padding-top: 16px;
   }
 
-  .workflow-step__arrow {
-    top: 44px;
+  .workflow-step__connector {
+    top: 43px;
     right: auto;
-    bottom: -4px;
-    left: 1px;
-    width: 20px;
-    height: 20px;
-    transform: rotate(90deg);
+    bottom: -1px;
+    left: 8px;
+    width: 2px;
+    height: auto;
+  }
+
+  .workflow-step__line {
+    inset: 0 0 5px;
+    transform: scaleY(0);
+    transform-origin: top;
+    animation-name: workflow-line-mobile;
+  }
+
+  .workflow-step__arrow {
+    top: auto;
+    right: -3px;
+    bottom: 0;
+    transform: rotate(135deg) scale(0);
+    animation-name: workflow-arrow-mobile;
   }
 
   .focus-strip {
@@ -827,6 +885,18 @@ h3 {
 
   .content-page {
     padding-block: 84px;
+  }
+}
+
+@keyframes workflow-line-mobile {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes workflow-arrow-mobile {
+  to {
+    transform: rotate(135deg) scale(1);
   }
 }
 

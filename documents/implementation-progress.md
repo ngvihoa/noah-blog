@@ -23,12 +23,12 @@ Last updated: 2026-08-02
 
 - [~] Implement Hero copy for Viết Hòa. The current copy is intentional placeholder content pending the final professional title and introduction.
 - [x] Implement the static workflow diagram.
-- [~] Add workflow entrance and connector animations. Node entrance is implemented; connector drawing remains pending.
+- [x] Add workflow entrance and connector line-drawing animations with hover and keyboard-focus states.
 - [x] Add reduced-motion behavior.
 - [~] Implement the Focus Strip. Layout is complete; final values require confirmation.
 - [x] Add three featured project placeholders.
 - [x] Add About preview, Contact CTA, and Footer.
-- [~] Verify desktop, tablet, and mobile layouts. Desktop at 1440 px and mobile at 390 px are verified; a dedicated tablet pass remains pending.
+- [x] Verify desktop, tablet, and mobile layouts at 1440 px, 768 px, and 390 px respectively.
 
 ## Milestone 3: Project Collection
 
@@ -107,5 +107,13 @@ Last updated: 2026-08-02
 - [x] Mobile browser QA at 390 x 844.
 - [x] Mobile navigation opens, closes after selection, and routes to `/projects`.
 - [x] No application console errors were observed.
-- [ ] Tablet browser QA.
+- [x] Tablet browser QA at 768 x 1024.
 - [ ] Real-device and cross-browser QA.
+
+### 2026-08-02: Homepage workflow completion
+
+- [x] Replaced static workflow arrows with responsive SVG connector line-drawing animations.
+- [x] Verified the horizontal tablet workflow and centered third project card at 768 x 1024.
+- [x] Verified the vertical mobile workflow at 390 x 844.
+- [x] Verified `prefers-reduced-motion: reduce`; transitions finish immediately at 0.01 ms.
+- [x] No application console errors were observed in tablet, mobile, or reduced-motion sessions.
