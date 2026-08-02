@@ -141,7 +141,7 @@ Mục tiêu: giới thiệu rõ vị trí và cá tính trong 5–10 giây đầ
 Ví dụ nội dung:
 
 ```text
-Hi, I’m Nhật Minh.
+Hi, I’m Viết Hòa.
 Junior Developer. Curious Mind.
 Builder of playful, useful things.
 
@@ -156,12 +156,16 @@ CTA:
 
 ### Visual hero
 
-Có thể dùng một trong các hướng:
+Visual chính là một **Animated Workflow Diagram** thể hiện cách chủ portfolio đóng góp vào quy trình phát triển sản phẩm:
 
-1. Một nhân vật đại diện trung lập, không thuộc riêng Frost hoặc Ember.
-2. Một chồng thẻ nhiều màu.
-3. Một card “Player Profile” của chính chủ portfolio.
-4. Một portal/khung cửa fantasy sáng, phía sau là nhiều vùng nguyên tố.
+```text
+Discover → Define → Design → Build → Refine
+                       MY PRIMARY FOCUS
+```
+
+Các node thuộc phạm vi đóng góp trực tiếp được làm nổi bật bằng accent tím. Những bước chỉ tham gia hỗ trợ dùng màu trung tính và nhãn `Contribute to`; không tạo cảm giác chủ portfolio sở hữu toàn bộ quy trình.
+
+Visual chiếm khoảng 40–50% Hero trên desktop nhưng không được cạnh tranh với tên, vị trí ứng tuyển và CTA. Không sử dụng card stack hoặc nhân vật fantasy lớn làm Hero visual chính.
 
 Không nên dùng các câu như:
 
@@ -176,6 +180,8 @@ Các câu này không phù hợp với vị trí Fresher/Junior.
 ## 4.3. Featured Collection / Projects
 
 Mỗi dự án được thể hiện bằng một card nhưng vẫn cần metadata rõ ràng bên ngoài hoặc ngay phía dưới.
+
+Trước Featured Collection là một **Focus Strip** ngắn, giúp người xem hiểu hướng phát triển hiện tại trước khi xem bằng chứng qua project.
 
 Mẫu nội dung:
 
@@ -196,7 +202,17 @@ for a movie recommendation dataset.
 - Vai trò
 - Công nghệ chính
 - Năm hoặc trạng thái
-- Một artwork hoặc screenshot
+- Screenshot thật của sản phẩm làm visual chính
+- Artwork chỉ dùng khi project thực sự liên quan đến game/illustration hoặc chưa thể công bố screenshot
+
+Tỷ lệ định hướng: **80% bằng chứng sản phẩm, 20% fantasy styling**. Khung, gem và màu nguyên tố tạo nhận diện; screenshot, metadata và case study tạo độ tin cậy.
+
+### Layout collection
+
+- Desktop: grid 3 cột cho 3 project nổi bật.
+- Tablet: grid 2 cột.
+- Mobile: danh sách dọc hoặc horizontal media card.
+- Không dùng carousel làm cách duyệt project chính; carousel chỉ phù hợp với decorative card stack hoặc highlight phụ.
 
 ### Không nên phụ thuộc vào hover
 
@@ -388,7 +404,24 @@ Gợi ý dùng rarity như taxonomy:
 - Epic — project nhóm hoặc có phạm vi lớn
 - Legendary — chỉ dùng khi thực sự là dự án nổi bật nhất
 
-Một lựa chọn an toàn hơn là coi rarity hoàn toàn là yếu tố hình ảnh, không gắn với chất lượng dự án.
+Lựa chọn khuyến nghị là coi rarity hoàn toàn là yếu tố hình ảnh, không gắn với chất lượng dự án và không dùng làm bộ lọc chính. Metadata nghề nghiệp nên dùng taxonomy trung lập hơn:
+
+- Experiment
+- Solo Project
+- Team Project
+- Featured Project
+
+### 6.4. Ý nghĩa của hệ nguyên tố
+
+Mỗi hệ cần có ý nghĩa ổn định thay vì được gán ngẫu nhiên theo màu. Ví dụ:
+
+- Arcane — AI, research và experimentation.
+- Metal — backend, infrastructure và developer tooling.
+- Light — productivity, accessibility và education.
+- Nature — community, sustainability và human-centred products.
+- Electric — realtime, automation và high-interaction products.
+
+Danh sách chính thức chỉ nên được chốt sau khi đã kiểm kê project thật. Nếu một hệ không giúp người xem hiểu project nhanh hơn, hệ đó chỉ nên là decoration và không xuất hiện trong taxonomy.
 
 ---
 
@@ -422,7 +455,7 @@ Nguyên tắc: animation phải làm concept rõ hơn, không làm người xem 
 
 ### Mobile
 
-- Card nên chuyển sang horizontal card hoặc carousel.
+- Card nên chuyển sang danh sách dọc hoặc horizontal media card; không dùng carousel làm navigation chính.
 - Mỗi card có title và description luôn hiển thị.
 - Giảm ornament ở màn hình nhỏ.
 - Không phụ thuộc vào 3D tilt.
@@ -606,6 +639,10 @@ Các hình này cung cấp ngôn ngữ thiết kế quan trọng:
 4. Không đưa số liệu giả như số project, EXP hoặc streak nếu chưa có dữ liệu thật.
 5. Giảm mật độ nội dung ở desktop và tách case study sang trang riêng.
 6. Cần thiết kế mobile riêng, không chỉ thu nhỏ layout desktop.
+7. Loại bỏ khoảng 30–40% ornament; chỉ project card được dùng decorative frame mạnh.
+8. Không đặt mọi section trong panel có khung. Dùng khoảng trắng và divider mảnh để phân cấp nội dung.
+9. Hero nên dùng card stack hoặc product preview thay cho mascot fantasy chiếm nửa màn hình.
+10. Skills có thể tích hợp vào project metadata; chỉ giữ Skill Deck nếu nó bổ sung thông tin chưa xuất hiện ở project.
 
 ---
 
@@ -655,15 +692,19 @@ Nguyên tắc: font fantasy tạo cá tính, font sans-serif đảm bảo khả 
 
 - Navbar
 - Hero profile
-- Element filter
+- Animated workflow diagram
+- Workflow node
+- Workflow connector
+- Focus strip
 - Project card
 - Card back placeholder
 - Project metadata badge
 - Skill chip
 - Timeline item
-- Achievement item
 - CTA panel
 - Footer
+
+`Element filter` và `Achievement item` chỉ bổ sung sau MVP khi đã có đủ project và dữ liệu thật.
 
 ### Decorative components
 
@@ -674,6 +715,8 @@ Nguyên tắc: font fantasy tạo cá tính, font sans-serif đảm bảo khả 
 - Ornamental divider
 - Corner frame
 - Card stack
+
+`Card stack` chỉ dùng ở khu vực collection hoặc decoration phụ, không dùng làm Hero visual chính.
 
 ### CMS data cho Project Card
 
@@ -704,13 +747,15 @@ Không cần xây một hệ thống quá lớn ngay từ đầu.
 ### Phiên bản đầu tiên
 
 - 1 trang Home
+- Animated Workflow Diagram trong Hero
+- Focus Strip giữa Hero và Featured Projects
 - 3 project card nổi bật
 - 1 trang template cho project detail
 - About ngắn
-- Skill Deck
-- Quest Log
+- Journey ngắn
 - Contact
-- Responsive cơ bản
+- Responsive hoàn chỉnh cho desktop, tablet và mobile
+- Nền tảng MDX dùng chung cho project và blog tương lai
 
 ### Sau khi MVP ổn định
 
@@ -721,6 +766,7 @@ Không cần xây một hệ thống quá lớn ngay từ đầu.
 - Theme theo từng project
 - Achievement system
 - Card collection animation
+- Skill Deck riêng nếu cần
 
 Ưu tiên:
 
@@ -753,3 +799,187 @@ Hướng phù hợp nhất là xây một portfolio sáng theo concept **The Car
 - Lấy cảm hứng layout từ portfolio template hiện đại và lấy cảm hứng visual từ trading card UI.
 
 > **Đề xuất nền tảng:** cấu trúc portfolio/CMS rõ ràng + bento layout + card system tự thiết kế, thay vì sử dụng nguyên một template game studio.
+
+---
+
+## 18. Định hướng cải thiện đã chốt
+
+### 18.1. Creative direction
+
+> **Bright editorial portfolio with collectible project cards.**
+
+Website không mô phỏng một game hoàn chỉnh. Đây là một portfolio editorial sáng, trong đó project cards là tài sản nhận diện nổi bật nhất.
+
+### 18.2. Visual hierarchy
+
+1. Tên, vị trí ứng tuyển và CTA phải được hiểu trong 5–10 giây đầu.
+2. Screenshot và kết quả project quan trọng hơn fantasy artwork.
+3. Chỉ project card dùng ornamental frame mạnh.
+4. Các section About, Journey, Contact và Blog dùng surface sạch, divider mảnh và nhiều khoảng trắng.
+5. Serif fantasy dùng cho logo, section heading và card name; sans-serif dùng cho navigation, metadata và nội dung dài.
+6. Giảm khoảng 30–40% decoration so với mockup đầu tiên.
+
+### 18.2.1. Animated Workflow Hero
+
+Hero được chia thành hai vùng:
+
+- Bên trái: tên, vị trí, value proposition và hai CTA.
+- Bên phải: workflow diagram gồm tối đa 5–6 node.
+
+Flow mặc định:
+
+```text
+Discover     Problem and users
+Define       Requirements and flow
+Design       Interface and interaction
+Build        Frontend and integration
+Refine       Test, learn and iterate
+```
+
+Phạm vi đóng góp cần được diễn đạt trung thực:
+
+```text
+CONTRIBUTE TO
+Discovery · Product flow · Testing
+
+PRIMARY FOCUS
+UI implementation · Frontend development
+```
+
+Quy tắc nội dung:
+
+- Flow phải phản ánh kinh nghiệm thực tế, không dùng để tự nhận nhiều vai trò hơn phạm vi đã làm.
+- Node chỉ dùng động từ và mô tả ngắn, không liệt kê toàn bộ stack.
+- Không dùng `Expert`, `Mastered`, level, phần trăm hoặc fake stats.
+- Mỗi node có text label; màu và icon không được là dấu hiệu duy nhất.
+- Node có thể mang hình dạng gem, token hoặc mini-card để giữ Cardfolio identity.
+
+Animation sequence:
+
+1. Node xuất hiện bằng opacity và translate nhẹ.
+2. Connector được vẽ theo thứ tự của flow.
+3. Từng node sáng lên khi luồng đi qua.
+4. Node thuộc `Primary Focus` giữ accent tím ở trạng thái cuối.
+5. Marker `My Focus` xuất hiện sau cùng.
+6. Animation dừng ở trạng thái hoàn chỉnh, không loop toàn bộ liên tục.
+
+Timing tham khảo:
+
+```text
+Node entrance       150–200 ms
+Connector drawing   700–1000 ms
+Step highlight      200–300 ms
+Total sequence      1800–2500 ms
+```
+
+Interaction:
+
+- Hover hoặc keyboard focus có thể làm nổi node và mô tả liên quan.
+- Thông tin thiết yếu luôn hiển thị, không bị giấu hoàn toàn trong tooltip.
+- Node chỉ là link khi có destination rõ ràng, ví dụ một case study minh họa cho giai đoạn đó.
+- Không loop marker, pulse hoặc connector animation gây mất tập trung.
+
+Responsive behavior:
+
+- Desktop dùng flow ngang hoặc đường cong nhẹ từ trái sang phải.
+- Mobile chuyển thành timeline dọc; không thu nhỏ toàn bộ sơ đồ desktop.
+- Mobile luôn hiển thị label và mô tả, không phụ thuộc hover.
+- Với `prefers-reduced-motion`, hiển thị ngay trạng thái cuối và tắt line drawing, movement, pulse.
+
+### 18.3. Homepage hierarchy
+
+```text
+1. Minimal header
+2. Hero: identity, role, short value proposition, two CTAs, animated workflow
+3. Focus Strip: current work, learning direction, availability
+4. Featured Collection: three real projects
+5. About preview
+6. Short Journey
+7. Latest Field Notes, when blog content exists
+8. Contact and footer
+```
+
+Không hiển thị achievement, EXP, streak hoặc số liệu không có nguồn dữ liệu thật. Homepage không nên cố trình bày toàn bộ kỹ năng; project và case study phải chứng minh phần lớn năng lực kỹ thuật.
+
+### 18.3.1. Focus Strip
+
+Focus Strip là một hàng thông tin ngắn nằm ngay dưới Hero. Nó tạo cầu nối giữa lời giới thiệu và Featured Collection, không phải một Skills section hoàn chỉnh.
+
+Nội dung gồm tối đa ba mục:
+
+```text
+BUILDING
+Accessible web interfaces
+
+EXPLORING
+Full-stack TypeScript
+
+AVAILABLE FOR
+Junior developer opportunities
+```
+
+Quy tắc:
+
+- Mỗi mục có eyebrow ngắn và một dòng nội dung cụ thể.
+- Chỉ mô tả trạng thái hiện tại; không liệt kê toàn bộ công nghệ.
+- Không dùng phần trăm, progress bar, EXP hoặc số liệu tự đánh giá.
+- Có thể dùng ba gem hoặc element icon nhỏ, nhưng màu không được là dấu hiệu duy nhất.
+- Desktop hiển thị ba cột trên một hàng; mobile xếp dọc hoặc thành ba hàng compact.
+- Dùng divider mảnh thay vì ba card có shadow để tránh tăng mật độ surface.
+- Chỉ cập nhật nội dung khi trọng tâm học tập hoặc trạng thái tìm việc thay đổi.
+
+### 18.4. Blog extension
+
+Blog sử dụng nhãn **Field Notes** hoặc **Developer Journal**, không biến mỗi bài viết thành một trading card đầy đủ.
+
+```text
+/blog
+/blog/$slug
+/tags/$tag
+/rss.xml
+```
+
+Blog listing có thể giữ gem nhỏ, element label, serif heading và ornamental divider. Trang bài viết phải ưu tiên khả năng đọc:
+
+- Content width khoảng 680–760 px.
+- Body dùng sans-serif với line-height thoáng.
+- Table of contents và code block rõ ràng.
+- Không dùng khung fantasy quanh từng đoạn nội dung.
+- Ornament chỉ xuất hiện ở heading, divider và metadata nhỏ.
+
+### 18.5. Interaction budget
+
+- Card tilt tối đa 2–3 độ và tắt trên touch device.
+- Hover nâng card nhẹ, không che hoặc thay thế thông tin.
+- Transition chính khoảng 180–300 ms.
+- Card draw animation chỉ chạy một lần khi section xuất hiện.
+- Tôn trọng `prefers-reduced-motion`.
+- Không dùng scroll hijacking, autoplay sound, custom cursor hoặc particle dày đặc.
+
+### 18.6. MVP cuối cùng
+
+1. Home với Animated Workflow Hero, Focus Strip, ba featured projects, about, journey và contact.
+2. Project collection dạng responsive grid/list, không dùng carousel chính.
+3. Một project case study hoàn chỉnh với screenshot thật.
+4. MDX schema dùng chung cho project và blog tương lai.
+5. SEO, accessibility, performance và responsive hoàn chỉnh.
+6. Chưa triển khai rarity taxonomy, element filter, card flip, achievements, CMS hoặc animation phức tạp.
+
+Thứ tự ưu tiên cuối cùng:
+
+> **Nội dung thật → hierarchy → responsive → accessibility → performance → visual polish → animation.**
+
+### 18.7. Mockup tham khảo đã tinh gọn
+
+![Refined bright Cardfolio editorial homepage concept](../docs/images/20260802_111439_refined-bright-cardfolio-editorial-homepage-conc_b67a040c.jpg)
+
+Mockup này minh họa:
+
+- Hero rộng và rõ, không dùng mascot fantasy lớn.
+- Bố cục hai cột của Hero; card stack trong ảnh được thay bằng Animated Workflow Diagram khi triển khai.
+- Ba project card dùng screenshot phần mềm làm nội dung chính.
+- Ornamental frame tập trung ở project card; các section còn lại dùng editorial layout sạch.
+- About, Journey, Field Notes và Contact có ít decoration hơn.
+- Nền kem, navy typography và violet CTA vẫn giữ nhận diện sáng của Cardfolio.
+
+Ảnh chỉ dùng để tham khảo composition, hierarchy, palette và mật độ ornament; nó không còn là nguồn tham khảo cho Hero visual. Microcopy, metadata, ngày tháng và nội dung project trong ảnh là placeholder; khi triển khai phải thay bằng dữ liệu thật và không sao chép lỗi chữ do image generation.
