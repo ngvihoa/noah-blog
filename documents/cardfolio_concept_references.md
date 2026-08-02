@@ -971,7 +971,7 @@ Thứ tự ưu tiên cuối cùng:
 
 ### 18.7. Mockup tham khảo đã tinh gọn
 
-![Refined bright Cardfolio editorial homepage concept](../docs/images/20260802_111439_refined-bright-cardfolio-editorial-homepage-conc_b67a040c.jpg)
+![Refined bright Cardfolio editorial homepage concept](./20260802_111439_refined-bright-cardfolio-editorial-homepage-conc_b67a040c.jpg)
 
 Mockup này minh họa:
 
