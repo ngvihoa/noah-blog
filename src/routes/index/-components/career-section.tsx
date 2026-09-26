@@ -6,63 +6,68 @@ const cardClassName =
 
 export function CareerSection() {
   return (
-    <div className="page-shell mt-[76px] grid grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] gap-6 max-lg:grid-cols-1 max-md:mt-[54px]">
-      <article className={cardClassName}>
-        <p className="eyebrow">Experience</p>
-        <div className="flex items-start justify-between gap-8 max-md:flex-col">
-          <div>
-            <h3 className="mb-2 text-[clamp(1.8rem,3vw,2.6rem)]">
-              {experience.role}
-            </h3>
-            <p>{experience.company}</p>
+    <section
+      className="border-b border-[var(--line)] py-24 md:py-32"
+      aria-label="Experience and education"
+    >
+      <div className="page-shell grid grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] gap-6 max-lg:grid-cols-1">
+        <article className={cardClassName}>
+          <p className="eyebrow">Experience</p>
+          <div className="flex items-start justify-between gap-8 max-md:flex-col">
+            <div>
+              <h3 className="mb-2 text-[clamp(1.8rem,3vw,2.6rem)]">
+                {experience.role}
+              </h3>
+              <p>{experience.company}</p>
+            </div>
+            <span className="shrink-0 text-xs font-bold text-[var(--primary-dark)] md:text-sm">
+              {experience.period}
+            </span>
           </div>
-          <span className="shrink-0 text-xs font-bold text-[var(--primary-dark)] md:text-sm">
-            {experience.period}
-          </span>
-        </div>
-        <p className="text-xs font-bold text-[var(--primary-dark)] md:text-sm">
-          {experience.type}
-        </p>
-        <ul className="detail-list">
-          {experience.highlights.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-        <a
-          className="text-link mt-7"
-          href={experience.source}
-          target="_blank"
-          rel="noreferrer"
-        >
-          View internship repositories <ExternalLink aria-hidden="true" />
-        </a>
-      </article>
+          <p className="text-xs font-bold text-[var(--primary-dark)] md:text-sm">
+            {experience.type}
+          </p>
+          <ul className="detail-list">
+            {experience.highlights.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <a
+            className="text-link mt-7"
+            href={experience.source}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View internship repositories <ExternalLink aria-hidden="true" />
+          </a>
+        </article>
 
-      <article className={cardClassName}>
-        <p className="eyebrow">Education</p>
-        <h3 className="mb-2 text-[clamp(1.8rem,3vw,2.6rem)]">
-          {education.degree}
-        </h3>
-        <p>{education.school}</p>
-        <dl className="mt-11 grid gap-5">
-          <div className="border-t border-[var(--line)] pt-[18px]">
-            <dt className="mb-[5px] text-xs font-bold tracking-[0.11em] text-[var(--ink-soft)] uppercase md:text-sm">
-              Period
-            </dt>
-            <dd className="m-0 text-xs font-bold md:text-sm">
-              {education.period}
-            </dd>
-          </div>
-          <div className="border-t border-[var(--line)] pt-[18px]">
-            <dt className="mb-[5px] text-xs font-bold tracking-[0.11em] text-[var(--ink-soft)] uppercase md:text-sm">
-              GPA
-            </dt>
-            <dd className="m-0 text-xs font-bold md:text-sm">
-              {education.gpa}
-            </dd>
-          </div>
-        </dl>
-      </article>
-    </div>
+        <article className={cardClassName}>
+          <p className="eyebrow">Education</p>
+          <h3 className="mb-2 text-[clamp(1.8rem,3vw,2.6rem)]">
+            {education.degree}
+          </h3>
+          <p>{education.school}</p>
+          <dl className="mt-11 grid gap-5">
+            <div className="border-t border-[var(--line)] pt-[18px]">
+              <dt className="mb-[5px] text-xs font-bold tracking-[0.11em] text-[var(--ink-soft)] uppercase md:text-sm">
+                Period
+              </dt>
+              <dd className="m-0 text-xs font-bold md:text-sm">
+                {education.period}
+              </dd>
+            </div>
+            <div className="border-t border-[var(--line)] pt-[18px]">
+              <dt className="mb-[5px] text-xs font-bold tracking-[0.11em] text-[var(--ink-soft)] uppercase md:text-sm">
+                GPA
+              </dt>
+              <dd className="m-0 text-xs font-bold md:text-sm">
+                {education.gpa}
+              </dd>
+            </div>
+          </dl>
+        </article>
+      </div>
+    </section>
   )
 }
