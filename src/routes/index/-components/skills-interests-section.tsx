@@ -2,11 +2,11 @@ import { interests, skills } from '~/data/portfolio'
 
 export function SkillsInterestsSection() {
   return (
-    <div className="page-shell mt-[76px] grid grid-cols-[minmax(0,1.35fr)_minmax(330px,0.65fr)] gap-[54px] max-[1020px]:grid-cols-1 max-[720px]:mt-[54px] max-[720px]:gap-8">
+    <div className="page-shell mt-[76px] grid grid-cols-[minmax(0,1.35fr)_minmax(330px,0.65fr)] gap-[54px] max-lg:grid-cols-1 max-md:mt-[54px] max-md:gap-8">
       <div>
         <p className="eyebrow">Toolbox</p>
         <h2>Skills I work with</h2>
-        <div className="grid grid-cols-3 gap-[14px] max-[720px]:grid-cols-1">
+        <div className="grid grid-cols-3 gap-[14px] max-md:grid-cols-1">
           {Object.entries(skills).map(([group, items]) => (
             <div
               className="rounded-[18px] border border-[var(--line)] bg-[var(--surface-strong)] p-[22px]"
@@ -33,7 +33,7 @@ export function SkillsInterestsSection() {
               className="flex items-center gap-3.5 bg-[var(--surface-strong)] p-5 [font-family:var(--display)] font-semibold"
               key={interest}
             >
-              <span className="[font-family:var(--body)] text-[0.66rem] text-[var(--primary-dark)]">
+              <span className="[font-family:var(--body)] text-xs text-[var(--primary-dark)] md:text-sm">
                 0{index + 1}
               </span>
               {interest}

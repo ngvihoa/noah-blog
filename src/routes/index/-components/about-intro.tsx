@@ -2,8 +2,8 @@ import { profile } from '~/data/portfolio'
 
 export function AboutIntro() {
   return (
-    <div className="page-shell grid grid-cols-[minmax(280px,0.72fr)_minmax(0,1.28fr)] items-center gap-[90px] max-[1020px]:gap-[50px] max-[720px]:grid-cols-1 max-[720px]:gap-8">
-      <div className="relative max-w-[420px] -rotate-2 rounded-[26px] border border-[var(--line)] bg-[var(--surface-strong)] p-[13px] shadow-[0_24px_70px_rgb(63_48_13/12%)] after:absolute after:right-[-7px] after:bottom-[18%] after:size-4 after:rotate-45 after:bg-[var(--gold)] after:content-[''] max-[720px]:w-[min(100%,360px)] max-[720px]:justify-self-center">
+    <div className="page-shell grid grid-cols-[minmax(280px,0.72fr)_minmax(0,1.28fr)] items-center gap-[90px] max-lg:gap-[50px] max-md:grid-cols-1 max-md:gap-8">
+      <div className="relative max-w-[420px] -rotate-2 rounded-[26px] border border-[var(--line)] bg-[var(--surface-strong)] p-[13px] shadow-[0_24px_70px_rgb(63_48_13/12%)] after:absolute after:right-[-7px] after:bottom-[18%] after:size-4 after:rotate-45 after:bg-[var(--gold)] after:content-[''] max-md:w-[min(100%,360px)] max-md:justify-self-center">
         <img
           className="block h-auto w-full rounded-[17px] saturate-[0.88] contrast-[1.03]"
           src="/avatar.jpg"
@@ -35,9 +35,9 @@ export function AboutIntro() {
           ownership across the product. I’m expanding my backend foundation with
           Node.js, Express, and SQL.
         </p>
-        <dl className="mt-[34px] grid grid-cols-2 gap-[18px] max-[720px]:grid-cols-1">
+        <dl className="mt-[34px] grid grid-cols-2 gap-[18px] max-md:grid-cols-1">
           <div className="border-t border-(--line) pt-4">
-            <dt className="mb-[5px] text-[0.64rem] font-bold tracking-[0.12em] text-[var(--primary-dark)] uppercase">
+            <dt className="mb-[5px] text-xs font-bold tracking-[0.12em] text-[var(--primary-dark)] uppercase md:text-sm">
               Based in
             </dt>
             <dd className="m-0 [font-family:var(--display)] font-semibold">
@@ -45,7 +45,7 @@ export function AboutIntro() {
             </dd>
           </div>
           <div className="border-t border-(--line) pt-4">
-            <dt className="mb-[5px] text-[0.64rem] font-bold tracking-[0.12em] text-[var(--primary-dark)] uppercase">
+            <dt className="mb-[5px] text-xs font-bold tracking-[0.12em] text-[var(--primary-dark)] uppercase md:text-sm">
               Focus
             </dt>
             <dd className="m-0 [font-family:var(--display)] font-semibold">

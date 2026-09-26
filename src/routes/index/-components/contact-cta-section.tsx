@@ -12,7 +12,7 @@ export function ContactCtaSection() {
           collaborations.
         </p>
       </div>
-      <Link className="button button--primary" to="/contact">
+      <Link className="button button--primary whitespace-nowrap" to="/contact">
         Contact me <ExternalLink aria-hidden="true" />
       </Link>
     </section>

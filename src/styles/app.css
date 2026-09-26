@@ -88,7 +88,7 @@ button {
 
 .brand__role {
   color: var(--primary);
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -178,7 +178,7 @@ button {
 .eyebrow {
   margin: 0 0 14px;
   color: var(--primary-dark);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -303,7 +303,7 @@ h3 {
 .focus-strip dt {
   margin-bottom: 7px;
   color: var(--primary-dark);
-  font-size: 0.64rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -406,7 +406,7 @@ h3 {
 }
 
 .project-card__visual span {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -485,7 +485,7 @@ h3 {
 .project-card__type {
   margin-bottom: 7px;
   color: var(--element);
-  font-size: 0.67rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -512,13 +512,13 @@ h3 {
   border-radius: 999px;
   color: var(--ink);
   background: var(--element-soft);
-  font-size: 0.66rem;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 
 .project-card__pending {
   color: #81788e;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
 }
 
 .project-facts {
@@ -537,7 +537,7 @@ h3 {
 .case-study__meta dt {
   margin-bottom: 5px;
   color: var(--ink-soft);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -841,7 +841,24 @@ h3 {
   text-transform: uppercase;
 }
 
-@media (max-width: 1020px) {
+@media (width >= 48rem) {
+  .brand__role,
+  .eyebrow,
+  .focus-strip dt,
+  .text-link,
+  .project-card__visual span,
+  .project-card__type,
+  .project-card__body > p:not(.project-card__type),
+  .chip-list li,
+  .project-card__pending,
+  .project-facts dt,
+  .project-facts dd,
+  .site-footer__inner {
+    font-size: 0.875rem;
+  }
+}
+
+@media (width < 64rem) {
   .hero {
     min-height: auto;
     grid-template-columns: 1fr;
@@ -871,7 +888,7 @@ h3 {
   }
 }
 
-@media (max-width: 720px) {
+@media (width < 48rem) {
   .page-shell {
     width: min(100% - 28px, 620px);
   }
@@ -962,7 +979,7 @@ h3 {
   }
 
   .project-preview {
-    inset: 72px 22px 38px;
+    inset: 60px 22px 38px;
   }
 
   .project-preview__desktop {
