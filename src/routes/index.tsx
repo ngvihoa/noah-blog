@@ -1,9 +1,10 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { ArrowRight, ExternalLink, Github } from 'lucide-react'
+import { Mascot } from 'page-mascot'
+import { AgileOrbit } from '~/components/agile-orbit'
 import { FocusStrip } from '~/components/focus-strip'
 import { HomeAbout } from '~/components/home-about'
 import { RoleSwitcher } from '~/components/role-switcher'
-import { WorkflowDiagram } from '~/components/workflow-diagram'
 import { featuredProject, profile } from '~/data/portfolio'
 
 export const Route = createFileRoute('/')({
@@ -15,11 +16,20 @@ function HomePage() {
     <main>
       <section className="hero page-shell" aria-labelledby="hero-title">
         <div className="hero__copy">
-          <p className="eyebrow">Hello, I’m {profile.alias}</p>
-          <h1 id="hero-title">
-            I build thoughtful software and polished interfaces.
-          </h1>
+          <div className="mb-2 flex min-h-26 items-end gap-3">
+            <p className="eyebrow mb-3! text-lg!">Hello, I’m {profile.alias}</p>
+            <Mascot
+              className="-mr-1 -mb-2 drop-shadow-[0_14px_24px_rgb(23_35_60/0.14)]"
+              directions="/mascots/noah-directions.webp"
+              reactions="/mascots/noah-reactions.webp"
+              label="Noah mascot"
+              size={104}
+            />
+          </div>
           <RoleSwitcher />
+          <p className="hero__tagline">
+            Thoughtful software. Polished interfaces.
+          </p>
           <p className="hero__intro">
             Based in Ho Chi Minh City, I turn product ideas into clear,
             accessible experiences with React, Next.js, TypeScript, and a
@@ -34,7 +44,7 @@ function HomePage() {
             </a>
           </div>
         </div>
-        <WorkflowDiagram />
+        <AgileOrbit />
       </section>
 
       <div className="page-shell">

@@ -30,7 +30,7 @@ export const featuredProject = {
     'Vehicle check-in and check-out operations.',
   ],
   stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit', 'Figma'],
-  source: 'https://github.com/capstone-k20-219/capstone-k20-219-frontend-web',
+  source: 'https://github.com/capstone-k20-219',
 } as const
 
 export const experience = {

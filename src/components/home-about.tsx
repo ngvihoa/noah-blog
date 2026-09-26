@@ -14,7 +14,7 @@ export function HomeAbout() {
         <div className="about-portrait">
           <img
             className="about-portrait__photo"
-            src="/images/viet-hoa-profile.jpg"
+            src="/avatar.jpg"
             alt="Nguyễn Viết Hòa"
             width="592"
             height="620"
