@@ -19,7 +19,9 @@ function HomePage() {
       <div className="page-shell">
         <FocusStrip />
       </div>
-      <StackedSection layer={10}>
+      <StackedSection
+        layer={10}
+        className='[&_div]:shadow-none! [&_div]:rounded-none! [&_div]:border-none!'>
         <FeaturedProjectSection />
       </StackedSection>
       <StackedSection layer={11}>
