@@ -1,7 +1,15 @@
-export function BrandMark() {
+export function BrandMark({ priority = false }: { priority?: boolean }) {
   return (
     <span className="brand-mark" aria-hidden="true">
-      <span className="brand-mark__gem" />
+      <img
+        src="/logo_main.png"
+        alt=""
+        width="627"
+        height="627"
+        decoding="async"
+        loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : 'auto'}
+      />
     </span>
   )
 }

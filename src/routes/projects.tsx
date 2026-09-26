@@ -5,10 +5,11 @@ import { featuredProject } from '~/data/portfolio'
 export const Route = createFileRoute('/projects')({
   head: () => ({
     meta: [
-      { title: 'Projects | Viết Hòa' },
+      { title: 'Projects | Noah / Viết Hòa' },
       {
         name: 'description',
-        content: 'Selected frontend work by Viết Hòa, including PakiSlot.',
+        content:
+          'Selected frontend work by Noah, Nguyễn Viết Hòa, including PakiSlot.',
       },
     ],
   }),

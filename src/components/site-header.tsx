@@ -9,9 +9,9 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header__inner page-shell">
-        <Link className="brand" to="/" aria-label="Viết Hòa, home">
-          <BrandMark />
-          <span className="brand__name">Viết Hòa</span>
+        <Link className="brand" to="/" aria-label="Noah, Viết Hòa, home">
+          <BrandMark priority />
+          <span className="brand__name">Noah</span>
           <span className="brand__role">Frontend Developer</span>
         </Link>
 

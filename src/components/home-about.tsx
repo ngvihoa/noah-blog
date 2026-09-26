@@ -13,23 +13,32 @@ export function HomeAbout() {
       <div className="page-shell home-about__intro">
         <div className="about-portrait">
           <img
+            className="about-portrait__photo"
             src="/images/viet-hoa-profile.jpg"
             alt="Nguyễn Viết Hòa"
             width="592"
             height="620"
             loading="lazy"
           />
-          <span>{profile.alias}</span>
+          <img
+            className="about-portrait__logo"
+            src="/logo_main.png"
+            alt=""
+            width="627"
+            height="627"
+            loading="lazy"
+          />
         </div>
         <div className="home-about__copy">
-          <p className="eyebrow">Player profile</p>
+          <p className="eyebrow">About me</p>
           <h2 id="about-title">
             Curious by default. Intentional in execution.
           </h2>
           <p className="home-about__lead">
-            I’m a frontend developer with a Computer Science background. I enjoy
-            understanding a product’s workflows, shaping them in Figma, and
-            turning them into clear, responsive React interfaces.
+            I’m Noah — Nguyễn Viết Hòa, a frontend developer with a Computer
+            Science background. I enjoy understanding a product’s workflows,
+            shaping them in Figma, and turning them into clear, responsive React
+            interfaces.
           </p>
           <p>
             My long-term goal is to become a full-stack developer who can take

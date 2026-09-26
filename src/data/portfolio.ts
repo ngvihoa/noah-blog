@@ -1,7 +1,7 @@
 export const profile = {
   name: 'Nguyễn Viết Hòa',
   shortName: 'Viết Hòa',
-  alias: 'Harry Nguyen',
+  alias: 'Noah',
   role: 'Frontend Developer',
   location: 'Tay Thanh ward, Ho Chi Minh City',
   email: 'nvhoa29702@gmail.com',

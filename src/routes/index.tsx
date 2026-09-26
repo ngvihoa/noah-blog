@@ -14,7 +14,7 @@ function HomePage() {
     <main>
       <section className="hero page-shell" aria-labelledby="hero-title">
         <div className="hero__copy">
-          <p className="eyebrow">Hello, I’m {profile.shortName}</p>
+          <p className="eyebrow">Hello, I’m {profile.alias}</p>
           <h1 id="hero-title">
             I turn product flows into polished interfaces.
           </h1>

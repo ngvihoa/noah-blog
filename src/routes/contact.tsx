@@ -5,10 +5,10 @@ import { profile } from '~/data/portfolio'
 export const Route = createFileRoute('/contact')({
   head: () => ({
     meta: [
-      { title: 'Contact | Viết Hòa' },
+      { title: 'Contact | Noah / Viết Hòa' },
       {
         name: 'description',
-        content: 'Get in touch with frontend developer Viết Hòa.',
+        content: 'Get in touch with frontend developer Noah, Nguyễn Viết Hòa.',
       },
     ],
   }),
