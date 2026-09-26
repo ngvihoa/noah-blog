@@ -3,12 +3,6 @@ import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { BrandMark } from './brand-mark'
 
-const navigation = [
-  { label: 'Projects', to: '/projects' },
-  { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact' },
-] as const
-
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -22,16 +16,23 @@ export function SiteHeader() {
         </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {navigation.map((item) => (
-            <Link
-              key={item.to}
-              className="nav-link"
-              activeProps={{ className: 'nav-link nav-link--active' }}
-              to={item.to}
-            >
-              {item.label}
-            </Link>
-          ))}
+          <Link
+            className="nav-link"
+            activeProps={{ className: 'nav-link nav-link--active' }}
+            to="/projects"
+          >
+            Projects
+          </Link>
+          <a className="nav-link" href="/#about">
+            About
+          </a>
+          <Link
+            className="nav-link"
+            activeProps={{ className: 'nav-link nav-link--active' }}
+            to="/contact"
+          >
+            Contact
+          </Link>
         </nav>
 
         <button
@@ -52,19 +53,33 @@ export function SiteHeader() {
           className="mobile-nav page-shell"
           aria-label="Mobile navigation"
         >
-          {navigation.map((item) => (
-            <Link
-              key={item.to}
-              className="mobile-nav__link"
-              activeProps={{
-                className: 'mobile-nav__link mobile-nav__link--active',
-              }}
-              to={item.to}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
+          <Link
+            className="mobile-nav__link"
+            activeProps={{
+              className: 'mobile-nav__link mobile-nav__link--active',
+            }}
+            to="/projects"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Projects
+          </Link>
+          <a
+            className="mobile-nav__link"
+            href="/#about"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            About
+          </a>
+          <Link
+            className="mobile-nav__link"
+            activeProps={{
+              className: 'mobile-nav__link mobile-nav__link--active',
+            }}
+            to="/contact"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Contact
+          </Link>
         </nav>
       ) : null}
     </header>

@@ -72,6 +72,19 @@ function ProjectsPage() {
             </ul>
           </div>
 
+          <figure className="case-study__hero-visual">
+            <img
+              src="/paki-slot/m-home.png"
+              alt="PakiSlot web dashboard with revenue, service, vehicle, and traffic charts"
+              width="1367"
+              height="941"
+            />
+            <figcaption>
+              The manager dashboard brings daily parking operations and business
+              signals into one view.
+            </figcaption>
+          </figure>
+
           <div className="case-study__columns">
             <section aria-labelledby="contributions-title">
               <p className="eyebrow">My contribution</p>
@@ -91,6 +104,41 @@ function ProjectsPage() {
                 ))}
               </ul>
             </section>
+          </div>
+
+          <div className="case-study__gallery">
+            <figure className="case-study__gallery-item case-study__gallery-item--wide">
+              <img
+                src="/paki-slot/e-map.png"
+                alt="Interactive PakiSlot parking map with occupied and empty slots"
+                width="1117"
+                height="942"
+                loading="lazy"
+              />
+              <figcaption>
+                A live parking map makes slot status scannable at a glance.
+              </figcaption>
+            </figure>
+            <figure className="case-study__gallery-item case-study__gallery-item--phone">
+              <img
+                src="/paki-slot/login_screen.png"
+                alt="PakiSlot mobile authentication screen"
+                width="849"
+                height="1863"
+                loading="lazy"
+              />
+              <figcaption>Mobile authentication experience.</figcaption>
+            </figure>
+            <figure className="case-study__gallery-item case-study__gallery-item--phone">
+              <img
+                src="/paki-slot/splash-screen.png"
+                alt="PakiSlot mobile splash screen"
+                width="781"
+                height="1689"
+                loading="lazy"
+              />
+              <figcaption>A focused brand moment on launch.</figcaption>
+            </figure>
           </div>
 
           <a

@@ -1,6 +1,7 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { ArrowRight, ExternalLink, Github } from 'lucide-react'
 import { FocusStrip } from '~/components/focus-strip'
+import { HomeAbout } from '~/components/home-about'
 import { WorkflowDiagram } from '~/components/workflow-diagram'
 import { featuredProject, profile } from '~/data/portfolio'
 
@@ -25,9 +26,9 @@ function HomePage() {
             <Link className="button button--primary" to="/projects">
               View projects <ArrowRight aria-hidden="true" />
             </Link>
-            <Link className="button button--secondary" to="/about">
+            <a className="button button--secondary" href="#about">
               About my process
-            </Link>
+            </a>
           </div>
         </div>
         <WorkflowDiagram />
@@ -50,19 +51,30 @@ function HomePage() {
 
         <div className="project-grid project-grid--featured">
           <article className="project-card project-card--ice project-card--featured">
-            <div className="project-card__visual project-card__visual--dashboard">
+            <figure className="project-card__visual project-card__visual--product">
               <span className="project-card__visual-label">
                 Capstone project
               </span>
-              <div className="dashboard-preview" aria-hidden="true">
-                <span className="dashboard-preview__sidebar" />
-                <span className="dashboard-preview__header" />
-                <span className="dashboard-preview__metric dashboard-preview__metric--one" />
-                <span className="dashboard-preview__metric dashboard-preview__metric--two" />
-                <span className="dashboard-preview__map" />
+              <div className="project-preview">
+                <img
+                  className="project-preview__desktop"
+                  src="/paki-slot/m-home.png"
+                  alt="PakiSlot management dashboard showing parking and revenue data"
+                  width="1367"
+                  height="941"
+                  loading="lazy"
+                />
+                <img
+                  className="project-preview__mobile"
+                  src="/paki-slot/login_screen.png"
+                  alt="PakiSlot mobile login screen"
+                  width="849"
+                  height="1863"
+                  loading="lazy"
+                />
               </div>
               <strong>01</strong>
-            </div>
+            </figure>
             <div className="project-card__body project-card__body--featured">
               <p className="project-card__type">{featuredProject.subtitle}</p>
               <h3>{featuredProject.title}</h3>
@@ -103,25 +115,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="about-preview">
-        <div className="page-shell about-preview__inner">
-          <div>
-            <p className="eyebrow">Player profile</p>
-            <h2>Curious by default. Intentional in execution.</h2>
-          </div>
-          <div className="about-preview__copy">
-            <p>
-              My Computer Science background and frontend internship taught me
-              to begin with requirements and workflows, then move from Figma to
-              maintainable implementation. I’m growing toward full-stack product
-              development with Node.js and Express.
-            </p>
-            <Link className="text-link" to="/about">
-              More about me <ArrowRight aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HomeAbout />
 
       <section
         className="contact-cta page-shell"
