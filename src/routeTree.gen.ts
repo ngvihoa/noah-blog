@@ -9,13 +9,13 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as IndexRouteRouteImport } from './routes/index/route'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProjectsRouteImport } from './routes/projects'
 
-const IndexRoute = IndexRouteImport.update({
+const IndexRouteRoute = IndexRouteRouteImport.update({
   id: '/',
-  path: '/',
+  path: '',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -30,18 +30,18 @@ const ProjectsRoute = ProjectsRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof IndexRouteRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/': typeof IndexRouteRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/': typeof IndexRouteRoute
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
 }
@@ -54,7 +54,7 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  IndexRouteRoute: typeof IndexRouteRoute
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRoute
 }
@@ -63,9 +63,9 @@ declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
       id: '/'
-      path: '/'
+      path: ''
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+      preLoaderRoute: typeof IndexRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -86,7 +86,7 @@ declare module '@tanstack/react-router' {
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  IndexRouteRoute: IndexRouteRoute,
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
 }

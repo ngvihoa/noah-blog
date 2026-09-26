@@ -1,0 +1,46 @@
+import { interests, skills } from '~/data/portfolio'
+
+export function SkillsInterestsSection() {
+  return (
+    <div className="page-shell mt-[76px] grid grid-cols-[minmax(0,1.35fr)_minmax(330px,0.65fr)] gap-[54px] max-[1020px]:grid-cols-1 max-[720px]:mt-[54px] max-[720px]:gap-8">
+      <div>
+        <p className="eyebrow">Toolbox</p>
+        <h2>Skills I work with</h2>
+        <div className="grid grid-cols-3 gap-[14px] max-[720px]:grid-cols-1">
+          {Object.entries(skills).map(([group, items]) => (
+            <div
+              className="rounded-[18px] border border-[var(--line)] bg-[var(--surface-strong)] p-[22px]"
+              key={group}
+            >
+              <h3 className="capitalize">{group}</h3>
+              <ul className="chip-list">
+                {items.map((item) => (
+                  <li className="bg-[#eeeafd]" key={item}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div>
+        <p className="eyebrow">Beyond the screen</p>
+        <h2>Things that keep me curious</h2>
+        <ul className="m-0 grid list-none grid-cols-1 gap-px overflow-hidden rounded-[18px] border border-[var(--line)] bg-[var(--line)] p-0">
+          {interests.map((interest, index) => (
+            <li
+              className="flex items-center gap-3.5 bg-[var(--surface-strong)] p-5 [font-family:var(--display)] font-semibold"
+              key={interest}
+            >
+              <span className="[font-family:var(--body)] text-[0.66rem] text-[var(--primary-dark)]">
+                0{index + 1}
+              </span>
+              {interest}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
