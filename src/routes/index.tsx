@@ -27,7 +27,7 @@ function HomePage() {
             />
           </div>
           <RoleSwitcher />
-          <p className="hero__tagline">
+          <p className="mb-[22px] max-w-[500px] [font-family:var(--display)] text-[clamp(1.15rem,2vw,1.45rem)] font-bold tracking-[-0.02em] text-[var(--primary-dark)]">
             Thoughtful software. Polished interfaces.
           </p>
           <p className="hero__intro">

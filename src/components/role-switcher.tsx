@@ -22,17 +22,15 @@ export function RoleSwitcher() {
   }
 
   return (
-    <h1
-      className="hero__role-switcher"
-      id="hero-title"
-      aria-label="Software Developer and Frontend Developer"
-    >
-      <span className="hero__role-window" aria-hidden="true">
-        <span className="hero__role-placeholder">Software Developer</span>
+    <h1 id="hero-title" aria-label="Software Developer and Frontend Developer">
+      <span className="grid overflow-hidden" aria-hidden="true">
+        <span className="invisible col-start-1 row-start-1">
+          Software Developer
+        </span>
         <AnimatePresence initial={false} mode="popLayout">
           <motion.span
             key={roles[activeRole]}
-            className="hero__role"
+            className="col-start-1 row-start-1"
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -28 }}
