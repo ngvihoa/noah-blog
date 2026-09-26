@@ -335,7 +335,7 @@ h3 {
 
 .agile-orbit__stage {
   position: relative;
-  min-height: 500px;
+  min-height: 530px;
   margin-top: -16px;
 }
 
@@ -343,8 +343,8 @@ h3 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 350px;
-  height: 350px;
+  width: 390px;
+  height: 390px;
   transform: translate(-50%, -50%);
   border: 1.5px dashed #c9c0e8;
   border-radius: 50%;
@@ -358,7 +358,7 @@ h3 {
 
 .agile-orbit__ring::before {
   position: absolute;
-  inset: 42px;
+  inset: 48px;
   border: 1px solid rgb(108 92 231 / 10%);
   border-radius: 50%;
   content: '';
@@ -370,8 +370,8 @@ h3 {
   top: 50%;
   left: 50%;
   display: flex;
-  width: 142px;
-  height: 142px;
+  width: 150px;
+  height: 150px;
   transform: translate(-50%, -50%) rotate(3deg);
   align-items: center;
   justify-content: center;
@@ -416,7 +416,7 @@ h3 {
   left: 0;
   width: 0;
   height: 0;
-  transform: rotate(var(--orbit-angle)) translateY(-175px);
+  transform: rotate(var(--orbit-angle)) translateY(-195px);
 }
 
 .agile-orbit__anchor {
@@ -431,7 +431,7 @@ h3 {
 .agile-orbit__item {
   position: absolute;
   display: flex;
-  width: 140px;
+  width: 150px;
   min-height: 74px;
   transform: translate(-50%, -50%);
   align-items: center;
@@ -1334,17 +1334,18 @@ h3 {
   }
 
   .agile-orbit {
+    overflow-x: clip;
     padding: 0;
   }
 
   .agile-orbit__stage {
-    min-height: 410px;
+    min-height: 430px;
     margin-top: 0;
   }
 
   .agile-orbit__ring {
-    width: 250px;
-    height: 250px;
+    width: min(290px, calc(100vw - 160px));
+    height: min(290px, calc(100vw - 160px));
   }
 
   .agile-orbit__core {
@@ -1353,12 +1354,13 @@ h3 {
   }
 
   .agile-orbit__item {
-    width: 116px;
+    width: 126px;
     min-height: 68px;
   }
 
   .agile-orbit__slot {
-    transform: rotate(var(--orbit-angle)) translateY(-125px);
+    transform: rotate(var(--orbit-angle))
+      translateY(calc(-1 * min(145px, calc(50vw - 80px))));
   }
 
   .focus-strip {

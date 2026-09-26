@@ -1,24 +1,22 @@
-import { motion, useReducedMotion } from 'motion/react'
+import { motion, useReducedMotion, useTime, useTransform } from 'motion/react'
 
 const contributions = [
-  { label: 'Read specs', detail: 'Requirements & logic' },
-  { label: 'Review design', detail: 'UI flows & states' },
-  { label: 'Align', detail: 'With Designer & PM' },
+  {
+    label: 'Clarify requirements',
+    detail: 'Review specs & designs with PM and Designer',
+  },
   { label: 'Build', detail: 'Product-ready features' },
   { label: 'Test & validate', detail: 'Together with QA' },
-  { label: 'Maintain', detail: 'Fixes after release' },
+  { label: 'Maintain & improve', detail: 'Monitor, refine & evolve' },
 ] as const
-
-const orbitTransition = {
-  duration: 32,
-  ease: 'linear',
-  repeat: Number.POSITIVE_INFINITY,
-} as const
 
 export function AgileOrbit() {
   const shouldReduceMotion = useReducedMotion()
-  const orbitAnimation = shouldReduceMotion ? undefined : { rotate: 360 }
-  const counterAnimation = shouldReduceMotion ? undefined : { rotate: -360 }
+  const time = useTime()
+  const orbitRotation = useTransform(time, (value) =>
+    shouldReduceMotion ? 0 : ((value % 32_000) / 32_000) * 360,
+  )
+  const counterRotation = useTransform(orbitRotation, (value) => -value)
 
   return (
     <div
@@ -26,7 +24,6 @@ export function AgileOrbit() {
       aria-labelledby="agile-orbit-title"
       aria-describedby="agile-orbit-description"
     >
-
       <div className="agile-orbit__stage">
         <div className="agile-orbit__ring" aria-hidden="true" />
 
@@ -37,15 +34,14 @@ export function AgileOrbit() {
 
         <motion.ul
           className="agile-orbit__list"
-          animate={orbitAnimation}
-          transition={orbitTransition}
+          style={{ rotate: orbitRotation }}
         >
           {contributions.map((item, index) => (
             <li
               className="agile-orbit__slot"
               style={
                 {
-                  '--orbit-angle': `${index * 60}deg`,
+                  '--orbit-angle': `${index * (360 / contributions.length)}deg`,
                 } as React.CSSProperties
               }
               key={item.label}
@@ -53,8 +49,7 @@ export function AgileOrbit() {
               <div className="agile-orbit__anchor">
                 <motion.div
                   className="agile-orbit__counter"
-                  animate={counterAnimation}
-                  transition={orbitTransition}
+                  style={{ rotate: counterRotation }}
                 >
                   <div className="agile-orbit__item">
                     <span className="agile-orbit__number">0{index + 1}</span>
