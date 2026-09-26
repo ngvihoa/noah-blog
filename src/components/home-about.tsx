@@ -35,10 +35,10 @@ export function HomeAbout() {
             Curious by default. Intentional in execution.
           </h2>
           <p className="home-about__lead">
-            I’m Noah — Nguyễn Viết Hòa, a frontend developer with a Computer
-            Science background. I enjoy understanding a product’s workflows,
-            shaping them in Figma, and turning them into clear, responsive React
-            interfaces.
+            I’m Noah — Nguyễn Viết Hòa, a software developer with a strong
+            frontend foundation and a Computer Science background. I enjoy
+            understanding a product’s workflows, shaping them in Figma, and
+            turning them into clear, responsive products.
           </p>
           <p>
             My long-term goal is to become a full-stack developer who can take
@@ -52,7 +52,7 @@ export function HomeAbout() {
             </div>
             <div>
               <dt>Focus</dt>
-              <dd>Frontend & product UI</dd>
+              <dd>Software development & product UI</dd>
             </div>
           </dl>
         </div>

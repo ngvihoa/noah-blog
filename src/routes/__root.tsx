@@ -16,12 +16,12 @@ export const Route = createRootRoute({
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        title: 'Noah / Viết Hòa | Frontend Developer',
+        title: 'Noah / Viết Hòa | Software Developer',
       },
       {
         name: 'description',
         content:
-          'Noah, Nguyễn Viết Hòa, builds thoughtful and accessible React and Next.js products.',
+          'Noah, Nguyễn Viết Hòa, is a software developer building thoughtful and accessible digital products with a strong frontend foundation.',
       },
     ],
     links: [

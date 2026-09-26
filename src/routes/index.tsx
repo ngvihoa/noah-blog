@@ -2,6 +2,7 @@ import { Link, createFileRoute } from '@tanstack/react-router'
 import { ArrowRight, ExternalLink, Github } from 'lucide-react'
 import { FocusStrip } from '~/components/focus-strip'
 import { HomeAbout } from '~/components/home-about'
+import { RoleSwitcher } from '~/components/role-switcher'
 import { WorkflowDiagram } from '~/components/workflow-diagram'
 import { featuredProject, profile } from '~/data/portfolio'
 
@@ -16,11 +17,13 @@ function HomePage() {
         <div className="hero__copy">
           <p className="eyebrow">Hello, I’m {profile.alias}</p>
           <h1 id="hero-title">
-            I turn product flows into polished interfaces.
+            I build thoughtful software and polished interfaces.
           </h1>
+          <RoleSwitcher />
           <p className="hero__intro">
-            I’m a frontend developer in Ho Chi Minh City, working with React,
-            Next.js, and TypeScript to build clear, accessible web experiences.
+            Based in Ho Chi Minh City, I turn product ideas into clear,
+            accessible experiences with React, Next.js, TypeScript, and a
+            growing full-stack toolkit.
           </p>
           <div className="hero__actions">
             <Link className="button button--primary" to="/projects">

@@ -8,7 +8,7 @@ export const Route = createFileRoute('/contact')({
       { title: 'Contact | Noah / Viết Hòa' },
       {
         name: 'description',
-        content: 'Get in touch with frontend developer Noah, Nguyễn Viết Hòa.',
+        content: 'Get in touch with software developer Noah, Nguyễn Viết Hòa.',
       },
     ],
   }),
