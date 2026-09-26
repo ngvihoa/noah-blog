@@ -18,7 +18,7 @@ export function SiteHeader() {
         <Link className="brand" to="/" aria-label="Viết Hòa, home">
           <BrandMark />
           <span className="brand__name">Viết Hòa</span>
-          <span className="brand__role">Developer</span>
+          <span className="brand__role">Frontend Developer</span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">

@@ -1,4 +1,6 @@
 import { Link } from '@tanstack/react-router'
+import { Github, Linkedin, Mail } from 'lucide-react'
+import { profile } from '~/data/portfolio'
 import { BrandMark } from './brand-mark'
 
 export function SiteFooter() {
@@ -9,7 +11,27 @@ export function SiteFooter() {
           <BrandMark />
           <span>Viết Hòa</span>
         </Link>
-        <p>Building thoughtful interfaces, one iteration at a time.</p>
+        <div className="site-footer__links" aria-label="Social links">
+          <a href={`mailto:${profile.email}`} aria-label="Email Viết Hòa">
+            <Mail aria-hidden="true" />
+          </a>
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Viết Hòa on GitHub"
+          >
+            <Github aria-hidden="true" />
+          </a>
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Viết Hòa on LinkedIn"
+          >
+            <Linkedin aria-hidden="true" />
+          </a>
+        </div>
         <span>© 2026 Viết Hòa</span>
       </div>
     </footer>

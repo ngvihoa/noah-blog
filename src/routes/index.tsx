@@ -1,49 +1,25 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
-import { ArrowRight, ExternalLink } from 'lucide-react'
+import { ArrowRight, ExternalLink, Github } from 'lucide-react'
 import { FocusStrip } from '~/components/focus-strip'
 import { WorkflowDiagram } from '~/components/workflow-diagram'
+import { featuredProject, profile } from '~/data/portfolio'
 
 export const Route = createFileRoute('/')({
   component: HomePage,
 })
-
-const projects = [
-  {
-    title: 'Project one',
-    type: 'Web application',
-    summary:
-      'A real project story and product screenshot will replace this placeholder.',
-    stack: ['TypeScript', 'React'],
-    element: 'ice',
-  },
-  {
-    title: 'Project two',
-    type: 'Data experience',
-    summary:
-      'A concise explanation of the problem, contribution, and outcome belongs here.',
-    stack: ['UI design', 'Data'],
-    element: 'fire',
-  },
-  {
-    title: 'Project three',
-    type: 'Product experiment',
-    summary:
-      'This card remains honest about missing content while the layout is developed.',
-    stack: ['Prototype', 'Research'],
-    element: 'nature',
-  },
-] as const
 
 function HomePage() {
   return (
     <main>
       <section className="hero page-shell" aria-labelledby="hero-title">
         <div className="hero__copy">
-          <p className="eyebrow">Hello, I’m Viết Hòa</p>
-          <h1 id="hero-title">I build thoughtful, useful digital products.</h1>
+          <p className="eyebrow">Hello, I’m {profile.shortName}</p>
+          <h1 id="hero-title">
+            I turn product flows into polished interfaces.
+          </h1>
           <p className="hero__intro">
-            I’m a junior developer focused on turning clear product flows into
-            accessible, well-crafted web experiences.
+            I’m a frontend developer in Ho Chi Minh City, working with React,
+            Next.js, and TypeScript to build clear, accessible web experiences.
           </p>
           <div className="hero__actions">
             <Link className="button button--primary" to="/projects">
@@ -72,34 +48,58 @@ function HomePage() {
           </Link>
         </div>
 
-        <div className="project-grid">
-          {projects.map((project, index) => (
-            <article
-              className={`project-card project-card--${project.element}`}
-              key={project.title}
-            >
-              <div className="project-card__visual" aria-hidden="true">
-                <span>Real project screenshot</span>
-                <strong>0{index + 1}</strong>
+        <div className="project-grid project-grid--featured">
+          <article className="project-card project-card--ice project-card--featured">
+            <div className="project-card__visual project-card__visual--dashboard">
+              <span className="project-card__visual-label">
+                Capstone project
+              </span>
+              <div className="dashboard-preview" aria-hidden="true">
+                <span className="dashboard-preview__sidebar" />
+                <span className="dashboard-preview__header" />
+                <span className="dashboard-preview__metric dashboard-preview__metric--one" />
+                <span className="dashboard-preview__metric dashboard-preview__metric--two" />
+                <span className="dashboard-preview__map" />
               </div>
-              <div className="project-card__body">
-                <p className="project-card__type">{project.type}</p>
-                <h3>{project.title}</h3>
-                <p>{project.summary}</p>
-                <ul
-                  className="chip-list"
-                  aria-label={`${project.title} technologies`}
+              <strong>01</strong>
+            </div>
+            <div className="project-card__body project-card__body--featured">
+              <p className="project-card__type">{featuredProject.subtitle}</p>
+              <h3>{featuredProject.title}</h3>
+              <p>{featuredProject.summary}</p>
+              <dl className="project-facts">
+                <div>
+                  <dt>Role</dt>
+                  <dd>{featuredProject.role}</dd>
+                </div>
+                <div>
+                  <dt>Team</dt>
+                  <dd>{featuredProject.team}</dd>
+                </div>
+              </dl>
+              <ul
+                className="chip-list"
+                aria-label={`${featuredProject.title} technologies`}
+              >
+                {featuredProject.stack.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <div className="project-card__links">
+                <Link className="text-link" to="/projects">
+                  Read case study <ArrowRight aria-hidden="true" />
+                </Link>
+                <a
+                  className="text-link text-link--muted"
+                  href={featuredProject.source}
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  {project.stack.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <span className="project-card__pending">
-                  Case study pending real content
-                </span>
+                  Source <Github aria-hidden="true" />
+                </a>
               </div>
-            </article>
-          ))}
+            </div>
+          </article>
         </div>
       </section>
 
@@ -111,9 +111,10 @@ function HomePage() {
           </div>
           <div className="about-preview__copy">
             <p>
-              I care about understanding the problem before reaching for tools.
-              This space will document what I build, how I make decisions, and
-              what each iteration teaches me.
+              My Computer Science background and frontend internship taught me
+              to begin with requirements and workflows, then move from Figma to
+              maintainable implementation. I’m growing toward full-stack product
+              development with Node.js and Express.
             </p>
             <Link className="text-link" to="/about">
               More about me <ArrowRight aria-hidden="true" />
