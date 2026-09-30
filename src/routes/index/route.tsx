@@ -29,14 +29,15 @@ function HomePage() {
       </div>
       <StackedSection
         layer={10}
-        className="lg:relative! [&_div]:shadow-none! [&_div]:rounded-none! [&_div]:border-none!"
+        pinBottom
+        className="[&_div]:shadow-none! [&_div]:rounded-none! [&_div]:border-none!"
       >
         <FeaturedProjectSection />
       </StackedSection>
       <StackedSection layer={11}>
         <AboutIntroSection />
       </StackedSection>
-      <StackedSection layer={12} className="lg:relative!">
+      <StackedSection layer={12} pinBottom>
         <CareerSection />
       </StackedSection>
       <StackedSection layer={13}>

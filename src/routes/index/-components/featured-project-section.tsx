@@ -26,12 +26,12 @@ export function FeaturedProjectSection() {
         </Link>
       </div>
 
-      <div className="project-grid project-grid--featured">
+      <div className="project-grid project-grid--featured lg:block! lg:space-y-6">
         {projects.map((project, index) => {
           const visual = featuredVisuals[project.slug]
           return (
             <article
-              className={`project-card project-card--featured ${visual.variant}`}
+              className={`project-card project-card--featured lg:sticky lg:top-[90px] ${visual.variant}`}
               key={project.slug}
             >
               <figure className="project-card__visual project-card__visual--product">
