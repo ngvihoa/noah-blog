@@ -23,9 +23,6 @@ export function SiteHeader() {
           >
             Projects
           </Link>
-          <a className="nav-link" href="/#about">
-            About
-          </a>
           <Link
             className="nav-link"
             activeProps={{ className: 'nav-link nav-link--active' }}
@@ -63,13 +60,6 @@ export function SiteHeader() {
           >
             Projects
           </Link>
-          <a
-            className="mobile-nav__link"
-            href="/#about"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            About
-          </a>
           <Link
             className="mobile-nav__link"
             activeProps={{

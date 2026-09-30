@@ -11,10 +11,14 @@ interface SeoOptions {
   title: string
   description: string
   path: string
+  /** Absolute URL or a root-relative path to the social share image. */
+  image?: string
 }
 
-export function seoHead({ title, description, path }: SeoOptions) {
+export function seoHead({ title, description, path, image }: SeoOptions) {
   const url = `${siteUrl}${path}`
+  const resolvedImage =
+    image && !image.startsWith('http') ? `${siteUrl}${image}` : image
   return {
     meta: [
       { title },
@@ -22,6 +26,12 @@ export function seoHead({ title, description, path }: SeoOptions) {
       { property: 'og:title', content: title },
       { property: 'og:description', content: description },
       { property: 'og:url', content: url },
+      ...(resolvedImage
+        ? [
+            { property: 'og:image', content: resolvedImage },
+            { name: 'twitter:image', content: resolvedImage },
+          ]
+        : []),
       { name: 'twitter:title', content: title },
       { name: 'twitter:description', content: description },
     ],

@@ -43,6 +43,7 @@ export const Route = createRootRoute({
     ],
   }),
   component: RootComponent,
+  notFoundComponent: NotFoundPage,
 })
 
 function RootComponent() {
@@ -52,6 +53,21 @@ function RootComponent() {
       <Outlet />
       <SiteFooter />
     </RootDocument>
+  )
+}
+
+function NotFoundPage() {
+  return (
+    <main className="page-shell content-page">
+      <p className="eyebrow">404</p>
+      <h1>Page not found</h1>
+      <p className="content-page__lead">
+        The page you’re looking for doesn’t exist or has moved.
+      </p>
+      <a className="button button--primary" href="/">
+        Back to home
+      </a>
+    </main>
   )
 }
 

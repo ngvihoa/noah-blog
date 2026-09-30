@@ -15,7 +15,7 @@ const housenowProject = {
   subtitle: 'Real estate marketplace',
   period: 'August 2024 — Present',
   context: 'Proptech · Full-time role',
-  team: '4 FE · 4 BE · 3 designers · 1–2 PM',
+  team: '4 FE · 4 BE · 3 DES · 1–2 PM',
   role: 'Frontend Developer',
   summary:
     'A proptech marketplace for buying, renting, and exploring homes in Vietnam — 25,000+ listings, short-video property browsing, home-loan services with partner banks, and a full toolkit for real estate agents, on web and mobile.',
