@@ -1,17 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react'
 import { profile } from '~/data/portfolio'
+import { seoHead } from '~/lib/seo'
 
 export const Route = createFileRoute('/contact')({
-  head: () => ({
-    meta: [
-      { title: 'Contact | Noah / Viết Hòa' },
-      {
-        name: 'description',
-        content: 'Get in touch with software developer Noah, Nguyễn Viết Hòa.',
-      },
-    ],
-  }),
+  head: () =>
+    seoHead({
+      title: 'Contact | Noah / Viết Hòa',
+      description:
+        'Get in touch with software developer Noah, Nguyễn Viết Hòa.',
+      path: '/contact',
+    }),
   component: ContactPage,
 })
 

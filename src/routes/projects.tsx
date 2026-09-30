@@ -1,18 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { ExternalLink, Github } from 'lucide-react'
 import { featuredProject } from '~/data/portfolio'
+import { seoHead } from '~/lib/seo'
 
 export const Route = createFileRoute('/projects')({
-  head: () => ({
-    meta: [
-      { title: 'Projects | Noah / Viết Hòa' },
-      {
-        name: 'description',
-        content:
-          'Selected frontend work by Noah, Nguyễn Viết Hòa, including PakiSlot.',
-      },
-    ],
-  }),
+  head: () =>
+    seoHead({
+      title: 'Projects | Noah / Viết Hòa',
+      description:
+        'Selected frontend work by Noah, Nguyễn Viết Hòa, including PakiSlot.',
+      path: '/projects',
+    }),
   component: ProjectsPage,
 })
 

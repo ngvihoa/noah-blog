@@ -8,6 +8,7 @@ import {
 import type { ReactNode } from 'react'
 import { SiteFooter } from '~/components/site-footer'
 import { SiteHeader } from '~/components/site-header'
+import { siteHead } from '~/lib/seo'
 import appCss from '~/styles/app.css?url'
 
 export const Route = createRootRoute({
@@ -23,7 +24,9 @@ export const Route = createRootRoute({
         content:
           'Noah, Nguyễn Viết Hòa, is a software developer building thoughtful and accessible digital products with a strong frontend foundation.',
       },
+      ...siteHead.meta,
     ],
+    scripts: siteHead.scripts,
     links: [
       { rel: 'stylesheet', href: appCss },
       { rel: 'icon', type: 'image/png', href: '/logo_main.png' },
