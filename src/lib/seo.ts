@@ -48,7 +48,7 @@ export const siteHead = {
         '@type': 'Person',
         name: 'Nguyễn Viết Hòa',
         alternateName: 'Noah',
-        jobTitle: 'Software Developer',
+        jobTitle: 'Frontend Developer',
         email: 'mailto:nvhoa29702@gmail.com',
         url: siteUrl,
         image: `${siteUrl}/images/viet-hoa-profile.jpg`,

@@ -12,9 +12,9 @@ import { StackedSection } from './-components/stacked-section'
 export const Route = createFileRoute('/')({
   head: () =>
     seoHead({
-      title: 'Noah / Viết Hòa | Software Developer',
+      title: 'Noah / Viết Hòa | Frontend Developer',
       description:
-        'Noah, Nguyễn Viết Hòa, is a software developer building thoughtful and accessible digital products with a strong frontend foundation.',
+        'Noah, Nguyễn Viết Hòa, is a frontend developer building thoughtful and accessible digital products with a strong frontend foundation.',
       path: '/',
     }),
   component: HomePage,
@@ -29,14 +29,14 @@ function HomePage() {
       </div>
       <StackedSection
         layer={10}
-        className="[&_div]:shadow-none! [&_div]:rounded-none! [&_div]:border-none!"
+        className="lg:relative! [&_div]:shadow-none! [&_div]:rounded-none! [&_div]:border-none!"
       >
         <FeaturedProjectSection />
       </StackedSection>
       <StackedSection layer={11}>
         <AboutIntroSection />
       </StackedSection>
-      <StackedSection layer={12}>
+      <StackedSection layer={12} className="lg:relative!">
         <CareerSection />
       </StackedSection>
       <StackedSection layer={13}>

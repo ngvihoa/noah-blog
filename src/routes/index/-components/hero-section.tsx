@@ -7,7 +7,10 @@ import { RoleSwitcher } from './role-switcher'
 
 export function HeroSection() {
   return (
-    <section className="hero page-shell" aria-labelledby="hero-title">
+    <section
+      className="hero page-shell min-h-[calc(100svh-4.75rem)] content-center pt-20 pb-18"
+      aria-labelledby="hero-title"
+    >
       <div className="hero__copy">
         <div className="mb-2 flex min-h-26 items-end gap-3">
           <p className="eyebrow mb-3! text-lg!">Hello, I’m {profile.alias}</p>

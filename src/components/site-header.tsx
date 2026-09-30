@@ -12,7 +12,7 @@ export function SiteHeader() {
         <Link className="brand" to="/" aria-label="Noah, Viết Hòa, home">
           <BrandMark priority />
           <span className="brand__name">Noah</span>
-          <span className="brand__role">Software Developer</span>
+          <span className="brand__role">Frontend Developer</span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">

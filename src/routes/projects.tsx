@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { ExternalLink, Github } from 'lucide-react'
-import { featuredProject } from '~/data/portfolio'
+import { projects } from '~/data/portfolio'
 import { seoHead } from '~/lib/seo'
 
 export const Route = createFileRoute('/projects')({
@@ -8,7 +8,7 @@ export const Route = createFileRoute('/projects')({
     seoHead({
       title: 'Projects | Noah / Viết Hòa',
       description:
-        'Selected frontend work by Noah, Nguyễn Viết Hòa, including PakiSlot.',
+        'Selected frontend work by Noah, Nguyễn Viết Hòa — HouseNow and PakiSlot.',
       path: '/projects',
     }),
   component: ProjectsPage,
@@ -26,130 +26,125 @@ function ProjectsPage() {
         </p>
       </header>
 
-      <article className="case-study">
-        <div className="page-shell">
-          <div className="case-study__heading">
-            <div>
-              <p className="eyebrow">{featuredProject.context}</p>
-              <h2>{featuredProject.title}</h2>
-              <p className="case-study__subtitle">{featuredProject.subtitle}</p>
+      {projects.map((project) => (
+        <article className="case-study" key={project.slug}>
+          <div className="page-shell">
+            <div className="case-study__heading">
+              <div>
+                <p className="eyebrow">{project.context}</p>
+                <h2>{project.title}</h2>
+                <p className="case-study__subtitle">{project.subtitle}</p>
+              </div>
+              <a
+                className="button button--secondary"
+                href={project.source}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {project.sourceLabel}{' '}
+                {project.sourceKind === 'github' ? (
+                  <Github aria-hidden="true" />
+                ) : (
+                  <ExternalLink aria-hidden="true" />
+                )}
+              </a>
             </div>
+
+            <dl className="case-study__meta">
+              <div>
+                <dt>Role</dt>
+                <dd>{project.role}</dd>
+              </div>
+              <div>
+                <dt>Team</dt>
+                <dd>{project.team}</dd>
+              </div>
+              <div>
+                <dt>Timeline</dt>
+                <dd>{project.period}</dd>
+              </div>
+            </dl>
+
+            <div className="case-study__overview">
+              <div>
+                <p className="eyebrow">The product</p>
+                <p className="case-study__lead">{project.summary}</p>
+              </div>
+              <ul className="chip-list" aria-label="Technologies used">
+                {project.stack.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <figure className="case-study__hero-visual">
+              <img
+                src={project.heroVisual.src}
+                alt={project.heroVisual.alt}
+                width={project.heroVisual.width}
+                height={project.heroVisual.height}
+              />
+              <figcaption>{project.heroVisual.caption}</figcaption>
+            </figure>
+
+            <div className="case-study__columns">
+              <section aria-labelledby={`${project.slug}-contributions`}>
+                <p className="eyebrow">My contribution</p>
+                <h3 id={`${project.slug}-contributions`}>
+                  {project.slug === 'housenow'
+                    ? 'Two years across web, webview, and internal tools'
+                    : 'From system flow to interface'}
+                </h3>
+                <ul className="detail-list">
+                  {project.contributions.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </section>
+              <section aria-labelledby={`${project.slug}-features`}>
+                <p className="eyebrow">Core capabilities</p>
+                <h3 id={`${project.slug}-features`}>
+                  {project.slug === 'housenow'
+                    ? 'A marketplace for homes and the people who sell them'
+                    : 'Built for parking operations'}
+                </h3>
+                <ul className="detail-list">
+                  {project.features.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </section>
+            </div>
+
+            <div className="case-study__gallery">
+              {project.gallery.map((item) => (
+                <figure
+                  className={`case-study__gallery-item case-study__gallery-item--${item.variant}`}
+                  key={item.src}
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    width={item.width}
+                    height={item.height}
+                    loading="lazy"
+                  />
+                  <figcaption>{item.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+
             <a
-              className="button button--secondary"
-              href={featuredProject.source}
+              className="case-study__source text-link"
+              href={project.source}
               target="_blank"
               rel="noreferrer"
             >
-              View source <Github aria-hidden="true" />
+              {project.sourceLongLabel} <ExternalLink aria-hidden="true" />
             </a>
           </div>
-
-          <dl className="case-study__meta">
-            <div>
-              <dt>Role</dt>
-              <dd>{featuredProject.role}</dd>
-            </div>
-            <div>
-              <dt>Team</dt>
-              <dd>{featuredProject.team}</dd>
-            </div>
-            <div>
-              <dt>Timeline</dt>
-              <dd>{featuredProject.period}</dd>
-            </div>
-          </dl>
-
-          <div className="case-study__overview">
-            <div>
-              <p className="eyebrow">The product</p>
-              <p className="case-study__lead">{featuredProject.summary}</p>
-            </div>
-            <ul className="chip-list" aria-label="Technologies used">
-              {featuredProject.stack.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-
-          <figure className="case-study__hero-visual">
-            <img
-              src="/paki-slot/m-home.png"
-              alt="PakiSlot web dashboard with revenue, service, vehicle, and traffic charts"
-              width="1367"
-              height="941"
-            />
-            <figcaption>
-              The manager dashboard brings daily parking operations and business
-              signals into one view.
-            </figcaption>
-          </figure>
-
-          <div className="case-study__columns">
-            <section aria-labelledby="contributions-title">
-              <p className="eyebrow">My contribution</p>
-              <h3 id="contributions-title">From system flow to interface</h3>
-              <ul className="detail-list">
-                {featuredProject.contributions.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </section>
-            <section aria-labelledby="features-title">
-              <p className="eyebrow">Core capabilities</p>
-              <h3 id="features-title">Built for parking operations</h3>
-              <ul className="detail-list">
-                {featuredProject.features.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </section>
-          </div>
-
-          <div className="case-study__gallery">
-            <figure className="case-study__gallery-item case-study__gallery-item--wide">
-              <img
-                src="/paki-slot/e-map.png"
-                alt="Interactive PakiSlot parking map with occupied and empty slots"
-                width="1117"
-                height="942"
-                loading="lazy"
-              />
-              <figcaption>
-                A live parking map makes slot status scannable at a glance.
-              </figcaption>
-            </figure>
-            <figure className="case-study__gallery-item case-study__gallery-item--phone">
-              <img
-                src="/paki-slot/login_screen.png"
-                alt="PakiSlot mobile authentication screen"
-                width="849"
-                height="1863"
-                loading="lazy"
-              />
-              <figcaption>Mobile authentication experience.</figcaption>
-            </figure>
-            <figure className="case-study__gallery-item case-study__gallery-item--phone">
-              <img
-                src="/paki-slot/splash-screen.png"
-                alt="PakiSlot mobile splash screen"
-                width="781"
-                height="1689"
-                loading="lazy"
-              />
-              <figcaption>A focused brand moment on launch.</figcaption>
-            </figure>
-          </div>
-
-          <a
-            className="case-study__source text-link"
-            href={featuredProject.source}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Explore the repository <ExternalLink aria-hidden="true" />
-          </a>
-        </div>
-      </article>
+        </article>
+      ))}
     </main>
   )
 }

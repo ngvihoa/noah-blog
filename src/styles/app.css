@@ -168,11 +168,9 @@ button {
 
 .hero {
   display: grid;
-  min-height: 660px;
   grid-template-columns: minmax(0, 0.94fr) minmax(520px, 1.06fr);
   align-items: center;
   gap: 68px;
-  padding-block: 80px 72px;
 }
 
 .eyebrow {

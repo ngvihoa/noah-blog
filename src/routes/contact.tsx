@@ -8,7 +8,7 @@ export const Route = createFileRoute('/contact')({
     seoHead({
       title: 'Contact | Noah / Viết Hòa',
       description:
-        'Get in touch with software developer Noah, Nguyễn Viết Hòa.',
+        'Get in touch with frontend developer Noah, Nguyễn Viết Hòa.',
       path: '/contact',
     }),
   component: ContactPage,

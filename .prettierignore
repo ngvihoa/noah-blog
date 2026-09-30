@@ -1,4 +1,5 @@
 .now/
+.agents/
 dist/
 docs/
 documents/
