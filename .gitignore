@@ -6,3 +6,7 @@ dist/
 .now/
 documents/
 prompts/
+
+.env
+.env.*
+!.env.example

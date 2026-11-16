@@ -106,7 +106,7 @@ The homepage may show the two or three most recent articles after blog content e
 
 - Explains what opportunities are currently relevant.
 - Currently provides email, GitHub, and LinkedIn links. Resume is pending a real PDF.
-- May include a contact form implemented with TanStack Start Server Functions, Zod, and Resend.
+- Includes a contact form implemented with TanStack Start Server Functions, Zod, and Resend. Real delivery awaits provider configuration and a live inbox test; see `contact-form-setup.md`.
 - The form must expose loading, success, validation-error, and submission-error states.
 - The navigation item opens the Contact page rather than launching the visitor's email client immediately.
 - The active state applies to `/contact`.

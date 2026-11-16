@@ -10,7 +10,7 @@ The portfolio’s goal is finding a new Frontend Developer role (confirmed by th
 
 The next task is personal-content sign-off: review the biography, current career direction and availability, public contact details, education, interests, and resume. Existing professional experience and project content were confirmed on 2026-09-30; review time-sensitive statements before launch.
 
-Remaining launch work includes the resume PDF, accessibility/keyboard QA, route smoke tests, image/performance audit, and production deployment with `VITE_SITE_URL`. Contact form/email delivery and Field Notes remain unimplemented; MDX/Shiki are intentionally deferred. Deployment has not been verified in this audit.
+Remaining launch work includes the resume PDF, accessibility/keyboard QA, route smoke tests, image/performance audit, and production deployment with `VITE_SITE_URL`. The contact form and Resend integration are implemented; real email delivery is pending provider configuration and a live inbox test (see `contact-form-setup.md`). Field Notes remain unimplemented; MDX/Shiki are intentionally deferred. Deployment has not been verified in this audit.
 
 Build (including TypeScript) and lint passed on 2026-11-16. Targeted headless Chromium checks cover inline project details at 1440px/390px and skill-group layout at 1440px/768px/390px. Full-page accessibility, real-device, and production checks remain outstanding; earlier verification entries below are historical evidence.
 
@@ -104,9 +104,9 @@ The entries below record the original implementation. Standalone detail routes a
 - [x] Add factual career and education entries on the homepage (HouseNow, internship, and university). A separate Journey route is not planned for the initial release.
 - [~] GitHub, LinkedIn, and email links are implemented; confirm the public details during personal-content review.
 - [ ] Add the real resume PDF and its navigation/contact links.
-- [ ] Implement the contact form with a server function.
-- [ ] Add Zod validation and submission states.
-- [ ] Connect email delivery through Resend.
+- [x] Implement the contact form with a POST server function.
+- [x] Add shared Zod validation, field errors, pending/success/error states, retained input on failure, and accessible status/focus behavior.
+- [~] Resend delivery code and mocked integration tests are implemented; real credentials, an authorized sender, and live inbox verification remain pending.
 
 ## Completed Task: Consolidate About Into Homepage
 
@@ -222,3 +222,10 @@ Status: Completed and verified on 2026-09-26.
 - [x] Keep mobile as one column in the same reading order.
 
 - [x] Build (including TypeScript), lint, and targeted headless Chromium layout checks at 1440px, 768px, and 390px pass: expected group order, six AI tools, desktop column proportions, mobile stacking, and no skill-card overflow.
+
+### 2026-11-16: Contact form
+
+- [x] Add name/email/message form with shared client/server validation, honeypot, duplicate-submit prevention, and direct email fallback.
+- [x] Add server-only Resend delivery with recipient configuration, visitor reply-to, timeout, and safe errors.
+- [x] Add `.env.example`, setup documentation, and `npm run test:contact` with mocked provider tests.
+- [ ] Configure the real provider credentials/sender and verify a message arrives in the intended inbox.

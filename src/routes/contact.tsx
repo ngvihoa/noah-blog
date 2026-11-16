@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react'
 import { profile } from '~/data/portfolio'
 import { seoHead } from '~/lib/seo'
+import { ContactForm } from '~/components/contact-form'
 
 export const Route = createFileRoute('/contact')({
   head: () =>
@@ -32,36 +33,39 @@ function ContactPage() {
         </a>
       </div>
 
-      <address className="contact-list">
-        <a href={`mailto:${profile.email}`}>
-          <Mail aria-hidden="true" />
-          <span>
-            <small>Email</small>
-            {profile.email}
-          </span>
-        </a>
-        <a href={profile.github} target="_blank" rel="noreferrer">
-          <Github aria-hidden="true" />
-          <span>
-            <small>GitHub</small>
-            @ngvihoa
-          </span>
-        </a>
-        <a href={profile.linkedin} target="_blank" rel="noreferrer">
-          <Linkedin aria-hidden="true" />
-          <span>
-            <small>LinkedIn</small>
-            /in/nvhoa29b02
-          </span>
-        </a>
-        <div>
-          <MapPin aria-hidden="true" />
-          <span>
-            <small>Location</small>
-            {profile.location}
-          </span>
-        </div>
-      </address>
+      <div className="contact-page__details">
+        <ContactForm />
+        <address className="contact-list">
+          <a href={`mailto:${profile.email}`}>
+            <Mail aria-hidden="true" />
+            <span>
+              <small>Email</small>
+              {profile.email}
+            </span>
+          </a>
+          <a href={profile.github} target="_blank" rel="noreferrer">
+            <Github aria-hidden="true" />
+            <span>
+              <small>GitHub</small>
+              @ngvihoa
+            </span>
+          </a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer">
+            <Linkedin aria-hidden="true" />
+            <span>
+              <small>LinkedIn</small>
+              /in/nvhoa29b02
+            </span>
+          </a>
+          <div>
+            <MapPin aria-hidden="true" />
+            <span>
+              <small>Location</small>
+              {profile.location}
+            </span>
+          </div>
+        </address>
+      </div>
     </main>
   )
 }
