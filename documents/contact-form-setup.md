@@ -4,7 +4,16 @@ The `/contact` form submits to a POST TanStack Start server function. Zod valida
 
 ## Configuration
 
-Copy `.env.example` to `.env.local` and fill in:
+Pull the existing Production configuration directly from the `noah-blog` Vercel project:
+
+```sh
+npm run env:pull
+npm run dev
+```
+
+`env:pull` uses Vercel CLI 65.16.0 and targets the existing `ngvihoas-projects/noah-blog` project explicitly. It overwrites `.env.local` with Production env values; the file remains ignored by Git. Vercel authentication is required once (or after expiration): `npx --yes vercel@65.16.0 login`. Restart an already-running dev server after pulling.
+
+Alternatively, copy `.env.example` to `.env.local` and fill in:
 
 - `RESEND_API_KEY`: a Resend key permitted to send email.
 - `CONTACT_FROM_EMAIL`: a sender authorized by your Resend account, e.g. `Portfolio <hello@your-verified-domain.com>`.
