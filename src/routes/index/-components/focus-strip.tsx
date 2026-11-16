@@ -1,7 +1,7 @@
 const focusItems = [
   { label: 'Building with', value: 'React, Next.js & TypeScript' },
   { label: 'Growing toward', value: 'Full-stack development' },
-  { label: 'Open to', value: 'New opportunities & thoughtful collaborations' },
+  { label: 'Open to', value: 'Frontend Developer roles' },
 ] as const
 
 export function FocusStrip() {

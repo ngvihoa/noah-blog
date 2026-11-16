@@ -32,15 +32,16 @@ export function AboutIntroSection() {
             Curious by default. Intentional in execution.
           </h2>
           <p className="max-w-[650px] text-[1.12rem] leading-[1.8] text-[var(--ink-soft)]">
-            I’m Noah — Nguyễn Viết Hòa, a software developer with a strong
-            frontend foundation and a Computer Science background. I enjoy
-            understanding a product’s workflows, shaping them in Figma, and
-            turning them into clear, responsive products.
+            I’m Noah — Nguyễn Viết Hòa, a Frontend Developer based in Ho Chi
+            Minh City. My work at HouseNow spans web and mobile product
+            experiences, from property discovery to tools for real estate
+            agents, with React, Next.js, and TypeScript.
           </p>
           <p className="max-w-[650px] text-[1.12rem] leading-[1.8] text-[var(--ink-soft)]">
-            My long-term goal is to become a full-stack developer who can take
-            ownership across the product. I’m expanding my backend foundation
-            with Node.js, Express, and SQL.
+            With a Computer Science background, I enjoy understanding how a
+            product works and turning complex workflows into clear interfaces.
+            I’m growing toward full-stack development, building on hands-on
+            experience with backend APIs and SQL.
           </p>
           <dl className="mt-[34px] grid grid-cols-2 gap-[18px] max-md:grid-cols-1">
             <div className="border-t border-(--line) pt-4">
@@ -56,7 +57,7 @@ export function AboutIntroSection() {
                 Focus
               </dt>
               <dd className="m-0 [font-family:var(--display)] font-semibold">
-                Software development & product UI
+                Frontend development & product UI
               </dd>
             </div>
           </dl>

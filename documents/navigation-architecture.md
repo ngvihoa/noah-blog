@@ -2,7 +2,7 @@
 
 Last reviewed against source: 2026-11-16.
 
-Current implementation: homepage, project collection/case studies, and Contact. The header contains **Projects / Contact**. About is reached through the homepage hero link to `#about`. Field Notes and Resume below describe future behavior, not implemented navigation. Mobile Escape handling and focus return remain accessibility requirements awaiting implementation/verification.
+Current implementation: homepage, project collection, and Contact. Standalone case studies are temporarily hidden; known project detail URLs redirect to `/projects`, and unknown slugs return 404. The header contains **Projects / Contact**. About is reached through the homepage hero link to `#about`. Field Notes and Resume below describe future behavior, not implemented navigation. Mobile Escape handling and focus return remain accessibility requirements awaiting implementation/verification.
 
 ## Direction
 
@@ -15,7 +15,7 @@ This approach gives each topic enough room for meaningful content, improves SEO 
 ```text
 /                    Home
 /projects            Project collection
-/projects/$slug      Project case study
+/projects/$slug      Temporarily redirects known projects to /projects
 /contact              Contact
 ```
 
@@ -52,12 +52,12 @@ Projects    Contact
 
 - Displays the complete project collection.
 - Uses a responsive grid on desktop and tablet and a vertical list or horizontal media cards on mobile.
-- Each card links to `/projects/$slug`.
+- Each card has a View details / Hide details toggle that reveals personal contributions inline, with animation and reduced-motion support.
 - Project information remains visible without hover.
 - Filters by project type or element should only be introduced when there are enough projects to make filtering useful.
 - The active state applies to both `/projects` and `/projects/$slug`.
 
-The homepage highlights HouseNow and PakiSlot, each linking to its detailed case study.
+The homepage highlights HouseNow and PakiSlot, each revealing personal contributions below its card. The collection uses the same behavior.
 
 ## About
 
@@ -153,7 +153,7 @@ It contains no more than three current signals:
 ```text
 Building with    React, Next.js & TypeScript
 Growing toward   Full-stack development
-Open to          New opportunities & thoughtful collaborations
+Open to          Frontend Developer roles
 ```
 
 Behavior and content rules:

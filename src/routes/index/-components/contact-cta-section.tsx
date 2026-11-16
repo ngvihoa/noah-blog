@@ -10,8 +10,11 @@ export function ContactCtaSection() {
       <div className="contact-cta page-shell">
         <div>
           <p className="eyebrow">Start a conversation</p>
-          <h2 id="contact-title">Let’s build something useful together.</h2>
-          <p>I’m open to new opportunities and thoughtful collaborations.</p>
+          <h2 id="contact-title">Looking for a frontend developer?</h2>
+          <p>
+            I’m looking for my next Frontend Developer role and open to onsite,
+            hybrid, or remote work. Let’s talk about your team.
+          </p>
         </div>
         <Link
           className="button button--primary whitespace-nowrap"

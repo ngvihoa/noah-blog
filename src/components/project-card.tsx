@@ -1,5 +1,5 @@
-import { Link } from '@tanstack/react-router'
-import { ArrowRight, ExternalLink, Github } from 'lucide-react'
+import { useId, useState } from 'react'
+import { ChevronDown, ExternalLink, Github } from 'lucide-react'
 import type { projects } from '~/data/portfolio'
 
 type Project = (typeof projects)[number]
@@ -23,9 +23,13 @@ export function ProjectCard({
   index: number
 }) {
   const visual = projectVisuals[project.slug]
+  const [expanded, setExpanded] = useState(false)
+  const [instant, setInstant] = useState(false)
+  const detailsId = useId()
+  const headingId = useId()
   return (
     <article
-      className={`project-card project-card--featured lg:sticky lg:top-[90px] ${visual.variant}`}
+      className={`project-card project-card--featured ${visual.variant}`}
     >
       <figure className="project-card__visual project-card__visual--product">
         <span className="project-card__visual-label">{visual.label}</span>
@@ -82,13 +86,20 @@ export function ProjectCard({
           ))}
         </ul>
         <div className="project-card__links">
-          <Link
-            className="text-link"
-            to="/projects/$slug"
-            params={{ slug: project.slug }}
+          <button
+            type="button"
+            className="text-link project-card__toggle"
+            aria-expanded={expanded}
+            aria-controls={detailsId}
+            aria-label={`${expanded ? 'Hide details' : 'View details'} for ${project.title}`}
+            onClick={(event) => {
+              setInstant(event.detail === 0)
+              setExpanded((current) => !current)
+            }}
           >
-            Read case study <ArrowRight aria-hidden="true" />
-          </Link>
+            {expanded ? 'Hide details' : 'View details'}
+            <ChevronDown aria-hidden="true" />
+          </button>
           <a
             className="text-link text-link--muted"
             href={project.source}
@@ -104,6 +115,28 @@ export function ProjectCard({
           </a>
         </div>
       </div>
+      <section
+        id={detailsId}
+        className="project-card__details"
+        aria-labelledby={headingId}
+        aria-hidden={!expanded}
+        inert={!expanded}
+        data-expanded={expanded}
+        data-instant={instant}
+      >
+        <div className="project-card__details-clip">
+          <div className="project-card__contributions">
+            <p className="eyebrow">My contribution</p>
+            <h4 id={headingId}>My work on {project.title}</h4>
+            <p className="project-card__period">{project.period}</p>
+            <ul className="detail-list">
+              {project.contributions.map((contribution) => (
+                <li key={contribution}>{contribution}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
     </article>
   )
 }

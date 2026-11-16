@@ -8,7 +8,7 @@ export const Route = createFileRoute('/contact')({
     seoHead({
       title: 'Contact | Noah / Viết Hòa',
       description:
-        'Get in touch with frontend developer Noah, Nguyễn Viết Hòa.',
+        'Contact Nguyễn Viết Hòa (Noah) about Frontend Developer opportunities.',
       path: '/contact',
     }),
   component: ContactPage,
@@ -19,11 +19,13 @@ function ContactPage() {
     <main className="page-shell contact-page">
       <div className="contact-page__intro">
         <p className="eyebrow">Start a conversation</p>
-        <h1>Let’s make something useful.</h1>
+        <h1>Let’s talk about your team.</h1>
         <p className="content-page__lead">
-          The quickest way to reach me is by email. I’m happy to talk about
-          frontend roles, product ideas, or a project that could use a
-          thoughtful interface.
+          I’m looking for my next Frontend Developer role, bringing hands-on
+          experience with React, Next.js, and TypeScript. I’m based in Ho Chi
+          Minh City and open to onsite, hybrid, or remote work. If you’re
+          hiring, email me about your team, the role, and the product you’re
+          building.
         </p>
         <a className="button button--primary" href={`mailto:${profile.email}`}>
           Email me <Mail aria-hidden="true" />

@@ -9,13 +9,21 @@ export function SkillsInterestsSection() {
       <div className="page-shell">
         <p className="eyebrow">Toolbox</p>
         <h2>Skills I work with</h2>
-        <div className="grid grid-cols-3 gap-[14px] max-md:grid-cols-1">
+        <div className="grid grid-cols-1 gap-[14px] md:grid-cols-12">
           {Object.entries(skills).map(([group, items]) => (
             <div
-              className="rounded-[18px] border border-[var(--line)] bg-[var(--surface-strong)] p-[22px]"
+              className={`min-w-0 rounded-[18px] border border-[var(--line)] bg-[var(--surface-strong)] p-[22px] ${
+                group === 'frontend' || group === 'AI coding tools'
+                  ? 'md:col-span-7'
+                  : 'md:col-span-5'
+              }`}
               key={group}
             >
-              <h3 className="capitalize">{group}</h3>
+              <h3>
+                {group === 'AI coding tools'
+                  ? group
+                  : group[0].toUpperCase() + group.slice(1)}
+              </h3>
               <ul className="chip-list">
                 {items.map((item) => (
                   <li className="bg-[#eeeafd]" key={item}>

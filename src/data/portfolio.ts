@@ -25,7 +25,7 @@ const housenowProject = {
     'Developed paid packages, payments, and ads management (now around 10% of company revenue) and added in-app purchases to the mobile app.',
     'Designed React Query cache patterns — infinite scroll and optimistic updates — and wrote backend endpoints with Prisma and Kysely.',
     'Helped revamp a sister proptech company’s landlord app, lifting user retention by up to 50%.',
-    'Raised the site’s Geolify SEO score from 54 to 73 through on-site SEO.',
+    'Raised the site’s Geolify SEO score from 54 to 74 through on-site SEO.',
     'Built internal tools for loan profiles, projects, transactions, videos, and promotions, plus dashboards for Masterise investors and agency partners.',
     'Shipped agent-facing features: customer and lead management, Homi community threads, listing creation, and feng-shui home views.',
   ],
@@ -170,7 +170,7 @@ export const experiences: Experience[] = [
       'Built HouseReels (short-video property browsing) and the agent dashboard from zero to launch, plus investor dashboards for Masterise and agency partners.',
       'Developed the paid-packages, payments, and ads-management features that now generate around 10% of company revenue; added in-app purchases to the mobile app.',
       'Helped revamp a sister proptech company’s landlord app, lifting user retention by up to 50%.',
-      'Raised HouseNow’s Geolify SEO score from 54 to 73 and wrote backend endpoints with Prisma and Kysely to support the BE team.',
+      'Raised HouseNow’s Geolify SEO score from 54 to 74 and wrote backend endpoints with Prisma and Kysely to support the BE team.',
     ],
     source: 'https://www.housenow.com.vn',
     sourceLabel: 'Visit the live product',
@@ -215,6 +215,14 @@ export const skills = {
   ],
   backend: ['Node.js', 'Express', 'Prisma', 'Kysely', 'SQL / MySQL'],
   tools: ['Git', 'GitHub', 'Figma', 'Linear', 'Visual Studio Code'],
+  'AI coding tools': [
+    'Claude Code',
+    'Codex',
+    'Gemini',
+    'Amp',
+    'T3 Code',
+    'OpenCode',
+  ],
 } as const
 
 export const interests = [

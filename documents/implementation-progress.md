@@ -4,13 +4,15 @@ Last updated: 2026-11-16
 
 ## Current Snapshot (2026-11-16)
 
-The core portfolio is implemented: homepage, two real projects (HouseNow and PakiSlot), project collection and case-study routes, contact links, and SEO metadata. Current header navigation is **Projects / Contact**; About remains on the homepage at `#about` and is linked from the hero. There is no standalone `/about` route.
+The core portfolio is implemented: homepage, two real projects (HouseNow and PakiSlot), project collection, contact links, and SEO metadata. Standalone case studies are temporarily hidden; known project detail URLs redirect to `/projects`, while unknown slugs return 404. Cards on the homepage and project collection reveal existing personal contributions inline instead of navigating to a detail page. Current header navigation is **Projects / Contact**; About remains on the homepage at `#about` and is linked from the hero. There is no standalone `/about` route.
+
+The portfolio’s goal is finding a new Frontend Developer role (confirmed by the user on 2026-11-16). Work arrangement is flexible: onsite, hybrid, or remote. Availability and contact copy now target hiring conversations; the revised biography is pending final review. HouseNow remains a current role until the actual end date is confirmed; no immediate start date is claimed.
 
 The next task is personal-content sign-off: review the biography, current career direction and availability, public contact details, education, interests, and resume. Existing professional experience and project content were confirmed on 2026-09-30; review time-sensitive statements before launch.
 
 Remaining launch work includes the resume PDF, accessibility/keyboard QA, route smoke tests, image/performance audit, and production deployment with `VITE_SITE_URL`. Contact form/email delivery and Field Notes remain unimplemented; MDX/Shiki are intentionally deferred. Deployment has not been verified in this audit.
 
-Build (including TypeScript) and lint passed on 2026-11-16. Browser, real-device, and production checks were not rerun; earlier verification entries below are historical evidence.
+Build (including TypeScript) and lint passed on 2026-11-16. Targeted headless Chromium checks cover inline project details at 1440px/390px and skill-group layout at 1440px/768px/390px. Full-page accessibility, real-device, and production checks remain outstanding; earlier verification entries below are historical evidence.
 
 ## Status Legend
 
@@ -55,7 +57,7 @@ Status: Completed and verified on 2026-09-30. Motivated by sections looking spar
 
 Status: Completed and verified on 2026-09-30. Decisions were settled through a grilling interview with the user (role, dates, highlights, naming, positioning all confirmed).
 
-- [x] Added the user's full-time role to the homepage: **Frontend Developer at HouseNow JSC** (proptech, August 2024 — Present) with 5 confirmed highlights — TanStack Router webview migration, HouseReels and agent dashboard built from zero, monetization features (~10% of revenue), a sister proptech company's landlord-app revamp (+50% retention), and Geolify SEO 54 → 73.
+- [x] Added the user's full-time role to the homepage: **Frontend Developer at HouseNow JSC** (proptech, August 2024 — Present) with 5 confirmed highlights — TanStack Router webview migration, HouseReels and agent dashboard built from zero, monetization features (~10% of revenue), a sister proptech company's landlord-app revamp (+50% retention), and Geolify SEO 54 → 74 (score corrected by the user on 2026-11-16).
 - [x] Converted `experience` (single object) into an `experiences` array (HouseNow first, internship second under "Earlier experience"); the Career section maps over it with the company name linked to housenow.com.vn.
 - [x] Added a `projects` array (HouseNow + PakiSlot with hero visual, gallery, and per-project source labels); `/projects` renders both case studies — HouseNow links to the live product, PakiSlot keeps its GitHub repo. The homepage "Selected projects" section also shows both cards (HouseNow 01 in the green `--nature` variant, PakiSlot 02 in `--ice`); the unused `featuredProject` export was removed. Both oversized layers (Featured ~1400px, Career ~1553px) use `lg:relative!` — a sticky `top: 0` section taller than the viewport pins with its lower content unreachable, and `lg:static!` alone would strip z-index and let the pinned section behind cover it.
 - [x] Captured public HouseNow screenshots (`public/housenow/`): web home (hero visual), agent wallet portal, and home-loan page. The consumer search page renders broken under `prefers-color-scheme: dark` (the in-app browser's default), so the agent portal shot is used instead.
@@ -63,7 +65,21 @@ Status: Completed and verified on 2026-09-30. Decisions were settled through a g
 - [x] Stack caveat from the user: the Next.js → TanStack Router migration was the mobile app's webview (the website remains Next.js); HouseNews is a product feature, not the user's contribution; CarNow is anonymized as "a sister proptech company" while Masterise and agencies stay named.
 - [x] Fixed a stacking bug this introduced: sections taller than 100svh (Featured ~1400px, Career ~1553px) cannot pin with `sticky top: 0` (lower content becomes unreachable). Final approach: `StackedSection` gained an opt-in `pinBottom` mode — a `ResizeObserver` measures the section into a `--stack-h` custom property and the layer pins with `top: calc(100svh - var(--stack-h))`, i.e. it scrolls through all content, then freezes bottom-aligned exactly as the next section arrives to cover it, at any viewport size. Rejected alternatives: `lg:sticky lg:bottom-0` (pulls unreached sections up to the viewport at scroll 0) and per-card `h-svh` wrappers (dead scroll gaps). The cards inside both tall layers still deck (`lg:sticky lg:top-[90px]` in `lg:block! lg:space-y-6` containers).
 
+## Current Task: Inline Project Contributions (2026-11-16)
+
+- [x] Temporarily hide standalone case-study pages without deleting the shared content/component.
+- [x] Redirect known `/projects/$slug` URLs to `/projects`; keep unknown slugs as not found.
+- [x] Replace card detail links with expandable contributions below each card, shared by homepage and collection.
+- [x] Add open/close animation, expanded/control semantics, keyboard operation, and reduced-motion handling.
+- [x] Remove individual sticky card positioning and keep the Projects section in normal flow so expanded contributions and toggles are not covered by following sections.
+- [x] Use a white background for expanded contributions (user preference).
+- [x] Build (including TypeScript) and lint pass.
+- [x] Headless Chromium checks at 1440px and 390px: both cards expand/collapse, final contributions remain reachable and unobscured, keyboard/reduced-motion behavior works, cards fit the viewport, collection toggles work, known detail URLs redirect, unknown slugs return 404, and no browser runtime errors are observed.
+- [ ] Existing mobile horizontal overflow from the decorative About logo remains outside this change.
+
 ## Milestone 3: Project Collection
+
+The entries below record the original implementation. Standalone detail routes are currently hidden as described above.
 
 - [x] Define and validate the project content schema. (Completed 2026-09-30: the `projects` array in `src/data/portfolio.ts` is TypeScript-typed at build time; runtime (Zod) validation is deferred until content comes from external sources such as MDX or a CMS.)
 - [x] Replace placeholders with real project content and screenshots. (Completed 2026-09-30: HouseNow and PakiSlot with full case-study data and screenshots.)
@@ -198,3 +214,11 @@ Status: Completed and verified on 2026-09-26.
 - [x] `npm run lint` passed.
 - [x] Reconciled stale project/contact checklist items and current navigation.
 - [ ] Browser, accessibility, performance, and deployment verification remain outstanding for launch.
+
+### 2026-11-16: AI coding tools and skills layout
+
+- [x] Add the user-confirmed AI coding tools: Claude Code, Codex, Gemini, Amp, T3 Code, and OpenCode, shown as chips without proficiency claims.
+- [x] Arrange desktop skill groups in two rows: Frontend 7/12 + Backend 5/12, then Tools 5/12 + AI coding tools 7/12. Row heights follow content independently.
+- [x] Keep mobile as one column in the same reading order.
+
+- [x] Build (including TypeScript), lint, and targeted headless Chromium layout checks at 1440px, 768px, and 390px pass: expected group order, six AI tools, desktop column proportions, mobile stacking, and no skill-card overflow.

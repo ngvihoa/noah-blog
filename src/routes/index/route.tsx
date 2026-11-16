@@ -29,8 +29,7 @@ function HomePage() {
       </div>
       <StackedSection
         layer={10}
-        pinBottom
-        className="[&_div]:shadow-none! [&_div]:rounded-none! [&_div]:border-none!"
+        className="lg:relative! [&_div]:shadow-none! [&_div]:rounded-none! [&_div]:border-none!"
       >
         <FeaturedProjectSection />
       </StackedSection>
