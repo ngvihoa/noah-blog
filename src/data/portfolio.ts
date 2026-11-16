@@ -163,6 +163,7 @@ export const experiences: Experience[] = [
     period: 'August 2024 — Present',
     type: 'Full-time',
     highlights: [
+      'Developed frontend features for a real estate platform averaging **32K monthly active signed-in accounts** across its applications since January 2026.',
       'Helped migrate the Agent application to TanStack Start, covering **80+ route modules**, while continuing development on the Next.js website.',
       'Built HouseReels and the agent dashboard from zero to launch, plus investor dashboards for Masterise and agency partners.',
       'Developed paid packages, payments, and ads-management features contributing around **10% of company revenue**; added in-app purchases to the mobile app.',

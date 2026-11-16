@@ -289,3 +289,8 @@ Status: Completed and verified on 2026-09-26.
 - [x] Add explicit emphasis to selected metric phrases in HouseNow Experience highlights and project contributions, rendered as semantic strong elements without interpreting HTML.
 - [x] Preserve the approved wording, normal text for other content, and PakiSlot presentation.
 - [x] Build/TypeScript, lint, and diff checks pass. Chromium at 1440px and 390px verifies six highlighted metrics in Experience, nine in expanded HouseNow contributions on home/projects, and no visible formatting markers.
+
+### 2026-11-16: HouseNow platform scale
+
+- [x] Add the approved opening Experience bullet describing an average of 32K monthly active signed-in accounts across applications since January 2026, with the metric emphasized.
+- [x] Record the user-confirmed reporting window (January 2026–16 November 2026) and metric definition in the content evidence notes.

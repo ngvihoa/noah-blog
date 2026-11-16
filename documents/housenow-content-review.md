@@ -7,6 +7,7 @@ Status: Approved with user corrections and applied to the website implementation
 **HouseNow JSC · Frontend Developer**  
 **August 2024 — Present · Full-time**
 
+- Developed frontend features for a real estate platform averaging **32K monthly active signed-in accounts** across its applications since January 2026.
 - Helped migrate the Agent application to TanStack Start, covering 80+ route modules, while continuing development on the Next.js website.
 - Built HouseReels and the agent dashboard from zero to launch, plus investor dashboards for Masterise and agency partners.
 - Developed paid packages, payments, and ads-management features contributing around 10% of company revenue; added in-app purchases to the mobile app.
@@ -53,3 +54,5 @@ Next.js · TanStack Start · TanStack Router · React Query · React Native · T
 - RPC figures refer to mean serialized bytes per returned RPC item, not per listing, total network traffic, or billing. Their historical audit conditions belong in evidence rather than the main experience summary.
 - No general claim that all performance metrics improved: mobile LCP regressed in the acceptance measurements.
 - Current role and date wording is retained pending the actual HouseNow end date. The migration wording follows the supplied evidence identifying TanStack Start and 80+ route modules.
+
+- Platform-scale figure supplied and confirmed by the user: an average of 32K monthly active signed-in accounts across the applications, January 2026–16 November 2026. This is account activity, not total visitors or a claim of individually driven user growth; the underlying analytics were not independently queried for this update.
