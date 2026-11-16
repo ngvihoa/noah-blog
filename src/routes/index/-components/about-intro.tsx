@@ -4,7 +4,7 @@ export function AboutIntroSection() {
   return (
     <section
       id="about"
-      className="scroll-mt-[76px] flex min-h-svh flex-col justify-center border-y border-[var(--line)] bg-[rgb(255_255_255/52%)] py-28 md:py-36"
+      className="scroll-mt-[76px] max-md:overflow-x-clip flex min-h-svh flex-col justify-center border-y border-[var(--line)] bg-[rgb(255_255_255/52%)] py-28 md:py-36"
       aria-labelledby="about-title"
     >
       <div className="page-shell grid grid-cols-[minmax(280px,0.72fr)_minmax(0,1.28fr)] items-center gap-[90px] max-lg:gap-[50px] max-md:grid-cols-1 max-md:gap-8">
@@ -18,7 +18,7 @@ export function AboutIntroSection() {
             loading="lazy"
           />
           <img
-            className="absolute right-[-34px] bottom-[-34px] size-[116px] rotate-4 rounded-[28px] border border-[rgb(23_35_60/8%)] bg-[var(--surface-strong)] object-contain p-[18px] shadow-[0_18px_44px_rgb(23_35_60/16%)]"
+            className="absolute right-[-34px] bottom-[-34px] max-md:right-0 size-[116px] rotate-4 rounded-[28px] border border-[rgb(23_35_60/8%)] bg-[var(--surface-strong)] object-contain p-[18px] shadow-[0_18px_44px_rgb(23_35_60/16%)]"
             src="/logo_main.png"
             alt=""
             width="627"

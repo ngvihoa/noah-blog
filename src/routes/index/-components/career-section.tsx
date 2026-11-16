@@ -19,10 +19,7 @@ export function CareerSection() {
         <div className="grid grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] gap-6 max-lg:grid-cols-1">
           <div className="grid gap-6 lg:block! lg:space-y-6">
             {experiences.map((experience) => (
-              <article
-                className={`${cardClassName} lg:sticky lg:top-[90px]`}
-                key={experience.company}
-              >
+              <article className={cardClassName} key={experience.company}>
                 <p className="eyebrow">{experience.label}</p>
                 <div className="flex items-start justify-between gap-8 max-md:flex-col">
                   <div>

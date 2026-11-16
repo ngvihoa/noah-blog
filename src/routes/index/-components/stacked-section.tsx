@@ -6,6 +6,8 @@ type StackedSectionProps = {
   children: ReactNode
   layer: number
   className?: string
+  /** Use overflow-clip for surfaces containing viewport-sticky descendants. */
+  contentClassName?: string
   /** Pin bottom-aligned once scrolled past, for sections taller than 100svh. */
   pinBottom?: boolean
 }
@@ -14,6 +16,7 @@ export function StackedSection({
   children,
   layer,
   className,
+  contentClassName,
   pinBottom = false,
 }: StackedSectionProps) {
   const ref = useRef<HTMLDivElement>(null)
@@ -40,7 +43,12 @@ export function StackedSection({
       )}
       style={{ zIndex: layer }}
     >
-      <div className="relative bg-[var(--canvas)] lg:overflow-hidden lg:rounded-t-[28px] lg:border-t lg:border-[var(--line)] lg:shadow-[0_-18px_52px_rgb(23_35_60/8%)]">
+      <div
+        className={cn(
+          'relative bg-[var(--canvas)] lg:overflow-hidden lg:rounded-t-[28px] lg:border-t lg:border-[var(--line)] lg:shadow-[0_-18px_52px_rgb(23_35_60/8%)]',
+          contentClassName,
+        )}
+      >
         {children}
       </div>
     </div>

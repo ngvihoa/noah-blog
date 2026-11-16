@@ -75,7 +75,7 @@ Status: Completed and verified on 2026-09-30. Decisions were settled through a g
 - [x] Use a white background for expanded contributions (user preference).
 - [x] Build (including TypeScript) and lint pass.
 - [x] Headless Chromium checks at 1440px and 390px: both cards expand/collapse, final contributions remain reachable and unobscured, keyboard/reduced-motion behavior works, cards fit the viewport, collection toggles work, known detail URLs redirect, unknown slugs return 404, and no browser runtime errors are observed.
-- [ ] Existing mobile horizontal overflow from the decorative About logo remains outside this change.
+- [x] Mobile horizontal overflow from the decorative About logo was resolved in the layout-fixes task below.
 
 ## Milestone 3: Project Collection
 
@@ -294,3 +294,10 @@ Status: Completed and verified on 2026-09-26.
 
 - [x] Add the approved opening Experience bullet describing an average of 32K monthly active signed-in accounts across applications since January 2026, with the metric emphasized.
 - [x] Record the user-confirmed reporting window (January 2026–16 November 2026) and metric definition in the content evidence notes.
+
+### 2026-11-16: Homepage overflow, project numbering, and Education sticky
+
+- [x] Keep the About logo inside the portrait edge on mobile and clip decorative horizontal overflow within the About section only.
+- [x] Move project numbers to the visual’s upper-right corner with smaller/lighter type, separate from desktop and phone mockups.
+- [x] Use `overflow-clip` on the Career stacked surface so Education can stick to the viewport; allow long Experience cards to scroll normally so all highlights remain reachable.
+- [x] Build/TypeScript, lint, formatting, and diff checks pass. Chromium at 375px/390px verifies viewport-width document bounds and logo containment. At 1280px/1440px, Education remains 90px from the top at multiple scroll positions and the final HouseNow highlight remains unobscured. Project numbers do not overlap either mockup at any checked width. Screenshots were reviewed; no browser runtime errors were observed.

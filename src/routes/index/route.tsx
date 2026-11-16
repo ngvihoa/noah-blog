@@ -36,7 +36,7 @@ function HomePage() {
       <StackedSection layer={11}>
         <AboutIntroSection />
       </StackedSection>
-      <StackedSection layer={12} pinBottom>
+      <StackedSection layer={12} pinBottom contentClassName="lg:overflow-clip">
         <CareerSection />
       </StackedSection>
       <StackedSection layer={13}>
