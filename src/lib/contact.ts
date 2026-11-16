@@ -8,5 +8,7 @@ export const sendContact = createServerFn({ method: 'POST' })
       apiKey: process.env.RESEND_API_KEY,
       from: process.env.CONTACT_FROM_EMAIL,
       to: process.env.CONTACT_TO_EMAIL,
+      gmailUser: process.env.GMAIL_USER,
+      gmailAppPassword: process.env.GMAIL_APP_PASSWORD,
     }),
   )

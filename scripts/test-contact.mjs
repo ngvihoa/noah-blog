@@ -44,25 +44,112 @@ try {
   )
   assert.equal((await deliverContact(input, {}, forbidden)).ok, false)
   assert.equal(calls, 0)
+  let acceptedCalls = 0
   const accepted = await deliverContact(
     { ...input, to: 'attacker@example.com' },
     config,
     async (url, options) => {
+      acceptedCalls++
       assert.equal(url, 'https://api.resend.com/emails')
       assert.equal(options.method, 'POST')
       const body = JSON.parse(options.body)
-      assert.deepEqual(body.to, ['owner@example.com'])
-      assert.equal(body.from, config.from)
-      assert.equal(body.reply_to, 'recruiter@example.com')
-      assert.equal(body.subject, 'Portfolio contact from Recruiter')
-      assert.ok(body.text.includes(input.message))
-      assert.ok(body.html.includes('A new conversation.'))
-      assert.ok(body.html.includes(input.message))
-      assert.ok(body.html.includes('mailto:recruiter%40example.com'))
-      return globalThis.Response.json({ id: 'test-receipt' })
+      if (acceptedCalls === 1) {
+        assert.deepEqual(body.to, ['owner@example.com'])
+        assert.equal(body.from, config.from)
+        assert.equal(body.reply_to, 'recruiter@example.com')
+        assert.equal(body.subject, 'Portfolio contact from Recruiter')
+        assert.ok(body.text.includes(input.message))
+        assert.ok(body.html.includes('A new conversation.'))
+        assert.ok(body.html.includes(input.message))
+        assert.ok(body.html.includes('mailto:recruiter%40example.com'))
+      } else {
+        assert.equal(acceptedCalls, 2)
+        assert.deepEqual(body.to, ['recruiter@example.com'])
+        assert.equal(body.from, config.from)
+        assert.equal(body.reply_to, 'owner@example.com')
+        assert.equal(
+          body.subject,
+          'Thanks for reaching out — Noah / Nguyễn Viết Hòa',
+        )
+        assert.ok(body.text.includes('Hi Recruiter,'))
+        assert.ok(body.text.includes(input.message))
+        assert.ok(body.html.includes('Thanks for reaching out.'))
+        assert.ok(body.html.includes(input.message))
+        assert.ok(body.html.includes('mailto:owner%40example.com'))
+      }
+      return globalThis.Response.json({ id: `test-receipt-${acceptedCalls}` })
     },
   )
   assert.equal(accepted.ok, true)
+  assert.equal(acceptedCalls, 2)
+
+  let sandboxCalls = 0
+  const sandboxAccepted = await deliverContact(
+    input,
+    { ...config, from: 'Portfolio <onboarding@resend.dev>' },
+    async () => {
+      sandboxCalls++
+      return globalThis.Response.json({ id: 'sandbox-receipt' })
+    },
+  )
+  assert.equal(sandboxAccepted.ok, true)
+  assert.equal(sandboxCalls, 1)
+
+  let sandboxOwnerCalls = 0
+  const sandboxOwnerAccepted = await deliverContact(
+    { ...input, email: 'owner@example.com' },
+    { ...config, from: 'Portfolio <onboarding@resend.dev>' },
+    async () => {
+      sandboxOwnerCalls++
+      return globalThis.Response.json({
+        id: `sandbox-owner-${sandboxOwnerCalls}`,
+      })
+    },
+  )
+  assert.equal(sandboxOwnerAccepted.ok, true)
+  assert.equal(sandboxOwnerCalls, 2)
+
+  let confirmationFailureCalls = 0
+  const confirmationFailureAccepted = await deliverContact(
+    input,
+    config,
+    async () => {
+      confirmationFailureCalls++
+      if (confirmationFailureCalls === 1) {
+        return globalThis.Response.json({ id: 'owner-receipt' })
+      }
+      throw new Error('confirmation-provider-error')
+    },
+  )
+  assert.equal(confirmationFailureAccepted.ok, true)
+  assert.equal(confirmationFailureCalls, 2)
+
+  const gmailMessages = []
+  let resendOwnerCalls = 0
+  const gmailAccepted = await deliverContact(
+    input,
+    {
+      ...config,
+      from: 'Portfolio <onboarding@resend.dev>',
+      gmailUser: 'nvhoa29702@gmail.com',
+      gmailAppPassword: 'abcd efgh ijkl mnop',
+    },
+    async () => {
+      resendOwnerCalls++
+      return globalThis.Response.json({ id: 'resend-owner-receipt' })
+    },
+    async (mail) => {
+      gmailMessages.push(mail)
+      return { messageId: `<msg-${gmailMessages.length}@gmail.com>` }
+    },
+  )
+  assert.equal(gmailAccepted.ok, true)
+  assert.equal(resendOwnerCalls, 1)
+  assert.equal(gmailMessages.length, 1)
+  assert.equal(gmailMessages[0].to, 'recruiter@example.com')
+  assert.equal(gmailMessages[0].replyTo, 'owner@example.com')
+  assert.ok(gmailMessages[0].html.includes('Thanks for reaching out.'))
+
   const unsafe = {
     ...input,
     name: '<img src=x onerror="alert(1)">',
