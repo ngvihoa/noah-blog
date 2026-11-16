@@ -303,7 +303,7 @@ export const sideProjects: SideProject[] = [
     source: 'https://github.com/ngvihoa/chibi-bluff',
     thumbnail: {
       src: '/side-projects/chibi-bluff.png',
-      alt: 'Chibi Bluff home screen with bot match and online multiplayer room options',
+      alt: 'Chibi Bluff mascot logo — Giang Hồ Nhí Nhố',
     },
   },
   {
