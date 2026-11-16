@@ -332,7 +332,7 @@ export const sideProjects: SideProject[] = [
     source: 'https://github.com/ngvihoa/office-takeover',
     thumbnail: {
       src: '/side-projects/office-takeover.png',
-      alt: 'Office Takeover 2D pixel-art tactical office map with Dev, Pantry, and Marketing rooms',
+      alt: 'Office Takeover pixel-art cabinet mascot logo lockup',
     },
   },
   {
