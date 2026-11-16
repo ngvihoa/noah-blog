@@ -1,3 +1,4 @@
+import { EmphasizedText } from '~/components/emphasized-text'
 import { useId, useState } from 'react'
 import { ChevronDown, ExternalLink, Github } from 'lucide-react'
 import type { projects } from '~/data/portfolio'
@@ -131,7 +132,9 @@ export function ProjectCard({
             <p className="project-card__period">{project.period}</p>
             <ul className="detail-list">
               {project.contributions.map((contribution) => (
-                <li key={contribution}>{contribution}</li>
+                <li key={contribution}>
+                  <EmphasizedText text={contribution} />
+                </li>
               ))}
             </ul>
           </div>

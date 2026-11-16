@@ -1,3 +1,4 @@
+import { EmphasizedText } from '~/components/emphasized-text'
 import { ExternalLink } from 'lucide-react'
 import { education, experiences } from '~/data/portfolio'
 
@@ -52,7 +53,9 @@ export function CareerSection() {
                 </p>
                 <ul className="detail-list">
                   {experience.highlights.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item}>
+                      <EmphasizedText text={item} />
+                    </li>
                   ))}
                 </ul>
                 <a

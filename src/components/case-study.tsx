@@ -1,3 +1,4 @@
+import { EmphasizedText } from '~/components/emphasized-text'
 import { ExternalLink, Github } from 'lucide-react'
 import type { projects } from '~/data/portfolio'
 
@@ -77,7 +78,9 @@ export function CaseStudy({ project }: { project: Project }) {
             </h3>
             <ul className="detail-list">
               {project.contributions.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item}>
+                  <EmphasizedText text={item} />
+                </li>
               ))}
             </ul>
           </section>

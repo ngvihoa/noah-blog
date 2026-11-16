@@ -283,3 +283,9 @@ Status: Completed and verified on 2026-09-26.
 - [x] Preserve measurement context in `housenow-content-review.md`; avoid claims of overall performance improvements or deployment-time savings.
 
 - [x] Verification for the approved content: build/TypeScript, lint, formatting, and diff checks pass. Headless Chromium at 1440px and 390px verifies homepage/project collection copy, 12 expanded contributions, six experience highlights, reachable final contribution, no runtime errors, and the existing case-study redirect.
+
+### 2026-11-16: Emphasize HouseNow impact metrics
+
+- [x] Add explicit emphasis to selected metric phrases in HouseNow Experience highlights and project contributions, rendered as semantic strong elements without interpreting HTML.
+- [x] Preserve the approved wording, normal text for other content, and PakiSlot presentation.
+- [x] Build/TypeScript, lint, and diff checks pass. Chromium at 1440px and 390px verifies six highlighted metrics in Experience, nine in expanded HouseNow contributions on home/projects, and no visible formatting markers.
