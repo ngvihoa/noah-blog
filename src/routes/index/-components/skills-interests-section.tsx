@@ -3,13 +3,17 @@ import { skills } from '~/data/portfolio'
 export function SkillsInterestsSection() {
   return (
     <section
-      className="flex min-h-svh flex-col justify-center border-b border-[var(--line)] bg-[rgb(255_255_255/52%)] py-24 md:py-32"
+      className="section flex flex-col justify-center border-b border-[var(--line)] bg-[rgb(255_255_255/52%)] lg:min-h-svh"
       aria-label="Skills"
     >
       <div className="page-shell">
-        <p className="eyebrow">Toolbox</p>
-        <h2>Skills I work with</h2>
-        <div className="grid grid-cols-1 gap-[14px] md:grid-cols-12">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">Toolbox</p>
+            <h2>Skills I work with</h2>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 gap-[var(--space-card-gap)] md:grid-cols-12">
           {Object.entries(skills).map(([group, items]) => (
             <div
               className={`min-w-0 rounded-[18px] border border-[var(--line)] bg-[var(--surface-strong)] p-[22px] ${

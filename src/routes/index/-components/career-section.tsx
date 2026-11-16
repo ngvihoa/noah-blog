@@ -8,16 +8,18 @@ const cardClassName =
 export function CareerSection() {
   return (
     <section
-      className="flex min-h-svh flex-col justify-center border-b border-[var(--line)] py-24 md:py-32"
+      className="section flex flex-col justify-center border-b border-[var(--line)] lg:min-h-svh"
       aria-label="Experience and education"
     >
       <div className="page-shell">
-        <div className="mb-10">
-          <p className="eyebrow">The journey so far</p>
-          <h2>Experience &amp; education</h2>
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">The journey so far</p>
+            <h2>Experience &amp; education</h2>
+          </div>
         </div>
-        <div className="grid grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] gap-6 max-lg:grid-cols-1">
-          <div className="grid gap-6 lg:block! lg:space-y-6">
+        <div className="grid grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] gap-[var(--space-card-gap)] max-lg:grid-cols-1">
+          <div className="grid gap-[var(--space-card-gap)] lg:block! lg:space-y-[var(--space-card-gap)]">
             {experiences.map((experience) => (
               <article className={cardClassName} key={experience.company}>
                 <p className="eyebrow">{experience.label}</p>

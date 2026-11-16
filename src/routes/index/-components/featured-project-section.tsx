@@ -1,13 +1,12 @@
 import { Link } from '@tanstack/react-router'
 import { ArrowRight } from 'lucide-react'
-import { projects } from '~/data/portfolio'
+import { projects, sideProjects } from '~/data/portfolio'
 import { ProjectCard } from '~/components/project-card'
-import { SideProjectsStrip } from '~/components/side-projects'
 
 export function FeaturedProjectSection() {
   return (
     <section
-      className="section page-shell flex min-h-svh flex-col justify-center"
+      className="section page-shell flex flex-col justify-center lg:min-h-svh"
       aria-labelledby="projects-title"
     >
       <div className="section-heading">
@@ -16,17 +15,17 @@ export function FeaturedProjectSection() {
           <h2 id="projects-title">Selected projects</h2>
         </div>
         <Link className="text-link" to="/projects">
-          View all projects <ArrowRight aria-hidden="true" />
+          View all projects
+          {sideProjects.length > 0 && ` + ${sideProjects.length} side projects`}
+          <ArrowRight aria-hidden="true" />
         </Link>
       </div>
 
-      <div className="project-grid project-grid--featured lg:block! lg:space-y-6">
+      <div className="project-grid project-grid--featured lg:block! lg:space-y-[var(--space-card-gap)]">
         {projects.map((project, index) => (
           <ProjectCard project={project} index={index} key={project.slug} />
         ))}
       </div>
-
-      <SideProjectsStrip />
     </section>
   )
 }

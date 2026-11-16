@@ -4,7 +4,7 @@ export function AboutIntroSection() {
   return (
     <section
       id="about"
-      className="scroll-mt-[76px] max-md:overflow-x-clip flex min-h-svh flex-col justify-center border-y border-[var(--line)] bg-[rgb(255_255_255/52%)] py-28 md:py-36"
+      className="scroll-mt-[76px] max-md:overflow-x-clip section flex flex-col justify-center border-y border-[var(--line)] bg-[rgb(255_255_255/52%)] lg:min-h-svh"
       aria-labelledby="about-title"
     >
       <div className="page-shell grid grid-cols-[minmax(280px,0.72fr)_minmax(0,1.28fr)] items-center gap-[90px] max-lg:gap-[50px] max-md:grid-cols-1 max-md:gap-8">

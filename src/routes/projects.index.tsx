@@ -27,8 +27,8 @@ function ProjectsPage() {
         </p>
       </header>
 
-      <div className="page-shell pb-28">
-        <div className="project-grid project-grid--featured lg:block! lg:space-y-6">
+      <div className="page-shell pb-[var(--space-section)]">
+        <div className="project-grid project-grid--featured lg:block! lg:space-y-[var(--space-card-gap)]">
           {projects.map((project, index) => (
             <ProjectCard project={project} index={index} key={project.slug} />
           ))}

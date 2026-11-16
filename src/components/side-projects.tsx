@@ -1,8 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Link } from '@tanstack/react-router'
 import {
-  ArrowRight,
-  ArrowUpRight,
   ExternalLink,
   Github,
   LayoutDashboard,
@@ -268,7 +265,7 @@ export function SideProjectsSection() {
   return (
     <section
       id="side-projects"
-      className="scroll-mt-[96px] pt-20 md:pt-28"
+      className="scroll-mt-[96px] pt-[var(--space-section)]"
       aria-labelledby="side-projects-title"
     >
       <div className="section-heading max-md:flex-col max-md:items-start">
@@ -305,83 +302,11 @@ export function SideProjectsSection() {
         )}
       </div>
 
-      <div className="grid grid-cols-1 gap-[14px] sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-[var(--space-card-gap)] sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((project) => (
           <SideProjectCard project={project} key={project.slug} />
         ))}
       </div>
     </section>
-  )
-}
-
-/** Compact teaser for the homepage, linking to the full collection. */
-export function SideProjectsStrip({ limit = 3 }: { limit?: number }) {
-  const items = sortProjects(
-    sideProjects.filter((p) => p.status !== 'archived'),
-  ).slice(0, limit)
-  if (items.length === 0) return null
-
-  return (
-    <aside
-      className="mt-10 border-t border-[var(--line)] pt-6"
-      aria-label="Other side projects"
-    >
-      <div className="mb-4 flex items-center justify-between gap-4">
-        <p className="eyebrow m-0!">Also building</p>
-        <Link className="text-link" to="/projects" hash="side-projects">
-          All side projects <ArrowRight aria-hidden="true" />
-        </Link>
-      </div>
-      <ul className="m-0 grid list-none grid-cols-1 gap-3 p-0 md:grid-cols-3">
-        {items.map((project) => {
-          const Icon = categoryMeta[project.category].icon
-          const href = primaryHref(project)
-          const content = (
-            <>
-              <span
-                className={cn(
-                  'flex size-11 shrink-0 items-center justify-center rounded-xl',
-                  accentTile[project.accent],
-                )}
-              >
-                <Icon className="size-5" aria-hidden="true" />
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block font-extrabold text-[var(--ink)]">
-                  {project.title}
-                </span>
-                <span className="block truncate text-[0.8rem] text-[var(--ink-soft)]">
-                  {project.hook}
-                </span>
-              </span>
-              {href && (
-                <ArrowUpRight
-                  className="size-4 shrink-0 text-[var(--primary-dark)]"
-                  aria-hidden="true"
-                />
-              )}
-            </>
-          )
-          const rowClass =
-            'flex items-center gap-3 rounded-[14px] border border-[var(--line)] bg-[var(--surface-strong)] p-2.5 transition-colors hover:border-[var(--primary)]'
-          return (
-            <li key={project.slug}>
-              {href ? (
-                <a
-                  className={rowClass}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {content}
-                </a>
-              ) : (
-                <span className={rowClass}>{content}</span>
-              )}
-            </li>
-          )
-        })}
-      </ul>
-    </aside>
   )
 }

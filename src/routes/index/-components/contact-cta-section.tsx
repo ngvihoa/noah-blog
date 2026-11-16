@@ -4,7 +4,7 @@ import { ExternalLink } from 'lucide-react'
 export function ContactCtaSection() {
   return (
     <section
-      className="flex min-h-[calc(100svh-6.5rem)] flex-col justify-center"
+      className="section flex flex-col justify-center lg:min-h-[calc(100svh-6.5rem)]"
       aria-labelledby="contact-title"
     >
       <div className="contact-cta page-shell">

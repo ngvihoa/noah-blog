@@ -13,6 +13,14 @@
   --gold: #ffc857;
   --sky: #57b8ff;
   --line: #e9dfca;
+  /* Vertical rhythm: section padding and heading-to-content gap. */
+  --space-section: clamp(4.5rem, 2.5rem + 6vw, 7rem);
+  --space-heading: clamp(2rem, 1.5rem + 1.5vw, 2.75rem);
+  /* Gap between cards in a list or grid. */
+  --space-card-gap: clamp(1rem, 0.75rem + 0.85vw, 1.5rem);
+  /* Title to supporting text: h2 to sub text, h1 to lead. */
+  --space-title-sub: 1rem;
+  --space-title-lead: 1.5rem;
   --display: 'Manrope', system-ui, sans-serif;
   --body: 'Manrope', system-ui, sans-serif;
   color: var(--ink);
@@ -207,13 +215,13 @@ h1 {
 
 .hero h1 {
   max-width: 620px;
-  margin-bottom: 14px;
+  margin-bottom: var(--space-title-lead);
   font-size: clamp(3.5rem, 6.5vw, 6.25rem);
   line-height: 0.9;
 }
 
 h2 {
-  margin-bottom: 16px;
+  margin-bottom: var(--space-title-sub);
   font-size: clamp(2.25rem, 4vw, 3.6rem);
   font-weight: 700;
   line-height: 1.04;
@@ -315,7 +323,7 @@ h3 {
 }
 
 .section {
-  padding-block: 112px;
+  padding-block: var(--space-section);
 }
 
 .section-heading {
@@ -323,10 +331,11 @@ h3 {
   align-items: end;
   justify-content: space-between;
   gap: 28px;
-  margin-bottom: 42px;
+  margin-bottom: var(--space-heading);
 }
 
-.section-heading h2 {
+/* Only drop the gap when no sub text follows the title. */
+.section-heading h2:last-child {
   margin-bottom: 0;
 }
 
@@ -349,7 +358,7 @@ h3 {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: var(--space-card-gap);
 }
 
 .project-card {
@@ -648,7 +657,6 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 48px;
-  margin-block: 112px;
   padding: 50px;
   border-radius: 24px;
   background: var(--surface-strong);
@@ -658,7 +666,7 @@ h3 {
 
 .contact-cta h2 {
   max-width: 700px;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-title-sub);
 }
 
 .contact-cta p:not(.eyebrow) {
@@ -714,16 +722,20 @@ h3 {
 
 .content-page {
   min-height: calc(100vh - 154px);
-  padding-block: 120px;
+  padding-block: var(--space-section);
 }
 
 .content-page h1 {
-  margin-bottom: 24px;
+  margin-bottom: var(--space-title-lead);
 }
 
 .content-page--intro {
   min-height: auto;
-  padding-bottom: 88px;
+  padding-bottom: var(--space-heading);
+}
+
+.content-page--intro .content-page__lead {
+  margin-bottom: 0;
 }
 
 .case-study {
@@ -968,14 +980,9 @@ h3 {
     border-left: 0;
   }
 
-  .section {
-    padding-block: 84px;
-  }
-
   .section-heading {
     align-items: flex-start;
     flex-direction: column;
-    margin-bottom: 32px;
   }
 
   .project-grid {
@@ -1057,17 +1064,12 @@ h3 {
   .contact-cta {
     align-items: flex-start;
     flex-direction: column;
-    margin-block: 84px;
     padding: 34px 24px;
   }
 
   .site-footer__inner {
     grid-template-columns: 1fr;
     gap: 14px;
-  }
-
-  .content-page {
-    padding-block: 84px;
   }
 }
 
@@ -1095,7 +1097,7 @@ h3 {
   margin-bottom: 38px;
 }
 .contact-page__intro h1 {
-  margin: 0 0 18px;
+  margin: 0 0 var(--space-title-lead);
   max-width: none;
   font-size: clamp(2.25rem, 5vw, 4rem);
   line-height: 1.08;
@@ -1118,7 +1120,7 @@ h3 {
   min-width: 0;
 }
 .contact-page__aside h2 {
-  margin: 0 0 14px;
+  margin: 0 0 var(--space-title-sub);
   font-size: clamp(1.25rem, 2vw, 1.5rem);
   line-height: 1.3;
   letter-spacing: -0.025em;
