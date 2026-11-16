@@ -6,3 +6,6 @@ documents/
 node_modules/
 prompts/
 src/routeTree.gen.ts
+
+.vercel/
+.output/

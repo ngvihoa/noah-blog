@@ -10,3 +10,5 @@ prompts/
 .env
 .env.*
 !.env.example
+
+.vercel/

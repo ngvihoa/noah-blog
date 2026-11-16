@@ -35,3 +35,7 @@ For deployment, configure the same variables as server environment variables on 
 Live email delivery remains unverified until real provider credentials and an authorized sender are configured, then a test message is received in the intended mailbox.
 
 References: [TanStack server functions](https://tanstack.com/start/latest/docs/framework/react/guide/server-functions), [Resend Send Email API](https://resend.com/docs/api-reference/emails/send-email).
+
+## Vercel
+
+The repo uses the `tanstack-start` framework preset with the Nitro Vite plugin and Node 24.x. Keep the framework's default output directory; the build generates Vercel server functions and static assets. Add all three server variables (`RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL`) in the appropriate Vercel environment, then redeploy for the function to receive them. Add `VITE_SITE_URL` using the actual public domain before the production build. Until email settings are present, the form reports unavailable and direct email remains available.

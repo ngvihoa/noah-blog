@@ -229,3 +229,12 @@ Status: Completed and verified on 2026-09-26.
 - [x] Add server-only Resend delivery with recipient configuration, visitor reply-to, timeout, and safe errors.
 - [x] Add `.env.example`, setup documentation, and `npm run test:contact` with mocked provider tests.
 - [ ] Configure the real provider credentials/sender and verify a message arrives in the intended inbox.
+
+### 2026-11-16: Vercel deployment compatibility
+
+- [x] Upgrade `@tanstack/react-start` from 1.168.34 to patched 1.168.60; lockfile resolves `@tanstack/start-server-core` 1.169.39 (CVE-2026-102989 fix).
+- [x] Add the Nitro Vite plugin and `vercel.json` framework preset for server-side rendering and contact server functions.
+- [x] Pin the deployment Node engine to 24.x and exclude generated `.vercel` output from Git, lint, and formatting.
+- [x] `NITRO_PRESET=vercel npm run build`, contact delivery tests, and lint pass. Generated function config uses `nodejs24.x`.
+- [x] Execute the generated Vercel function locally: home/projects/contact return 200, known case study redirects with 307, and unknown slug returns 404.
+- [ ] Verify the Git-triggered Vercel deployment. Local CLI authentication has expired; deployment status can be read through GitHub integration.
