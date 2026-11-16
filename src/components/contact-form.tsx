@@ -1,5 +1,6 @@
 import { useRef, useState, type FormEvent } from 'react'
-import { Mail } from 'lucide-react'
+import { CircleAlert, CircleCheck, LoaderCircle, Mail } from 'lucide-react'
+import { motion, useReducedMotion } from 'motion/react'
 import {
   contactErrors,
   contactSchema,
@@ -14,7 +15,8 @@ export function ContactForm() {
   >('idle')
   const [feedback, setFeedback] = useState('')
   const sending = useRef(false)
-  const statusRef = useRef<HTMLParagraphElement>(null)
+  const statusRef = useRef<HTMLDivElement>(null)
+  const reduceMotion = useReducedMotion()
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -36,7 +38,7 @@ export function ContactForm() {
     }
     sending.current = true
     setStatus('pending')
-    setFeedback('Sending your message…')
+    setFeedback('Please wait a moment while your message is being sent.')
     try {
       const result = await sendContact({ data: parsed.data })
       if (result.ok) {
@@ -143,23 +145,64 @@ export function ContactForm() {
           />
         </div>
         <div className="contact-form__actions">
-          <button className="button button--primary" type="submit">
-            {status === 'pending' ? 'Sending…' : 'Send message'}{' '}
-            <Mail aria-hidden="true" />
+          <button
+            className="button button--primary contact-form__submit"
+            type="submit"
+          >
+            {status === 'pending' ? (
+              <LoaderCircle
+                className="contact-form__spinner"
+                aria-hidden="true"
+              />
+            ) : (
+              <Mail aria-hidden="true" />
+            )}
+            {status === 'pending' ? 'Sending…' : 'Send message'}
           </button>
           <span className="contact-form__hint">All fields required</span>
         </div>
       </fieldset>
-      <p
+      <div
         ref={statusRef}
         tabIndex={-1}
-        className={`contact-form__status ${status === 'error' ? 'contact-form__error' : ''}`}
+        className="contact-form__status"
         role="status"
         aria-live="polite"
         aria-atomic="true"
       >
-        {feedback}
-      </p>
+        {feedback ? (
+          <motion.div
+            key={status}
+            className={`contact-feedback contact-feedback--${status}`}
+            initial={reduceMotion ? false : { opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: reduceMotion ? 0 : 0.2,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <span className="contact-feedback__icon" aria-hidden="true">
+              {status === 'success' ? (
+                <CircleCheck />
+              ) : status === 'error' ? (
+                <CircleAlert />
+              ) : (
+                <Mail />
+              )}
+            </span>
+            <div className="contact-feedback__copy">
+              <strong>
+                {status === 'success'
+                  ? 'Message sent'
+                  : status === 'error'
+                    ? 'Something needs attention'
+                    : 'Sending your message'}
+              </strong>
+              <p>{feedback}</p>
+            </div>
+          </motion.div>
+        ) : null}
+      </div>
     </form>
   )
 }

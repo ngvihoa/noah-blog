@@ -252,3 +252,10 @@ Status: Completed and verified on 2026-09-26.
 - [x] Use Software Developer for general identity in the profile/header, About, page metadata, and Person JSON-LD. Availability copy in Contact, homepage CTA, and Focus Strip explicitly welcomes Software Developer and Frontend Developer roles.
 - [x] Preserve historical Frontend Developer/Intern titles and the existing frontend skill group. The social share image already says Software Developer.
 - [x] Build, contact delivery tests, and lint pass. Targeted desktop/tablet/mobile QA covers contact layout, link destinations/touch targets/focus, reduced motion, form states with mocked RPC, and homepage title/header/JSON-LD/availability copy.
+
+### 2026-11-16: Contact submission feedback
+
+- [x] Add a loading spinner and stable-width submit button while the form is disabled during submission.
+- [x] Replace plain feedback text with distinct pending/success/error panels, icons, clear titles, and short entrance motion; reduced motion disables the spinner and entrance movement.
+- [x] Keep the live status region, focus management, validation, duplicate-submit prevention, and failed-input retention.
+- [x] Build, TypeScript, lint, and mocked delivery tests pass. Headless Chromium checks at 1440px, 768px, and 390px verify form states, focus, input retention, and reduced-motion spinner behavior. Success-panel screenshots were visually reviewed; UI submissions were mocked and no real email was sent.
