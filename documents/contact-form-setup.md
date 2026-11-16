@@ -12,10 +12,10 @@ Copy `.env.example` to `.env.local` and fill in:
 
 Do not prefix these variables with `VITE_`. `.env` and `.env.*` are ignored by Git; `.env.example` contains no secrets.
 
-For local development, explicitly load the server environment using Node:
+For local development, run the standard command below. It automatically loads `.env` and then `.env.local` into the server environment; existing shell variables take precedence. Missing env files do not prevent the dev server from starting. Restart the dev server after editing email settings:
 
 ```sh
-node --env-file=.env.local node_modules/vite/bin/vite.js
+npm run dev
 ```
 
 For deployment, configure the same variables as server environment variables on the hosting provider and use an SSR/server runtime; a static-only host cannot run the form's server function. `VITE_SITE_URL` is a separate public setting for SEO metadata.
