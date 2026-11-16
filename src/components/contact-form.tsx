@@ -28,14 +28,15 @@ export function ContactForm() {
     if (!parsed.success) {
       const nextErrors = contactErrors(parsed.error)
       setErrors(nextErrors)
-      setStatus('error')
-      setFeedback('Please check the highlighted fields.')
+      setStatus('idle')
+      setFeedback('')
       const field = Object.keys(nextErrors).find(
         (key) => nextErrors[key as keyof ContactErrors],
       )
       if (field) (form.elements.namedItem(field) as HTMLElement | null)?.focus()
       return
     }
+    let invalidField: string | undefined
     sending.current = true
     setStatus('pending')
     setFeedback('Please wait a moment while your message is being sent.')
@@ -46,9 +47,13 @@ export function ContactForm() {
         setStatus('success')
         setFeedback('Thanks for reaching out. Your message has been sent.')
       } else {
-        setErrors(result.errors ?? {})
-        setStatus('error')
-        setFeedback(result.message)
+        const nextErrors = result.errors ?? {}
+        invalidField = Object.keys(nextErrors).find(
+          (key) => nextErrors[key as keyof ContactErrors],
+        )
+        setErrors(nextErrors)
+        setStatus(invalidField ? 'idle' : 'error')
+        setFeedback(invalidField ? '' : result.message)
       }
     } catch {
       setStatus('error')
@@ -57,7 +62,17 @@ export function ContactForm() {
       )
     } finally {
       sending.current = false
-      statusRef.current?.focus()
+      if (invalidField) {
+        // Wait for the disabled fieldset to re-enable before moving focus.
+        const field = invalidField
+        requestAnimationFrame(() => {
+          if (form.isConnected) {
+            ;(form.elements.namedItem(field) as HTMLElement | null)?.focus()
+          }
+        })
+      } else {
+        statusRef.current?.focus()
+      }
     }
   }
 

@@ -259,3 +259,10 @@ Status: Completed and verified on 2026-09-26.
 - [x] Replace plain feedback text with distinct pending/success/error panels, icons, clear titles, and short entrance motion; reduced motion disables the spinner and entrance movement.
 - [x] Keep the live status region, focus management, validation, duplicate-submit prevention, and failed-input retention.
 - [x] Build, TypeScript, lint, and mocked delivery tests pass. Headless Chromium checks at 1440px, 768px, and 390px verify form states, focus, input retention, and reduced-motion spinner behavior. Success-panel screenshots were visually reviewed; UI submissions were mocked and no real email was sent.
+
+### 2026-11-16: Remove duplicate validation feedback
+
+- [x] Show client/server field-validation errors only beside the affected inputs, without a duplicate error panel.
+- [x] Retain the error panel for delivery/network/configuration failures; preserve submitted values for retry.
+- [x] Focus the first invalid field, including after server validation re-enables the form.
+- [x] Build, TypeScript, contact delivery tests, and lint pass. Targeted Chromium checks at 1440px and 390px verify inline-only validation, focus, delivery-error panels, and retained input with mocked requests.
