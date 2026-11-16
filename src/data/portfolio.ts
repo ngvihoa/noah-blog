@@ -249,8 +249,8 @@ export interface SideProject {
   stack: string[]
   demo?: string
   source?: string
-  /** Optional 16:10 screenshot in /public. Falls back to an icon tile. */
-  thumbnail?: { src: string; alt: string }
+  /** Optional screenshot or brand artwork in /public. Falls back to an icon tile. */
+  thumbnail?: { src: string; alt: string; fit?: 'cover' | 'contain' }
   /** Pinned projects render as a wide card at the start of the grid. */
   pinned?: boolean
 }
@@ -274,9 +274,9 @@ export const sideProjects: SideProject[] = [
     pinned: true,
   },
   {
-    slug: 'werewolf-moderator',
-    title: 'Werewolf Moderator',
-    hook: 'A mobile-first assistant for in-person Werewolf sessions that tracks night/day phases while keeping the moderator in control.',
+    slug: 'moonveil',
+    title: 'Moonveil',
+    hook: 'A mobile-first Werewolf game for online self-play and hosted in-person sessions, with secret roles, night actions, and real-time voting.',
     year: 2026,
     status: 'live',
     category: 'mobile',
@@ -285,8 +285,9 @@ export const sideProjects: SideProject[] = [
     demo: 'https://werewolf-moderator-phi.vercel.app',
     source: 'https://github.com/ngvihoa/werewolf',
     thumbnail: {
-      src: '/side-projects/werewolf-moderator.png',
-      alt: 'Moonveil Werewolf Moderator interface showing night phase role actions',
+      src: '/side-projects/moonveil-lockup.webp',
+      alt: 'Moonveil logo lockup with wolf banner and wordmark',
+      fit: 'contain',
     },
   },
   {

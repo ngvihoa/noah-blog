@@ -301,3 +301,10 @@ Status: Completed and verified on 2026-09-26.
 - [x] Move project numbers to the visual’s upper-right corner with smaller/lighter type, separate from desktop and phone mockups.
 - [x] Use `overflow-clip` on the Career stacked surface so Education can stick to the viewport; allow long Experience cards to scroll normally so all highlights remain reachable.
 - [x] Build/TypeScript, lint, formatting, and diff checks pass. Chromium at 375px/390px verifies viewport-width document bounds and logo containment. At 1280px/1440px, Education remains 90px from the top at multiple scroll positions and the final HouseNow highlight remains unobscured. Project numbers do not overlap either mockup at any checked width. Screenshots were reviewed; no browser runtime errors were observed.
+
+### 2026-11-16: Moonveil side-project positioning and lockup
+
+- [x] Replace the stale Werewolf Moderator title/assistant hook with Moonveil and its current game positioning: online self-play and hosted in-person sessions.
+- [x] Copy the existing `werewolf/public/logo-with-name.webp` lockup unchanged; replace the old screenshot thumbnail with contained artwork and retain the working demo/repository URLs.
+- [x] Add optional thumbnail fit support so existing project screenshots retain their cover behavior.
+- [x] Build/TypeScript, lint, formatting, and diff checks pass. Chromium at 1440px and 375px verifies naming, copy, loaded/contained logo, existing demo URL, and no horizontal overflow. The mobile card screenshot was visually reviewed.

@@ -73,7 +73,12 @@ function ProjectThumb({
     >
       {project.thumbnail ? (
         <img
-          className="size-full object-cover object-top transition-transform duration-300 motion-safe:group-hover:scale-[1.03]"
+          className={cn(
+            'size-full transition-transform duration-300 motion-safe:group-hover:scale-[1.03]',
+            project.thumbnail.fit === 'contain'
+              ? 'object-contain p-5'
+              : 'object-cover object-top',
+          )}
           src={project.thumbnail.src}
           alt={project.thumbnail.alt}
           loading="lazy"
