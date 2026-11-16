@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router'
 import { ArrowRight } from 'lucide-react'
 import { projects } from '~/data/portfolio'
 import { ProjectCard } from '~/components/project-card'
+import { SideProjectsStrip } from '~/components/side-projects'
 
 export function FeaturedProjectSection() {
   return (
@@ -24,6 +25,8 @@ export function FeaturedProjectSection() {
           <ProjectCard project={project} index={index} key={project.slug} />
         ))}
       </div>
+
+      <SideProjectsStrip />
     </section>
   )
 }

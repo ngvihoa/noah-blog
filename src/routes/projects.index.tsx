@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { projects } from '~/data/portfolio'
 import { ProjectCard } from '~/components/project-card'
+import { SideProjectsSection } from '~/components/side-projects'
 import { seoHead } from '~/lib/seo'
 
 export const Route = createFileRoute('/projects/')({
@@ -8,7 +9,7 @@ export const Route = createFileRoute('/projects/')({
     seoHead({
       title: 'Projects | Noah / Viết Hòa',
       description:
-        'Selected software projects by Noah, Nguyễn Viết Hòa — HouseNow and PakiSlot.',
+        'Selected software projects and side projects by Noah, Nguyễn Viết Hòa — HouseNow, PakiSlot, and more.',
       path: '/projects',
     }),
   component: ProjectsPage,
@@ -32,6 +33,7 @@ function ProjectsPage() {
             <ProjectCard project={project} index={index} key={project.slug} />
           ))}
         </div>
+        <SideProjectsSection />
       </div>
     </main>
   )
