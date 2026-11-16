@@ -266,3 +266,10 @@ Status: Completed and verified on 2026-09-26.
 - [x] Retain the error panel for delivery/network/configuration failures; preserve submitted values for retry.
 - [x] Focus the first invalid field, including after server validation re-enables the form.
 - [x] Build, TypeScript, contact delivery tests, and lint pass. Targeted Chromium checks at 1440px and 390px verify inline-only validation, focus, delivery-error panels, and retained input with mocked requests.
+
+### 2026-11-16: Branded contact notification email
+
+- [x] Add a responsive HTML notification in the portfolio palette, with sender details, message block, and reply button; retain the plain-text fallback and native Reply behavior.
+- [x] Escape user input before rendering and preserve message line breaks; test the HTML payload with unsafe text.
+- [x] Build, TypeScript, delivery tests, and lint pass. HTML rendering checks at 728px and 390px cover sample and maximum-length content without horizontal overflow; sample screenshots were reviewed.
+- [ ] Verify the new template in an actual inbox after deployment (automated tests use a mocked provider).

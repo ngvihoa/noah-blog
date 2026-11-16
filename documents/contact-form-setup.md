@@ -1,6 +1,6 @@
 # Contact Form Setup
 
-The `/contact` form submits to a POST TanStack Start server function. Zod validates both client and server input. Resend receives a plain-text email addressed only to the configured recipient; the visitor's email is used as `reply_to`, never as the sender. Provider credentials stay on the server.
+The `/contact` form submits to a POST TanStack Start server function. Zod validates both client and server input. Resend receives a branded HTML email with a plain-text fallback addressed only to the configured recipient; the visitor's email is used as `reply_to`, never as the sender. Provider credentials stay on the server.
 
 ## Configuration
 
@@ -39,3 +39,9 @@ References: [TanStack server functions](https://tanstack.com/start/latest/docs/f
 ## Vercel
 
 The repo uses the `tanstack-start` framework preset with the Nitro Vite plugin and Node 24.x. Keep the framework's default output directory; the build generates Vercel server functions and static assets. Add all three server variables (`RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL`) in the appropriate Vercel environment, then redeploy for the function to receive them. Add `VITE_SITE_URL` using the actual public domain before the production build. Until email settings are present, the form reports unavailable and direct email remains available.
+
+## Email notification template
+
+`src/lib/contact-email.server.ts` renders a cream/purple notification with sender details, a separate message area, and a Reply by email button. It uses table layout, inline styles, and system fonts without remote images or new dependencies. All visitor-provided text is HTML-escaped and message line breaks are preserved. Native email Reply still uses the sender's address through `reply_to`; the reply link uses an encoded mailto address.
+
+Tests cover HTML escaping, line breaks, the text fallback, and provider payload. Browser rendering at 728px and 390px was checked with sample and maximum-length inputs. Actual Gmail/Outlook rendering of the new template remains to be verified by receiving a new message after deployment; no live email was sent during automated tests.

@@ -56,11 +56,38 @@ try {
       assert.equal(body.reply_to, 'recruiter@example.com')
       assert.equal(body.subject, 'Portfolio contact from Recruiter')
       assert.ok(body.text.includes(input.message))
-      assert.equal(body.html, undefined)
+      assert.ok(body.html.includes('A new conversation.'))
+      assert.ok(body.html.includes(input.message))
+      assert.ok(body.html.includes('mailto:recruiter%40example.com'))
       return globalThis.Response.json({ id: 'test-receipt' })
     },
   )
   assert.equal(accepted.ok, true)
+  const unsafe = {
+    ...input,
+    name: '<img src=x onerror="alert(1)">',
+    message: '<script>alert(1)</script>\nSecond line & more',
+  }
+  assert.equal(
+    (
+      await deliverContact(unsafe, config, async (_url, options) => {
+        const body = JSON.parse(options.body)
+        assert.ok(!body.html.includes('<script>'))
+        assert.ok(!body.html.includes('<img'))
+        assert.ok(
+          body.html.includes(
+            '&lt;script&gt;alert(1)&lt;/script&gt;<br />Second line &amp; more',
+          ),
+        )
+        assert.ok(
+          body.html.includes('&lt;img src=x onerror=&quot;alert(1)&quot;&gt;'),
+        )
+        assert.ok(body.text.includes(unsafe.message))
+        return globalThis.Response.json({ id: 'escaped-receipt' })
+      })
+    ).ok,
+    true,
+  )
   for (const send of [
     async () =>
       globalThis.Response.json(

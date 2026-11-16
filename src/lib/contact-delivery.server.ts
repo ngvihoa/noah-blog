@@ -4,6 +4,8 @@ import {
   type ContactResult,
 } from './contact-schema'
 
+import { renderContactEmail } from './contact-email.server'
+
 type DeliveryConfig = { apiKey?: string; from?: string; to?: string }
 
 // Keep provider credentials and recipients entirely on the server.
@@ -47,6 +49,7 @@ export async function deliverContact(
         reply_to: email,
         subject: `Portfolio contact from ${name}`,
         text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+        html: renderContactEmail({ name, email, message }),
       }),
       signal: AbortSignal.timeout(10000),
     })
