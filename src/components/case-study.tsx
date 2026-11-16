@@ -65,7 +65,9 @@ export function CaseStudy({ project }: { project: Project }) {
           <figcaption>{project.heroVisual.caption}</figcaption>
         </figure>
 
-        <div className="case-study__columns">
+        <div
+          className={`case-study__columns ${'features' in project ? '' : 'grid-cols-1!'}`}
+        >
           <section aria-labelledby={`${project.slug}-contributions`}>
             <p className="eyebrow">My contribution</p>
             <h3 id={`${project.slug}-contributions`}>
@@ -79,19 +81,19 @@ export function CaseStudy({ project }: { project: Project }) {
               ))}
             </ul>
           </section>
-          <section aria-labelledby={`${project.slug}-features`}>
-            <p className="eyebrow">Core capabilities</p>
-            <h3 id={`${project.slug}-features`}>
-              {project.slug === 'housenow'
-                ? 'A marketplace for homes and the people who sell them'
-                : 'Built for parking operations'}
-            </h3>
-            <ul className="detail-list">
-              {project.features.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
+          {'features' in project ? (
+            <section aria-labelledby={`${project.slug}-features`}>
+              <p className="eyebrow">Core capabilities</p>
+              <h3 id={`${project.slug}-features`}>
+                Built for parking operations
+              </h3>
+              <ul className="detail-list">
+                {project.features.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
         </div>
 
         <div className="case-study__gallery">

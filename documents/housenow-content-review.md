@@ -1,0 +1,55 @@
+# HouseNow content — review draft
+
+Status: Approved with user corrections and applied to the website implementation. Product capabilities are omitted.
+
+## Experience — homepage
+
+**HouseNow JSC · Frontend Developer**  
+**August 2024 — Present · Full-time**
+
+- Helped migrate the Agent application to TanStack Start, covering 80+ route modules, while continuing development on the Next.js website.
+- Built HouseReels and the agent dashboard from zero to launch, plus investor dashboards for Masterise and agency partners.
+- Developed paid packages, payments, and ads-management features contributing around 10% of company revenue; added in-app purchases to the mobile app.
+- Optimized homepage rendering, with production before/after measurements showing ~25% fewer initial DOM elements and ~40% smaller HTML documents.
+- Helped revamp a sister automotive company’s app, improving user retention by up to 50%.
+- Raised HouseNow’s Geolify SEO score from 54 to 74.
+
+## Project card
+
+**HouseNow**  
+Real estate marketplace
+
+**Role:** Frontend Developer  
+**Period:** August 2024 — Present  
+**Context:** Proptech · Full-time role  
+**Team:** 4 FE · 4 BE · 3 DES · 1–2 PM
+
+A proptech marketplace for buying and exploring homes in Vietnam — 25,000+ listings, short-video property browsing, home-loan services, and tools for real estate agents across web and mobile.
+
+## Expanded project details — My work on HouseNow
+
+- Helped migrate the Agent application to TanStack Start, covering 80+ route modules, while continuing development on the Next.js website.
+- Built HouseReels and the agent dashboard from zero to launch.
+- Developed paid packages, payments, and ads-management features contributing around 10% of company revenue; added in-app purchases to the mobile app.
+- Optimized homepage rendering, with production before/after measurements showing ~25% fewer initial DOM elements and ~40% smaller HTML documents.
+- Reduced Next.js build output files by 67%, measured in comparable local builds.
+- Optimized API responses, reducing average serialized payload sizes by up to 39.4%.
+- Built video upload workflows supporting files up to 500 MB.
+- Developed data-heavy interfaces with React Query and contributed backend APIs using Prisma and Kysely.
+- Helped revamp a sister automotive company’s app, improving user retention by up to 50%.
+- Raised HouseNow’s Geolify SEO score from 54 to 74.
+- Built internal tools for loan profiles, projects, transactions, videos, and promotions, plus investor dashboards for Masterise and agency partners.
+- Shipped property-search and agent workflows, including price boards, listing creation, lead management, community threads, and feng-shui home views.
+
+## Technology stack
+
+Next.js · TanStack Start · TanStack Router · React Query · React Native · Tailwind CSS · Prisma · Kysely · MySQL
+
+## Editorial and evidence notes — not website copy
+
+- Existing business/product figures (25,000+ listings, ~10% revenue, up to 50% retention, SEO 54 → 74) are retained from the current portfolio and prior user input; they were not independently remeasured for this draft.
+- Homepage DOM/HTML figures use the production 03/11 → 05/11 acceptance measurements supplied by the user for NOW-35354. They describe a release before/after comparison, with other PRs and changing production data; the wording does not attribute the full outcome to a single isolated change.
+- The 67% build-output reduction refers to file counts in comparable local builds, not deployment duration, bundle bytes, or cloud cost.
+- RPC figures refer to mean serialized bytes per returned RPC item, not per listing, total network traffic, or billing. Their historical audit conditions belong in evidence rather than the main experience summary.
+- No general claim that all performance metrics improved: mobile LCP regressed in the acceptance measurements.
+- Current role and date wording is retained pending the actual HouseNow end date. The migration wording follows the supplied evidence identifying TanStack Start and 80+ route modules.

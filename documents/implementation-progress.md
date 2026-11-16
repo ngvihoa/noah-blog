@@ -273,3 +273,13 @@ Status: Completed and verified on 2026-09-26.
 - [x] Escape user input before rendering and preserve message line breaks; test the HTML payload with unsafe text.
 - [x] Build, TypeScript, delivery tests, and lint pass. HTML rendering checks at 728px and 390px cover sample and maximum-length content without horizontal overflow; sample screenshots were reviewed.
 - [ ] Verify the new template in an actual inbox after deployment (automated tests use a mocked provider).
+
+### 2026-11-16: Approved HouseNow content refresh
+
+- [x] Apply the reviewed Experience highlights, project summary, 12 contributions, and TanStack Start stack entry.
+- [x] Include the production DOM/HTML measurements (~25%/~40%), 80+ route modules, 67% local build-output file reduction, up to 39.4% average serialized payload reduction, and 500 MB video support.
+- [x] Remove renting and correct the sister company to automotive; retain existing user-confirmed business metrics and SEO 54 → 74.
+- [x] Remove HouseNow product capabilities from the data and shared case-study renderer; retain PakiSlot capabilities.
+- [x] Preserve measurement context in `housenow-content-review.md`; avoid claims of overall performance improvements or deployment-time savings.
+
+- [x] Verification for the approved content: build/TypeScript, lint, formatting, and diff checks pass. Headless Chromium at 1440px and 390px verifies homepage/project collection copy, 12 expanded contributions, six experience highlights, reachable final contribution, no runtime errors, and the existing case-study redirect.
