@@ -32,10 +32,10 @@ export function AboutIntroSection() {
             Curious by default. Intentional in execution.
           </h2>
           <p className="max-w-[650px] text-[1.12rem] leading-[1.8] text-[var(--ink-soft)]">
-            I’m Noah — Nguyễn Viết Hòa, a Frontend Developer based in Ho Chi
-            Minh City. My work at HouseNow spans web and mobile product
-            experiences, from property discovery to tools for real estate
-            agents, with React, Next.js, and TypeScript.
+            I’m Noah — Nguyễn Viết Hòa, a Software Developer based in Ho Chi
+            Minh City with a strong frontend foundation. My work at HouseNow
+            spans web and mobile product experiences, from property discovery to
+            tools for real estate agents, with React, Next.js, and TypeScript.
           </p>
           <p className="max-w-[650px] text-[1.12rem] leading-[1.8] text-[var(--ink-soft)]">
             With a Computer Science background, I enjoy understanding how a
@@ -57,7 +57,7 @@ export function AboutIntroSection() {
                 Focus
               </dt>
               <dd className="m-0 [font-family:var(--display)] font-semibold">
-                Frontend development & product UI
+                Software development & product UI
               </dd>
             </div>
           </dl>

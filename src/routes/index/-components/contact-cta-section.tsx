@@ -10,10 +10,10 @@ export function ContactCtaSection() {
       <div className="contact-cta page-shell">
         <div>
           <p className="eyebrow">Start a conversation</p>
-          <h2 id="contact-title">Looking for a frontend developer?</h2>
+          <h2 id="contact-title">Looking for a developer?</h2>
           <p>
-            I’m looking for my next Frontend Developer role and open to onsite,
-            hybrid, or remote work. Let’s talk about your team.
+            I’m open to Software Developer and Frontend Developer roles —
+            onsite, hybrid, or remote. Let’s talk about your team.
           </p>
         </div>
         <Link

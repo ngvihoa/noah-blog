@@ -6,7 +6,6 @@ import {
   type ContactErrors,
 } from '~/lib/contact-schema'
 import { sendContact } from '~/lib/contact'
-import { profile } from '~/data/portfolio'
 
 export function ContactForm() {
   const [errors, setErrors] = useState<ContactErrors>({})
@@ -66,54 +65,55 @@ export function ContactForm() {
       className="contact-form"
       onSubmit={submit}
       noValidate
-      aria-labelledby="contact-form-title"
+      aria-label="Send a message"
       aria-busy={status === 'pending'}
     >
-      <p className="eyebrow">Send a message</p>
-      <h2 id="contact-form-title">Tell me about the opportunity.</h2>
-      <p className="contact-form__hint">All fields are required.</p>
       <fieldset disabled={status === 'pending'}>
-        <div className="contact-form__field">
-          <label htmlFor="contact-name">Your name</label>
-          <input
-            id="contact-name"
-            name="name"
-            autoComplete="name"
-            required
-            maxLength={100}
-            aria-invalid={Boolean(errors.name)}
-            aria-describedby={errors.name ? 'contact-name-error' : undefined}
-          />
-          {errors.name ? (
-            <p className="contact-form__error" id="contact-name-error">
-              {errors.name}
-            </p>
-          ) : null}
-        </div>
-        <div className="contact-form__field">
-          <label htmlFor="contact-email">Email address</label>
-          <input
-            id="contact-email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            maxLength={254}
-            aria-invalid={Boolean(errors.email)}
-            aria-describedby={errors.email ? 'contact-email-error' : undefined}
-          />
-          {errors.email ? (
-            <p className="contact-form__error" id="contact-email-error">
-              {errors.email}
-            </p>
-          ) : null}
+        <div className="contact-form__row">
+          <div className="contact-form__field">
+            <label htmlFor="contact-name">Your name</label>
+            <input
+              id="contact-name"
+              name="name"
+              autoComplete="name"
+              required
+              maxLength={100}
+              aria-invalid={Boolean(errors.name)}
+              aria-describedby={errors.name ? 'contact-name-error' : undefined}
+            />
+            {errors.name ? (
+              <p className="contact-form__error" id="contact-name-error">
+                {errors.name}
+              </p>
+            ) : null}
+          </div>
+          <div className="contact-form__field">
+            <label htmlFor="contact-email">Email address</label>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              required
+              maxLength={254}
+              aria-invalid={Boolean(errors.email)}
+              aria-describedby={
+                errors.email ? 'contact-email-error' : undefined
+              }
+            />
+            {errors.email ? (
+              <p className="contact-form__error" id="contact-email-error">
+                {errors.email}
+              </p>
+            ) : null}
+          </div>
         </div>
         <div className="contact-form__field">
           <label htmlFor="contact-message">Message</label>
           <textarea
             id="contact-message"
             name="message"
-            rows={6}
+            rows={5}
             required
             minLength={10}
             maxLength={5000}
@@ -125,8 +125,7 @@ export function ContactForm() {
             }
           />
           <p id="contact-message-help" className="contact-form__hint">
-            A little about your team, the role, and how to reach you. 10–5,000
-            characters.
+            10–5,000 characters.
           </p>
           {errors.message ? (
             <p className="contact-form__error" id="contact-message-error">
@@ -143,10 +142,13 @@ export function ContactForm() {
             autoComplete="off"
           />
         </div>
-        <button className="button button--primary" type="submit">
-          {status === 'pending' ? 'Sending…' : 'Send message'}{' '}
-          <Mail aria-hidden="true" />
-        </button>
+        <div className="contact-form__actions">
+          <button className="button button--primary" type="submit">
+            {status === 'pending' ? 'Sending…' : 'Send message'}{' '}
+            <Mail aria-hidden="true" />
+          </button>
+          <span className="contact-form__hint">All fields required</span>
+        </div>
       </fieldset>
       <p
         ref={statusRef}
@@ -157,12 +159,6 @@ export function ContactForm() {
         aria-atomic="true"
       >
         {feedback}
-      </p>
-      <p className="contact-form__hint">
-        Prefer email?{' '}
-        <a className="text-link" href={`mailto:${profile.email}`}>
-          {profile.email}
-        </a>
       </p>
     </form>
   )

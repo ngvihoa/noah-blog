@@ -12,9 +12,9 @@ import { StackedSection } from './-components/stacked-section'
 export const Route = createFileRoute('/')({
   head: () =>
     seoHead({
-      title: 'Noah / Viết Hòa | Frontend Developer',
+      title: 'Noah / Viết Hòa | Software Developer',
       description:
-        'Noah, Nguyễn Viết Hòa, is a frontend developer building thoughtful and accessible digital products with a strong frontend foundation.',
+        'Noah, Nguyễn Viết Hòa, is a software developer with a strong frontend foundation, building web and mobile products and open to Software Developer and Frontend Developer roles.',
       path: '/',
     }),
   component: HomePage,

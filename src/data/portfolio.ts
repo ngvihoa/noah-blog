@@ -2,7 +2,7 @@ export const profile = {
   name: 'Nguyễn Viết Hòa',
   shortName: 'Viết Hòa',
   alias: 'Noah',
-  role: 'Frontend Developer',
+  role: 'Software Developer',
   location: 'Ho Chi Minh City',
   email: 'nvhoa29702@gmail.com',
   github: 'https://github.com/ngvihoa',

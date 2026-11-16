@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react'
+import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from 'lucide-react'
 import { profile } from '~/data/portfolio'
 import { seoHead } from '~/lib/seo'
 import { ContactForm } from '~/components/contact-form'
@@ -9,7 +9,7 @@ export const Route = createFileRoute('/contact')({
     seoHead({
       title: 'Contact | Noah / Viết Hòa',
       description:
-        'Contact Nguyễn Viết Hòa (Noah) about Frontend Developer opportunities.',
+        'Contact Nguyễn Viết Hòa (Noah) about Software Developer and Frontend Developer opportunities.',
       path: '/contact',
     }),
   component: ContactPage,
@@ -18,53 +18,84 @@ export const Route = createFileRoute('/contact')({
 function ContactPage() {
   return (
     <main className="page-shell contact-page">
-      <div className="contact-page__intro">
-        <p className="eyebrow">Start a conversation</p>
-        <h1>Let’s talk about your team.</h1>
-        <p className="content-page__lead">
-          I’m looking for my next Frontend Developer role, bringing hands-on
-          experience with React, Next.js, and TypeScript. I’m based in Ho Chi
-          Minh City and open to onsite, hybrid, or remote work. If you’re
-          hiring, email me about your team, the role, and the product you’re
-          building.
+      <header className="contact-page__intro">
+        <h1>Let’s work together.</h1>
+        <p>
+          I’m open to Software Developer and Frontend Developer roles.
+          <br />
+          Open to onsite, hybrid, or remote work.
         </p>
-        <a className="button button--primary" href={`mailto:${profile.email}`}>
-          Email me <Mail aria-hidden="true" />
-        </a>
-      </div>
+      </header>
 
-      <div className="contact-page__details">
-        <ContactForm />
-        <address className="contact-list">
-          <a href={`mailto:${profile.email}`}>
-            <Mail aria-hidden="true" />
-            <span>
-              <small>Email</small>
-              {profile.email}
+      <div className="contact-page__layout">
+        <aside
+          className="contact-page__aside"
+          aria-labelledby="contact-aside-title"
+        >
+          <h2 id="contact-aside-title">Have a role in mind?</h2>
+          <p>Tell me about your team and the product you’re building.</p>
+          <address className="contact-page__links">
+            <a className="contact-method" href={`mailto:${profile.email}`}>
+              <span className="contact-method__icon">
+                <Mail aria-hidden="true" />
+              </span>
+              <span className="contact-method__copy">
+                <span>Email</span>
+                <strong>{profile.email}</strong>
+              </span>
+              <ArrowUpRight
+                className="contact-method__arrow"
+                aria-hidden="true"
+              />
+            </a>
+            <a
+              className="contact-method"
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="contact-method__icon">
+                <Github aria-hidden="true" />
+              </span>
+              <span className="contact-method__copy">
+                <span>GitHub</span>
+                <strong>@ngvihoa</strong>
+              </span>
+              <ArrowUpRight
+                className="contact-method__arrow"
+                aria-hidden="true"
+              />
+            </a>
+            <a
+              className="contact-method"
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="contact-method__icon">
+                <Linkedin aria-hidden="true" />
+              </span>
+              <span className="contact-method__copy">
+                <span>LinkedIn</span>
+                <strong>{profile.name}</strong>
+              </span>
+              <ArrowUpRight
+                className="contact-method__arrow"
+                aria-hidden="true"
+              />
+            </a>
+          </address>
+          <div className="contact-method contact-page__location">
+            <span className="contact-method__icon">
+              <MapPin aria-hidden="true" />
             </span>
-          </a>
-          <a href={profile.github} target="_blank" rel="noreferrer">
-            <Github aria-hidden="true" />
-            <span>
-              <small>GitHub</small>
-              @ngvihoa
-            </span>
-          </a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer">
-            <Linkedin aria-hidden="true" />
-            <span>
-              <small>LinkedIn</small>
-              /in/nvhoa29b02
-            </span>
-          </a>
-          <div>
-            <MapPin aria-hidden="true" />
-            <span>
-              <small>Location</small>
-              {profile.location}
-            </span>
+            <p className="contact-method__copy">
+              <span>Based in</span>
+              <strong>{profile.location}</strong>
+            </p>
           </div>
-        </address>
+        </aside>
+        <ContactForm />
       </div>
     </main>
   )

@@ -8,7 +8,7 @@ export const Route = createFileRoute('/projects/')({
     seoHead({
       title: 'Projects | Noah / Viết Hòa',
       description:
-        'Selected frontend work by Noah, Nguyễn Viết Hòa — HouseNow and PakiSlot.',
+        'Selected software projects by Noah, Nguyễn Viết Hòa — HouseNow and PakiSlot.',
       path: '/projects',
     }),
   component: ProjectsPage,

@@ -153,7 +153,7 @@ It contains no more than three current signals:
 ```text
 Building with    React, Next.js & TypeScript
 Growing toward   Full-stack development
-Open to          Frontend Developer roles
+Open to          Software & Frontend Developer roles
 ```
 
 Behavior and content rules:

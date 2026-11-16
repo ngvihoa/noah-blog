@@ -6,7 +6,7 @@ Last updated: 2026-11-16
 
 The core portfolio is implemented: homepage, two real projects (HouseNow and PakiSlot), project collection, contact links, and SEO metadata. Standalone case studies are temporarily hidden; known project detail URLs redirect to `/projects`, while unknown slugs return 404. Cards on the homepage and project collection reveal existing personal contributions inline instead of navigating to a detail page. Current header navigation is **Projects / Contact**; About remains on the homepage at `#about` and is linked from the hero. There is no standalone `/about` route.
 
-The portfolio’s goal is finding a new Frontend Developer role (confirmed by the user on 2026-11-16). Work arrangement is flexible: onsite, hybrid, or remote. Availability and contact copy now target hiring conversations; the revised biography is pending final review. HouseNow remains a current role until the actual end date is confirmed; no immediate start date is claimed.
+The portfolio’s goal is finding a new Software Developer or Frontend Developer role (scope broadened by the user on 2026-11-16). Work arrangement is flexible: onsite, hybrid, or remote. Availability and contact copy now target hiring conversations; the revised biography is pending final review. HouseNow remains a current role until the actual end date is confirmed; no immediate start date is claimed.
 
 The next task is personal-content sign-off: review the biography, current career direction and availability, public contact details, education, interests, and resume. Existing professional experience and project content were confirmed on 2026-09-30; review time-sensitive statements before launch.
 
@@ -238,3 +238,17 @@ Status: Completed and verified on 2026-09-26.
 - [x] `NITRO_PRESET=vercel npm run build`, contact delivery tests, and lint pass. Generated function config uses `nodejs24.x`.
 - [x] Execute the generated Vercel function locally: home/projects/contact return 200, known case study redirects with 307, and unknown slug returns 404.
 - [ ] Verify the Git-triggered Vercel deployment. Local CLI authentication has expired; deployment status can be read through GitHub integration.
+
+### 2026-11-16: Contact layout A
+
+- [x] Apply the user-selected layout: shared heading above a top-aligned contact sidebar and wider form; keep the existing cream/purple palette and typography.
+- [x] Put name/email side by side on desktop and stack fields on mobile. Remove duplicate form heading and email CTA.
+- [x] Keep validation, failure input retention, pending/success feedback, and email delivery logic unchanged.
+- [x] Build, contact delivery tests, lint, and diff checks pass. Headless Chromium QA at 1440px, 768px, and 390px verifies layout, no horizontal overflow, field-error focus, retained values on network error, and mocked pending/success states. Desktop/mobile screenshots were visually reviewed. No real email was sent.
+
+### 2026-11-16: Contact styling and broader role positioning
+
+- [x] Style email, GitHub, and LinkedIn as compact contact rows with icons, labels, destination text, arrows, and hover/focus feedback; style the location as a matching white card with the same padding, radius, and icon treatment.
+- [x] Use Software Developer for general identity in the profile/header, About, page metadata, and Person JSON-LD. Availability copy in Contact, homepage CTA, and Focus Strip explicitly welcomes Software Developer and Frontend Developer roles.
+- [x] Preserve historical Frontend Developer/Intern titles and the existing frontend skill group. The social share image already says Software Developer.
+- [x] Build, contact delivery tests, and lint pass. Targeted desktop/tablet/mobile QA covers contact layout, link destinations/touch targets/focus, reduced motion, form states with mocked RPC, and homepage title/header/JSON-LD/availability copy.

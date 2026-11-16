@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { BrandMark } from './brand-mark'
+import { profile } from '~/data/portfolio'
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -12,7 +13,7 @@ export function SiteHeader() {
         <Link className="brand" to="/" aria-label="Noah, Viết Hòa, home">
           <BrandMark priority />
           <span className="brand__name">Noah</span>
-          <span className="brand__role">Frontend Developer</span>
+          <span className="brand__role">{profile.role}</span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
