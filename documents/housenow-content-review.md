@@ -56,3 +56,14 @@ Next.js · TanStack Start · TanStack Router · React Query · React Native · T
 - Current role and date wording is retained pending the actual HouseNow end date. The migration wording follows the supplied evidence identifying TanStack Start and 80+ route modules.
 
 - Platform-scale figure supplied and confirmed by the user: an average of 32K monthly active signed-in accounts across the applications, January 2026–16 November 2026. This is account activity, not total visitors or a claim of individually driven user growth; the underlying analytics were not independently queried for this update.
+
+## Saved evidence assets
+
+- [Geolify brand overview screenshot](evidence/housenow/geolify-brand-overview-74.png): owner-supplied original showing **GEO Score 74** and the historical chart. See [source and interpretation notes](evidence/housenow/README.md) before reusing it. The screenshot supports the displayed result; the exact baseline 54 remains owner-provided.
+
+## CV additions — owner supplied
+
+- HouseReels product scale: **21K+ videos, 450K+ views**, supplied by the owner on 2026-11-17. These are product totals, not a measured increase attributable to one developer. No reporting window or analytics query was supplied.
+- CV wording: “Built HouseReels (21K+ videos, 450K+ views) and the agent dashboard from zero to launch.”
+- Video upload: “Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.” This describes the contribution without a new quantitative performance claim. Historical upload/processing evidence supports the workflow scope; no native background-upload migration is implied.
+- These additions are applied to the CVs; the approved website copy above is unchanged.

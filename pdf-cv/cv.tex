@@ -1,0 +1,81 @@
+% Updated content using the original cv_4.tex template and resume.cls styling.
+% Build: pdfLaTeX, with shell escape disabled.
+\documentclass{resume}
+\usepackage[left=0.5in,top=0.4in,right=0.5in,bottom=0.4in]{geometry}
+\usepackage{tabularx}
+% Avoid a full-width header box plus parskip's extra paragraph-fill minimum.
+\setlength{\parfillskip}{0pt plus 1fil}
+\ifdefined\cvFrontend
+  \newcommand{\targetRole}{Frontend Developer}
+\else
+  \newcommand{\targetRole}{Software Developer}
+\fi
+\hypersetup{pdftitle={Nguyen Viet Hoa - \targetRole},pdfauthor={Nguyen Viet Hoa}}
+\urlstyle{same}
+\newcommand{\cvurl}[2]{\href{https://#1}{\nolinkurl{#2}}}
+\renewcommand{\namesize}{\LARGE}
+\name{Nguyen Viet Hoa}
+\address{\targetRole}
+\address{{\small 0983 786 674 $\cdot$ \href{mailto:nvhoa29702@gmail.com}{nvhoa29702@gmail.com} $\cdot$ \href{https://www.noah.io.vn/}{Porfolio} $\cdot$ \href{https://www.linkedin.com/in/nvhoa29b02/}{LinkedIn} $\cdot$ \href{https://github.com/ngvihoa}{GitHub}}}
+
+\begin{document}
+
+\begin{rSection}{Education}
+{\bf VNU - Ho Chi Minh City University of Technology}\hfill Sep 2020 -- Nov 2024\\
+Bachelor of Computer Science\hfill {\bf GPA:} 8.34/10
+\end{rSection}
+
+\begin{rSection}{Experiences}
+\begin{rSubsection}{HouseNow JSC}{Aug 2024 -- Present}{Frontend Developer}{Full-time}
+\item Developed frontend features across apps averaging \textbf{32K monthly active signed-in accounts} since Jan 2026.
+\item Built HouseReels (\textbf{21K+ videos}, \textbf{450K+ views}) and the agent dashboard from zero to launch.
+\item Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.
+\item Developed payments, paid packages, and ads features contributing around \textbf{10\% of company revenue}.
+\ifdefined\cvFrontend
+\item Optimized homepage rendering, with production before/after measurements showing \textbf{$\sim$25\% fewer initial DOM elements} and \textbf{$\sim$40\% smaller HTML documents}.
+\item Improved HouseNow's Geolify SEO score from \textbf{54 to 74}.
+\item Helped migrate \textbf{80+ Agent route modules} to TanStack Start while maintaining the Next.js website.
+\item Reduced Next.js build output files by \textbf{67\%}, measured in comparable local builds.
+\item Optimized API responses, reducing average serialized payload sizes by \textbf{up to 39.4\%}.
+\else
+\item Optimized API responses, reducing average serialized payload sizes by \textbf{up to 39.4\%}.
+\item Helped migrate \textbf{80+ Agent route modules} to TanStack Start while maintaining the Next.js website.
+\item Optimized homepage rendering, with production before/after measurements showing \textbf{$\sim$25\% fewer initial DOM elements} and \textbf{$\sim$40\% smaller HTML documents}.
+\item Improved HouseNow's Geolify SEO score from \textbf{54 to 74}.
+\item Reduced Next.js build output files by \textbf{67\%}, measured in comparable local builds.
+\fi
+\end{rSubsection}
+\begin{rSubsection}{Truong Minh Thinh Technology JSC}{Jun 2023 -- Aug 2023}{Frontend Intern}{Full-time}
+\item Implemented responsive interfaces from Figma designs across two projects.
+\item Converted a fitness website from a Webpack setup to Angular 15.
+\end{rSubsection}
+\end{rSection}
+
+\begin{rSection}{Personal Projects}
+\begin{rSubsection}{React Strudel Kit}{Sep 2026 -- Nov 2026}{}{}
+\item Built a TypeScript library for composing music patterns and connecting playback to React controls.
+\item {\bf Skills}: React, TypeScript, Strudel, Web Audio.
+\item \href{https://github.com/ngvihoa/react-strudel-kit}{GitHub} $\cdot$ {\bf Demo}: \cvurl{react-strudel-kit.vercel.app}{react-strudel-kit.vercel.app}
+\end{rSubsection}
+\begin{rSubsection}{PakiSlot}{Oct 2023 -- May 2024}{Parking lot management system $\cdot$ 3 members $\cdot$ Frontend web developer}{Capstone project}
+\item Developed parking-management dashboards and configurable parking maps.
+\item {\bf Skills}: Next.js (TypeScript), Tailwind CSS, Redux Toolkit, Firebase Realtime Database.
+\item \href{https://github.com/capstone-k20-219/capstone-k20-219-frontend-web}{GitHub}
+\end{rSubsection}
+\end{rSection}
+
+\begin{rSection}{Skills and Knowledge}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}l@{\hspace{2.5ex}}X@{}}
+Languages: & TypeScript, JavaScript\\
+Frontend: & React, Next.js, TanStack Start, React Query, React Native, Tailwind CSS\\
+Backend: & Node.js, Express, Prisma, Kysely, SQL / MySQL\\
+AI tools: & Claude Code, Codex, Gemini, Amp, T3 Code
+\end{tabularx}
+\end{rSection}
+
+\begin{rSection}{References}
+\textbf{Tran Phuoc Bao} --- Chief Technology Officer\hfill\href{tel:0704612891}{0704 612 891}\\
+\textbf{Sang Le} --- Product Delivery Manager\hfill\href{https://www.linkedin.com/in/sangle1507/}{LinkedIn}
+\end{rSection}
+
+\end{document}

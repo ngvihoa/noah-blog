@@ -55,14 +55,24 @@ export function ProjectCard({
               />
             </>
           ) : (
-            <img
-              className="project-preview__desktop"
-              src={project.heroVisual.src}
-              alt={project.heroVisual.alt}
-              width={project.heroVisual.width}
-              height={project.heroVisual.height}
-              loading="lazy"
-            />
+            <>
+              <img
+                className="project-preview__desktop"
+                src={project.heroVisual.src}
+                alt={project.heroVisual.alt}
+                width={project.heroVisual.width}
+                height={project.heroVisual.height}
+                loading="lazy"
+              />
+              <img
+                className="project-preview__mobile"
+                src="/housenow/mobile-home.png"
+                alt="HouseNow mobile home showing property listings and video previews"
+                width="379"
+                height="877"
+                loading="lazy"
+              />
+            </>
           )}
         </div>
         <strong>{String(index + 1).padStart(2, '0')}</strong>

@@ -196,7 +196,7 @@ export const education = {
   school: 'VNU — Ho Chi Minh City University of Technology',
   degree: 'Bachelor of Computer Science',
   period: 'September 2020 — November 2024',
-  gpa: '8.26 / 10',
+  gpa: '8.34 / 10',
 } as const
 
 export const skills = {
