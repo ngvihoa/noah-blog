@@ -9,7 +9,8 @@ Status: Approved with user corrections and applied to the website implementation
 
 - Developed frontend features for a real estate platform averaging **32K monthly active signed-in accounts** across its applications since January 2026.
 - Helped migrate the Agent application to TanStack Start, covering 80+ route modules, while continuing development on the Next.js website.
-- Built HouseReels and the agent dashboard from zero to launch, plus investor dashboards for Masterise and agency partners.
+- Built HouseReels (**21K+** videos, **450K+** views) and the agent dashboard from zero to launch, plus investor dashboards for Masterise and agency partners.
+- Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.
 - Developed paid packages, payments, and ads-management features contributing around 10% of company revenue; added in-app purchases to the mobile app.
 - Optimized homepage rendering, with production before/after measurements showing ~25% fewer initial DOM elements and ~40% smaller HTML documents.
 - Helped revamp a sister automotive company’s app, improving user retention by up to 50%.
@@ -30,12 +31,12 @@ A proptech marketplace for buying and exploring homes in Vietnam — 25,000+ lis
 ## Expanded project details — My work on HouseNow
 
 - Helped migrate the Agent application to TanStack Start, covering 80+ route modules, while continuing development on the Next.js website.
-- Built HouseReels and the agent dashboard from zero to launch.
+- Built HouseReels (**21K+** videos, **450K+** views) and the agent dashboard from zero to launch.
 - Developed paid packages, payments, and ads-management features contributing around 10% of company revenue; added in-app purchases to the mobile app.
 - Optimized homepage rendering, with production before/after measurements showing ~25% fewer initial DOM elements and ~40% smaller HTML documents.
 - Reduced Next.js build output files by 67%, measured in comparable local builds.
 - Optimized API responses, reducing average serialized payload sizes by up to 39.4%.
-- Built video upload workflows supporting files up to 500 MB.
+- Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.
 - Developed data-heavy interfaces with React Query and contributed backend APIs using Prisma and Kysely.
 - Helped revamp a sister automotive company’s app, improving user retention by up to 50%.
 - Raised HouseNow’s Geolify SEO score from 54 to 74.
@@ -66,4 +67,4 @@ Next.js · TanStack Start · TanStack Router · React Query · React Native · T
 - HouseReels product scale: **21K+ videos, 450K+ views**, supplied by the owner on 2026-11-17. These are product totals, not a measured increase attributable to one developer. No reporting window or analytics query was supplied.
 - CV wording: “Built HouseReels (21K+ videos, 450K+ views) and the agent dashboard from zero to launch.”
 - Video upload: “Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.” This describes the contribution without a new quantitative performance claim. Historical upload/processing evidence supports the workflow scope; no native background-upload migration is implied.
-- These additions are applied to the CVs; the approved website copy above is unchanged.
+- These additions are applied to the CVs and the website HouseNow project contributions and homepage Experience. PakiSlot’s website stack also includes Firebase Realtime Database. The website AI coding tools section is preserved, including OpenCode, as explicitly requested.
