@@ -8,7 +8,7 @@ import { CvDownloads } from '~/components/cv-downloads'
 export const Route = createFileRoute('/contact')({
   head: () =>
     seoHead({
-      title: 'Contact | Noah / Viết Hòa',
+      title: 'Contact | Nguyễn Viết Hòa (Noah)',
       description:
         'Contact Nguyễn Viết Hòa (Noah) about Software Developer and Frontend Developer opportunities.',
       path: '/contact',

@@ -27,7 +27,7 @@ For local development, run the standard command below. It automatically loads `.
 npm run dev
 ```
 
-For deployment, configure the same variables as server environment variables on the hosting provider and use an SSR/server runtime; a static-only host cannot run the form's server function. `VITE_SITE_URL` is a separate public setting for SEO metadata.
+For deployment, configure the same variables as server environment variables on the hosting provider and use an SSR/server runtime; a static-only host cannot run the form's server function. SEO uses the canonical domain `https://www.noah.io.vn`, defined in `src/lib/seo.ts`; no `VITE_SITE_URL` variable is needed.
 
 ## Behavior and Verification
 
@@ -47,7 +47,7 @@ References: [TanStack server functions](https://tanstack.com/start/latest/docs/f
 
 ## Vercel
 
-The repo uses the `tanstack-start` framework preset with the Nitro Vite plugin and Node 24.x. Keep the framework's default output directory; the build generates Vercel server functions and static assets. Add all three server variables (`RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL`) in the appropriate Vercel environment, then redeploy for the function to receive them. Add `VITE_SITE_URL` using the actual public domain before the production build. Until email settings are present, the form reports unavailable and direct email remains available.
+The repo uses the `tanstack-start` framework preset with the Nitro Vite plugin and Node 24.x. Keep the framework's default output directory; the build generates Vercel server functions and static assets. Add all three server variables (`RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL`) in the appropriate Vercel environment, then redeploy for the function to receive them. Legacy `VITE_SITE_URL` values are ignored by SEO. Until email settings are present, the form reports unavailable and direct email remains available.
 
 ## Email notification template
 

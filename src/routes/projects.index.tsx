@@ -7,7 +7,7 @@ import { seoHead } from '~/lib/seo'
 export const Route = createFileRoute('/projects/')({
   head: () =>
     seoHead({
-      title: 'Projects | Noah / Viết Hòa',
+      title: 'Projects | Nguyễn Viết Hòa (Noah)',
       description:
         'Selected software projects and side projects by Noah, Nguyễn Viết Hòa — HouseNow, PakiSlot, and more.',
       path: '/projects',

@@ -8,7 +8,7 @@ import {
 import type { ReactNode } from 'react'
 import { SiteFooter } from '~/components/site-footer'
 import { SiteHeader } from '~/components/site-header'
-import { siteHead } from '~/lib/seo'
+import { siteDescription, siteHead, siteTitle } from '~/lib/seo'
 import appCss from '~/styles/app.css?url'
 
 export const Route = createRootRoute({
@@ -17,12 +17,11 @@ export const Route = createRootRoute({
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        title: 'Noah / Viết Hòa | Software Developer',
+        title: siteTitle,
       },
       {
         name: 'description',
-        content:
-          'Noah, Nguyễn Viết Hòa, is a software developer with a strong frontend foundation, building web and mobile products and open to Software Developer and Frontend Developer roles.',
+        content: siteDescription,
       },
       ...siteHead.meta,
     ],

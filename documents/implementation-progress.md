@@ -1,6 +1,16 @@
 # Implementation Progress
 
-Last updated: 2026-11-16
+Last updated: 2026-11-18
+
+## Domain and SEO update (2026-11-18)
+
+- Canonical, Open Graph, Twitter image, and Person JSON-LD URLs use `https://www.noah.io.vn`, independent of legacy `VITE_SITE_URL` values or preview hosts.
+- `public/robots.txt` points to `https://www.noah.io.vn/sitemap.xml`. Cloudflare may prepend its managed robots content at the edge.
+- The sitemap lists the three indexable pages: `/`, `/projects`, and `/contact`. Project detail URLs redirect to the collection and are excluded; there are no published blog pages.
+- The previous production alias `noah-blog-rouge.vercel.app` redirects permanently to the same path on the canonical domain. The apex domain already redirects to `www` at the hosting layer.
+- Homepage search/share copy includes the full name, Software/Frontend roles, location, and current experience. Header CV downloads and both reviewed PDFs are available; Contact retains direct PDF links.
+- Validation: production build/TypeScript, lint, formatting, and diff checks pass. HTTP checks against the built Node server verify one canonical/OG/Twitter image per page (including a query URL), Person JSON-LD, the three-page XML sitemap, robots, share/profile image responses, unknown-route 404s, and existing project redirects. Search-engine indexing is not established by these checks.
+- Earlier snapshots and verification entries below describe their recorded dates.
 
 ## Current Snapshot (2026-11-16)
 
@@ -126,11 +136,11 @@ Status: Completed and verified on 2026-09-26.
 - [ ] Publish the first Field Note.
 - [ ] Reveal Field Notes in navigation after content exists.
 - [ ] Add article metadata, tags, and draft filtering.
-- [ ] Add RSS and sitemap generation.
+- [ ] Add RSS and extend the sitemap when blog pages are published. (The current three-page sitemap was added on 2026-11-18.)
 
 ## Milestone 7: Quality and Launch
 
-- [x] Add metadata, Open Graph, canonical URLs, and JSON-LD. (Completed 2026-09-30: per-route titles/descriptions, OG and Twitter card tags, canonical URLs, a 1200x630 OG image at `/og/og-default.png`, and a Person JSON-LD schema. The absolute site URL is set through `VITE_SITE_URL` and must be provided at deploy time; it falls back to `http://localhost:3000`.)
+- [x] Add metadata, Open Graph, canonical URLs, and JSON-LD. (Completed 2026-09-30; updated 2026-11-18 to use the fixed canonical domain `https://www.noah.io.vn`. Includes per-route titles/descriptions, OG and Twitter card tags, a 1200x630 OG image, Person JSON-LD, robots.txt, and the current sitemap.)
 - [ ] Complete keyboard and accessibility testing.
 - [ ] Add Vitest coverage for content logic.
 - [ ] Add Playwright smoke tests for primary routes.

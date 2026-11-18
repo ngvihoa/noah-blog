@@ -1,8 +1,12 @@
-const rawSiteUrl = import.meta.env.VITE_SITE_URL ?? 'http://localhost:3000'
+// Canonicals always identify the public site, including local/preview builds.
+// Do not derive them from the request host or legacy deployment variables.
+export const siteUrl = 'https://www.noah.io.vn'
+export const siteTitle =
+  'Nguyễn Viết Hòa (Noah) | Software & Frontend Developer'
+export const siteDescription =
+  'Nguyễn Viết Hòa (Noah), a software developer in Ho Chi Minh City with 2+ years building web/mobile products and backend APIs. Open to software and frontend roles.'
 
-export const siteUrl = rawSiteUrl.replace(/\/+$/, '')
-
-const siteName = 'Noah / Viết Hòa'
+const siteName = 'Nguyễn Viết Hòa (Noah)'
 const ogImage = `${siteUrl}/og/og-default.png`
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
@@ -15,7 +19,12 @@ interface SeoOptions {
   image?: string
 }
 
-export function seoHead({ title, description, path, image }: SeoOptions) {
+export function seoHead({
+  title,
+  description,
+  path,
+  image = ogImage,
+}: SeoOptions) {
   const url = `${siteUrl}${path}`
   const resolvedImage =
     image && !image.startsWith('http') ? `${siteUrl}${image}` : image
@@ -56,11 +65,12 @@ export const siteHead = {
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Person',
+        '@id': `${siteUrl}/#person`,
         name: 'Nguyễn Viết Hòa',
         alternateName: 'Noah',
         jobTitle: 'Software Developer',
         email: 'mailto:nvhoa29702@gmail.com',
-        url: siteUrl,
+        url: `${siteUrl}/`,
         image: `${siteUrl}/images/viet-hoa-profile.jpg`,
         address: {
           '@type': 'PostalAddress',
