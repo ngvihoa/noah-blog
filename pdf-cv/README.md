@@ -36,4 +36,13 @@ Both current artifacts were built with the local `latex-author` skill's `build -
 - HouseNow is listed as current until the owner supplies the actual end date.
 - The CV retains a HouseNow platform-context line, seven HouseNow highlights per variant, and one selected project, React Strudel Kit. Layout follows cv_4.tex: centered name and role, one contact line containing phone/email/portfolio/LinkedIn/GitHub, Education before Experiences, rSubsection project entries, labelled project bullets, and a Skills and Knowledge table. The original Computer Modern font and 11pt body text are preserved. Name-to-role spacing and heading-to-rule spacing use smallskip. Related rendering/Geolify and migration/build achievements are grouped into bullets; distinct measurements remain separate sentences. Inline achievement emphasis is limited to numeric values; surrounding descriptions use regular weight. The name uses the original Computer Modern face at 17.28pt (reduced from 20.74pt). The single contact line uses 10pt text to fit all five contact details without overflow. Left/right margins are 0.5 inch (reduced from the original 0.75 inch); top/bottom margins are 0.4 inch (reduced from 0.6 inch). The Geolify SEO score improvement from 54 to 74 is included. A short role-specific introduction appears below the contact line without a Profile heading. The scholarship line, Moonveil, and PakiSlot are omitted from the CVs. PakiSlot remains on the website. Project descriptions and migration wording are shortened to fit one page without changing the retained metrics; no manual page breaks or body-font reductions are used. The portfolio keeps the broader contribution list.
 - References lists Tran Phuoc Bao, Chief Technology Officer, with the owner-supplied phone number displayed as 0704 612 891, followed by Sang Le, Product Delivery Manager, with the supplied LinkedIn URL. Names are displayed without Vietnamese diacritics. Clickable link destinations preserve their original https:// and www. hostnames.
-- These PDFs are for owner review. They have not been published to the portfolio or uploaded externally.
+## Website downloads
+
+Both CVs are offered on the homepage and Contact page, with a separate download link for each role.
+
+- `/cv/Nguyen-Viet-Hoa-Frontend-Developer-CV.pdf`
+- `/cv/Nguyen-Viet-Hoa-Software-Developer-CV.pdf`
+
+The source PDFs remain in this directory. `src/data/cv.json` defines the role labels and filenames for both the UI and the sync script. `npm run cv:sync` validates and copies those PDFs into the generated `public/cv/` directory. `npm run dev` and `npm run build` run this step automatically. Do not edit generated copies; rebuild the reviewed source PDFs, then restart dev or run `npm run cv:sync` to refresh downloads.
+
+The CVs are published through these public download URLs. Auxiliary TeX files and review renders are not served by the site.

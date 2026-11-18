@@ -11,3 +11,5 @@ prompts/
 !.env.example
 
 .vercel/
+
+/public/cv/

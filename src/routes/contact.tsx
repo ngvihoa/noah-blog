@@ -3,6 +3,7 @@ import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from 'lucide-react'
 import { profile } from '~/data/portfolio'
 import { seoHead } from '~/lib/seo'
 import { ContactForm } from '~/components/contact-form'
+import { CvDownloads } from '~/components/cv-downloads'
 
 export const Route = createFileRoute('/contact')({
   head: () =>
@@ -94,6 +95,7 @@ function ContactPage() {
               <strong>{profile.location}</strong>
             </p>
           </div>
+          <CvDownloads className="mt-7" />
         </aside>
         <ContactForm />
       </div>

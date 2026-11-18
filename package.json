@@ -12,7 +12,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test:contact": "node scripts/test-contact.mjs",
-    "env:pull": "npx --yes vercel@65.16.0 env pull .env.local --environment=production --project=noah-blog --scope=ngvihoas-projects --yes"
+    "env:pull": "npx --yes vercel@65.16.0 env pull .env.local --environment=production --project=noah-blog --scope=ngvihoas-projects --yes",
+    "cv:sync": "node scripts/sync-cv.mjs",
+    "predev": "npm run cv:sync",
+    "prebuild": "npm run cv:sync"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.170.18",

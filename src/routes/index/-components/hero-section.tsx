@@ -1,6 +1,7 @@
 import { Link } from '@tanstack/react-router'
 import { ArrowRight } from 'lucide-react'
 import { Mascot } from 'page-mascot'
+import { CvDownloads } from '~/components/cv-downloads'
 import { profile } from '~/data/portfolio'
 import { AgileOrbit } from './agile-orbit'
 import { RoleSwitcher } from './role-switcher'
@@ -39,6 +40,7 @@ export function HeroSection() {
             About my process
           </a>
         </div>
+        <CvDownloads className="mt-6" />
       </div>
       <AgileOrbit />
     </section>
