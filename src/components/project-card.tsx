@@ -15,7 +15,7 @@ const projectVisuals: Record<
   },
   carnow: {
     label: 'Full-time role · Automotive marketplace',
-    variant: 'project-card--fire',
+    variant: 'project-card--amber',
   },
   'paki-slot': { label: 'Capstone project', variant: 'project-card--ice' },
 }

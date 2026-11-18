@@ -532,9 +532,10 @@ h3 {
   --element-soft: #e8f7ff;
 }
 
-.project-card--fire {
-  --element: var(--coral);
-  --element-soft: #fff0ec;
+.project-card--amber {
+  --element: #d9a92f;
+  --element-soft: #fff7df;
+  --element-text: #8a5c13;
 }
 
 .project-card--nature {
@@ -572,7 +573,7 @@ h3 {
 }
 
 .project-card__visual strong {
-  color: var(--element);
+  color: var(--element-text, var(--element));
   font-family: var(--display);
   font-size: 2.8rem;
 }
@@ -659,7 +660,7 @@ h3 {
 
 .project-card__type {
   margin-bottom: 7px;
-  color: var(--element);
+  color: var(--element-text, var(--element));
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.11em;
@@ -671,6 +672,22 @@ h3 {
   color: var(--ink-soft);
   font-size: 0.86rem;
   line-height: 1.65;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .toolbox-skill:hover .toolbox-skill__icon {
+    animation: toolbox-icon-bounce 360ms ease-out;
+  }
+}
+
+@keyframes toolbox-icon-bounce {
+  38% {
+    transform: translateY(-3px) rotate(-11deg) scale(1.2);
+  }
+
+  68% {
+    transform: rotate(4deg);
+  }
 }
 
 .chip-list {
