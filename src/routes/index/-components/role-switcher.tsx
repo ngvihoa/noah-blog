@@ -17,9 +17,10 @@ export function RoleSwitcher() {
     return () => window.clearInterval(interval)
   }, [shouldReduceMotion])
 
-  if (shouldReduceMotion) {
-    return <h1 id="hero-title">Software Developer</h1>
-  }
+  const visibleRole = roles[shouldReduceMotion ? 0 : activeRole]
+  const titleTransition = shouldReduceMotion
+    ? { duration: 0 }
+    : { duration: 0.42, ease: [0.22, 1, 0.36, 1] as const }
 
   return (
     <h1 id="hero-title" aria-label="Software Developer and Frontend Developer">
@@ -29,14 +30,14 @@ export function RoleSwitcher() {
         </span>
         <AnimatePresence initial={false} mode="popLayout">
           <motion.span
-            key={roles[activeRole]}
+            key={visibleRole}
             className="col-start-1 row-start-1"
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -28 }}
-            transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+            transition={titleTransition}
           >
-            {roles[activeRole]}
+            {visibleRole}
           </motion.span>
         </AnimatePresence>
       </span>

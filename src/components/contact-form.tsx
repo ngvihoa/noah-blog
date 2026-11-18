@@ -142,7 +142,7 @@ export function ContactForm() {
             }
           />
           <p id="contact-message-help" className="contact-form__hint">
-            10–5,000 characters.
+            10-5,000 characters.
           </p>
           {errors.message ? (
             <p className="contact-form__error" id="contact-message-error">

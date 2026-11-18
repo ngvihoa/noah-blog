@@ -1,5 +1,13 @@
 # HouseNow content — review draft
 
+## November 2026 portfolio and CV expansion
+
+- The owner describes more than 15 groups of API routers moved from Next.js to TanStack Start and oRPC for client-v2. This is distinct from the 80+ Agent frontend route modules and from the earlier tRPC-to-oRPC conversion across admin, Agent, and Client. The earlier conversion has no published router count.
+- HouseNow retains August 2024 as the start date, consistent with the CV and the supplied portfolio review. The supplied summary lists October 2024, which still needs reconciliation. CarNow's project period is August 2024 to May 2026 per the review. CarNow is project work under HouseNow JSC.
+- HouseReels figures still describe product scale. Launch wording now credits the team, with the upload and processing contributions described separately. The public campaign count uses the owner-requested estimate of ~300.
+- CarNow's up-to-50% retention figure stays attached to the app revamp. CarNow web and NowAuto contributions are described separately. The review supplies the project scope, and the actual desktop and mobile screenshots are pending.
+- New HouseNow contribution details come from the owner summary and the supplied portfolio review. Work on layout shifts, main-thread blocking, RPC batching, and video processing is described without new performance measurements.
+
 Status: Approved with user corrections and applied to the website implementation. Product capabilities are omitted.
 
 ## Experience — homepage
@@ -12,7 +20,7 @@ Status: Approved with user corrections and applied to the website implementation
 - Built HouseReels (**21K+** videos, **450K+** views) and the agent dashboard from zero to launch, plus investor dashboards for Masterise and agency partners.
 - Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.
 - Contributed to monetization features, including payments and paid packages, generating around **10%** of company revenue. Added in-app purchases to the mobile app.
-- Contributed to ad-management features supporting **250+** campaigns.
+- Contributed to ad-management features supporting **~300** campaigns.
 - Optimized homepage rendering, with production before/after measurements showing ~25% fewer initial DOM elements and ~40% smaller HTML documents.
 - Helped revamp a sister automotive company’s app, improving user retention by up to 50%.
 - Raised HouseNow’s Geolify SEO score from 54 to 74.
@@ -34,7 +42,7 @@ A proptech marketplace for buying and exploring homes in Vietnam — 25,000+ lis
 - Helped migrate the Agent application to TanStack Start, covering 80+ route modules, while continuing development on the Next.js website.
 - Built HouseReels (**21K+** videos, **450K+** views) and the agent dashboard from zero to launch.
 - Contributed to monetization features, including payments and paid packages, generating around **10%** of company revenue. Added in-app purchases to the mobile app.
-- Contributed to ad-management features supporting **250+** campaigns.
+- Contributed to ad-management features supporting **~300** campaigns.
 - Optimized homepage rendering, with production before/after measurements showing ~25% fewer initial DOM elements and ~40% smaller HTML documents.
 - Reduced Next.js build output files by 67%, measured in comparable local builds.
 - Optimized API responses, reducing average serialized payload sizes by up to 39.4%.
@@ -73,15 +81,15 @@ Next.js · TanStack Start · TanStack Router · React Query · React Native · T
 
 ## Ad-management contribution — owner approved
 
-- Owner-provided scope: 265 ad campaigns with confirmed delivery. Public wording rounds down to **250+ campaigns**. No analytics query or reporting window was supplied in this conversation.
-- Contribution wording: “Contributed to ad-management features supporting 250+ campaigns.” The owner clarified that this was a contribution, not sole end-to-end ownership.
+- Owner-provided scope: 265 ad campaigns with confirmed delivery. The owner requested the public estimate of **~300 campaigns**. No analytics query or reporting window was supplied in this conversation.
+- Contribution wording: “Contributed to ad-management features supporting ~300 campaigns.” The owner clarified that this was a contribution, not sole end-to-end ownership.
 - Monetization wording is kept in a separate bullet: “Contributed to monetization features, including payments and paid packages, generating around 10% of company revenue.” The campaign count is not presented as the source of that revenue figure.
 - The supplied impression count is omitted from CV and website copy at the owner's request.
 
 ## CV refinement after peer review
 
 - The owner explicitly confirmed substantial oRPC experience and requested backend content in both the Frontend Developer and Software Developer CVs. Both now mention backend API contributions using oRPC, Prisma, and Kysely, including oRPC in Skills.
-- Broker payment/paid-package flows and in-app purchases use existing owner-approved portfolio content. Broker ad-management workflows retain contribution wording and the rounded 250+ campaign count, independently of the monetization revenue figure.
+- Broker payment/paid-package flows and in-app purchases use existing owner-approved portfolio content. Broker ad-management workflows retain contribution wording and the owner-requested estimate of ~300 campaigns, independently of the monetization revenue figure.
 - Each CV uses a platform-context line for 32K average monthly active signed-in accounts, then seven HouseNow bullets. Rendering and Geolify figures share a bullet; Agent migration and Next.js local build figures share another. Separate sentences retain their distinct scopes and measurement conditions.
 - Peer CV details such as 83% JavaScript reduction, wallet usage counts, 350K users, 40K peak MAU, and end-to-end cross-posting ownership are not adopted.
 - These refinements are CV-specific. Website content and the website AI tools section are unchanged.

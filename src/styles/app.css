@@ -638,6 +638,10 @@ h3 {
   box-shadow: 0 18px 34px rgb(23 35 60 / 24%);
 }
 
+.project-preview__desktop:only-child {
+  width: 100%;
+}
+
 .project-card__body {
   padding: 24px;
 }

@@ -1,10 +1,15 @@
 % Updated content using the original cv_4.tex template and resume.cls styling.
 % Build: pdfLaTeX, with shell escape disabled.
 \documentclass{resume}
-\usepackage[left=0.5in,top=0.4in,right=0.5in,bottom=0.4in]{geometry}
+\usepackage[a4paper,left=0.5in,top=0.4in,right=0.5in,bottom=0.4in]{geometry}
 \usepackage{tabularx}
+\ifdefined\XeTeXversion
+  \usepackage[OT1]{fontenc}
+  \renewcommand{\rmdefault}{cmr}
+\fi
 % Avoid a full-width header box plus parskip's extra paragraph-fill minimum.
 \setlength{\parfillskip}{0pt plus 1fil}
+\setlength{\parskip}{4.5pt plus 1pt}
 \ifdefined\cvFrontend
   \newcommand{\targetRole}{Frontend Developer}
 \else
@@ -18,7 +23,15 @@
 \renewcommand{\sectionlineskip}{\smallskip}
 \name{Nguyen Viet Hoa}
 \address{\targetRole}
-\address{{\small 0983 786 674 $\cdot$ \href{mailto:nvhoa29702@gmail.com}{nvhoa29702@gmail.com} $\cdot$ \href{https://www.noah.io.vn/}{Porfolio} $\cdot$ \href{https://www.linkedin.com/in/nvhoa29b02/}{LinkedIn} $\cdot$ \href{https://github.com/ngvihoa}{GitHub}}}
+\address{{\small 0983 786 674 $\cdot$ \href{mailto:nvhoa29702@gmail.com}{nvhoa29702@gmail.com} $\cdot$ \href{https://www.noah.io.vn/}{Portfolio} $\cdot$ \href{https://www.linkedin.com/in/nvhoa29b02/}{LinkedIn} $\cdot$ \href{https://github.com/ngvihoa}{GitHub}}}
+
+\newcommand{\agentMigration}{Migrated the broker-facing Agent frontend to TanStack Start, covering \textbf{80+} route modules.}
+\newcommand{\clientMigration}{Moved \textbf{15+} API router groups from Next.js to TanStack Start and oRPC for client-v2. Migrated mobile WebViews and connected both apps with an API proxy and session integration.}
+\newcommand{\homepagePerformance}{Optimized homepage rendering. Production before/after measurements showed \textbf{$\sim$25\%} fewer initial DOM elements and \textbf{$\sim$40\%} smaller HTML documents.}
+\newcommand{\houseNowSEO}{Implemented technical SEO, search landing pages, JSON-LD, video SEO, and llms.txt. Improved HouseNow's Geolify score from \textbf{54} to \textbf{74}.}
+\newcommand{\houseNowAPIs}{Contributed to backend APIs with oRPC, Prisma, and Kysely. Migrated tRPC routers to oRPC and reduced average serialized payloads by up to \textbf{39.4\%} on optimized endpoints.}
+\newcommand{\videoUpload}{Optimized video upload from file selection and transfer to processing and playback. Added Bunny Stream transcoding status updates and YouTube publishing with Google OAuth.}
+\newcommand{\carNowWork}{Built car search, valuation, and on-road pricing for CarNow, worked on technical SEO, and contributed to NowAuto, a mobile app for car brokers and dealers. Helped revamp the CarNow app, improving retention by up to \textbf{50\%}.}
 
 \begin{document}
 
@@ -30,40 +43,43 @@
 \par
 
 \begin{rSection}{Education}
-{\bf VNU - Ho Chi Minh City University of Technology}\hfill Sep 2020 -- Nov 2024\\
+{\bf VNU - Ho Chi Minh City University of Technology}\hfill Sep 2020 - Nov 2024\\
 Bachelor of Computer Science\hfill {\bf GPA:} 8.34/10
 \end{rSection}
 
 \begin{rSection}{Experiences}
-\begin{rSubsection}{HouseNow JSC}{Aug 2024 -- Present}{Frontend Developer}{Full-time}
+\begin{rSubsection}{HouseNow JSC}{Aug 2024 - Present}{Frontend Developer}{Full-time}
 \item[] Product company building a real estate platform averaging \textbf{32K} monthly active signed-in accounts across its applications.
-\item Built HouseReels (\textbf{21K+} videos, \textbf{450K+} views) and the agent dashboard from zero to launch.
+\item Co-built and launched HouseReels (\textbf{21K+} videos, \textbf{450K+} views) and the agent dashboard.
 \ifdefined\cvFrontend
-\item Optimized homepage rendering, with production before/after measurements showing \textbf{$\sim$25\%} fewer initial DOM elements and \textbf{$\sim$40\%} smaller HTML documents. Improved HouseNow's Geolify score from \textbf{54} to \textbf{74}.
-\item Migrated the broker-facing Agent application's frontend to TanStack Start.
+\item \homepagePerformance{} \houseNowSEO
+\item \agentMigration{} \clientMigration
 \item Reduced Next.js build output files by \textbf{67\%}, measured in comparable local builds.
 \item Contributed to broker monetization flows, including payments, paid packages, and in-app purchases, generating around \textbf{10\%} of \mbox{company revenue}.
-\item Contributed to broker ad-management workflows supporting \textbf{250+} campaigns.
-\item Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.
-\item Contributed to backend APIs using oRPC, Prisma, and Kysely; optimized API responses, reducing average serialized payload sizes by up to \textbf{39.4\%}.
+\item Contributed to broker ad-management workflows supporting \textbf{$\sim$300} campaigns.
+\item \videoUpload
+\item \houseNowAPIs
+\item Built the HouseNow \(\times\) BIDV landing page and the mobile Partner Loan Portal. Made the admin interface responsive.
 \else
-\item Contributed to backend APIs using oRPC, Prisma, and Kysely; optimized API responses, reducing average serialized payload sizes by up to \textbf{39.4\%}.
+\item \houseNowAPIs
+\item \agentMigration{} \clientMigration
 \item Contributed to broker monetization flows, including payments, paid packages, and in-app purchases, generating around \textbf{10\%} of \mbox{company revenue}.
-\item Contributed to broker ad-management workflows supporting \textbf{250+} campaigns.
-\item Migrated the broker-facing Agent application's frontend to TanStack Start.
+\item Contributed to broker ad-management workflows supporting \textbf{$\sim$300} campaigns.
+\item Delivered residential land listings and Boost credit subscriptions across frontend and backend. Built loan management workflows and an agency portal with business reports.
 \item Reduced Next.js build output files by \textbf{67\%}, measured in comparable local builds.
-\item Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.
-\item Optimized homepage rendering, with production before/after measurements showing \textbf{$\sim$25\%} fewer initial DOM elements and \textbf{$\sim$40\%} smaller HTML documents. Improved HouseNow's Geolify score from \textbf{54} to \textbf{74}.
+\item \videoUpload
+\item \homepagePerformance{} \houseNowSEO
 \fi
+\item \carNowWork
 \end{rSubsection}
-\begin{rSubsection}{Truong Minh Thinh Technology JSC}{Jun 2023 -- Aug 2023}{Frontend Intern}{Full-time}
+\begin{rSubsection}{Truong Minh Thinh Technology JSC}{Jun 2023 - Aug 2023}{Frontend Intern}{Full-time}
 \item Implemented responsive interfaces from Figma designs across two projects.
 \item Converted a fitness website from a Webpack setup to Angular 15.
 \end{rSubsection}
 \end{rSection}
 
 \begin{rSection}{Personal Projects}
-\begin{rSubsection}{React Strudel Kit}{Sep 2026 -- Nov 2026}{}{}
+\begin{rSubsection}{React Strudel Kit}{Sep 2026 - Nov 2026}{}{}
 \item Built a TypeScript library for composing music patterns and connecting playback to React controls.
 \item {\bf Skills}: React, TypeScript, Strudel, Web Audio.
 \item \href{https://github.com/ngvihoa/react-strudel-kit}{GitHub} $\cdot$ \href{https://react-strudel-kit.vercel.app}{Demo}
@@ -73,15 +89,15 @@ Bachelor of Computer Science\hfill {\bf GPA:} 8.34/10
 \begin{rSection}{Skills and Knowledge}
 \begin{tabularx}{\linewidth}{@{}>{\bfseries}l@{\hspace{2.5ex}}X@{}}
 Languages: & TypeScript, JavaScript\\
-Frontend: & React, Next.js, TanStack Start, React Native (Expo), React Query, TanStack Table, React Hook Form, Zod, Tailwind CSS, shadcn/ui\\
+Frontend: & React, Next.js, TanStack Start, React Native (Expo), React Query, TanStack Table, React Hook Form, Zod, Tailwind CSS, shadcn/ui, SEO / JSON-LD\\
 Backend: & Node.js, Express, oRPC, Prisma, Kysely, SQL / MySQL, PostgreSQL\\
 AI tools: & Claude Code, Codex, Gemini, Amp, T3 Code
 \end{tabularx}
 \end{rSection}
 
 \begin{rSection}{References}
-\textbf{Tran Phuoc Bao} --- Chief Technology Officer\hfill\href{tel:0704612891}{0704 612 891}\\
-\textbf{Sang Le} --- Product Delivery Manager\hfill\href{https://www.linkedin.com/in/sangle1507/}{LinkedIn}
+\textbf{Tran Phuoc Bao}, Chief Technology Officer\hfill\href{tel:0704612891}{0704 612 891}\\
+\textbf{Sang Le}, Product Delivery Manager\hfill\href{https://www.linkedin.com/in/sangle1507/}{LinkedIn}
 \end{rSection}
 
 \end{document}

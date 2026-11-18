@@ -12,8 +12,8 @@ export function ContactCtaSection() {
           <p className="eyebrow">Start a conversation</p>
           <h2 id="contact-title">Looking for a developer?</h2>
           <p>
-            I’m open to Software Developer and Frontend Developer roles —
-            onsite, hybrid, or remote. Let’s talk about your team.
+            I’m open to Software Developer and Frontend Developer roles, onsite,
+            hybrid, or remote. Let’s talk about your team.
           </p>
         </div>
         <Link

@@ -9,7 +9,7 @@ export const Route = createFileRoute('/projects/')({
     seoHead({
       title: 'Projects | Nguyễn Viết Hòa (Noah)',
       description:
-        'Selected software projects and side projects by Noah, Nguyễn Viết Hòa — HouseNow, PakiSlot, and more.',
+        'Selected software projects by Noah, Nguyễn Viết Hòa, including HouseNow, CarNow, PakiSlot, and side projects.',
       path: '/projects',
     }),
   component: ProjectsPage,

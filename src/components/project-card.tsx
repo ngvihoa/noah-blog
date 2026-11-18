@@ -13,6 +13,10 @@ const projectVisuals: Record<
     label: 'Full-time role · Proptech',
     variant: 'project-card--nature',
   },
+  carnow: {
+    label: 'Full-time role · Automotive marketplace',
+    variant: 'project-card--fire',
+  },
   'paki-slot': { label: 'Capstone project', variant: 'project-card--ice' },
 }
 
@@ -35,44 +39,23 @@ export function ProjectCard({
       <figure className="project-card__visual project-card__visual--product">
         <span className="project-card__visual-label">{visual.label}</span>
         <div className="project-preview">
-          {project.slug === 'paki-slot' ? (
-            <>
-              <img
-                className="project-preview__desktop"
-                src="/paki-slot/m-home.png"
-                alt="PakiSlot management dashboard showing parking and revenue data"
-                width="1367"
-                height="941"
-                loading="lazy"
-              />
-              <img
-                className="project-preview__mobile"
-                src="/paki-slot/login_screen.png"
-                alt="PakiSlot mobile login screen"
-                width="849"
-                height="1863"
-                loading="lazy"
-              />
-            </>
-          ) : (
-            <>
-              <img
-                className="project-preview__desktop"
-                src={project.heroVisual.src}
-                alt={project.heroVisual.alt}
-                width={project.heroVisual.width}
-                height={project.heroVisual.height}
-                loading="lazy"
-              />
-              <img
-                className="project-preview__mobile"
-                src="/housenow/mobile-home.png"
-                alt="HouseNow mobile home showing property listings and video previews"
-                width="379"
-                height="877"
-                loading="lazy"
-              />
-            </>
+          <img
+            className="project-preview__desktop"
+            src={project.heroVisual.src}
+            alt={project.heroVisual.alt}
+            width={project.heroVisual.width}
+            height={project.heroVisual.height}
+            loading="lazy"
+          />
+          {'mobileVisual' in project && (
+            <img
+              className="project-preview__mobile"
+              src={project.mobileVisual.src}
+              alt={project.mobileVisual.alt}
+              width={project.mobileVisual.width}
+              height={project.mobileVisual.height}
+              loading="lazy"
+            />
           )}
         </div>
         <strong>{String(index + 1).padStart(2, '0')}</strong>
@@ -86,10 +69,12 @@ export function ProjectCard({
             <dt>Role</dt>
             <dd>{project.role}</dd>
           </div>
-          <div>
-            <dt>Team</dt>
-            <dd>{project.team}</dd>
-          </div>
+          {'team' in project && (
+            <div>
+              <dt>Team</dt>
+              <dd>{project.team}</dd>
+            </div>
+          )}
         </dl>
         <ul className="chip-list" aria-label={`${project.title} technologies`}>
           {project.stack.map((item) => (

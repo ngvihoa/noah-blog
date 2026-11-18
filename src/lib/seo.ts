@@ -83,7 +83,7 @@ export const siteHead = {
         ],
         alumniOf: {
           '@type': 'CollegeOrUniversity',
-          name: 'VNU — Ho Chi Minh City University of Technology',
+          name: 'VNU - Ho Chi Minh City University of Technology',
         },
       }),
     },

@@ -2,7 +2,10 @@ import { EmphasizedText } from '~/components/emphasized-text'
 import { ExternalLink, Github } from 'lucide-react'
 import type { projects } from '~/data/portfolio'
 
-type Project = (typeof projects)[number]
+type Project = Extract<
+  (typeof projects)[number],
+  { gallery: readonly unknown[] }
+>
 
 export function CaseStudy({ project }: { project: Project }) {
   return (

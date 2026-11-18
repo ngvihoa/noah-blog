@@ -9,30 +9,52 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/nvhoa29b02/',
 } as const
 
+const agentMigration =
+  'Migrated the broker-facing Agent frontend to TanStack Start, covering **80+ route modules**.'
+const clientMigration =
+  'Moved more than **15 API router groups** from Next.js to TanStack Start and oRPC for client-v2. Implemented API proxying and session integration between the legacy app and client-v2.'
+const houseReels =
+  'Co-built and launched HouseReels (**21K+** videos, **450K+** views) and the agent dashboard.'
+const videoUpload =
+  'Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback. Added Bunny Stream webhook updates, thumbnails while transcoding, and kept existing videos live until replacements were ready. Integrated publishing to YouTube with Google OAuth.'
+const homepageRendering =
+  'Optimized homepage rendering, with production before/after measurements showing **~25% fewer initial DOM elements** and **~40% smaller HTML documents**.'
+const carNowRetention =
+  'Helped revamp the CarNow app, improving user retention by **up to 50%**.'
+
 const housenowProject = {
   slug: 'housenow',
   title: 'HouseNow',
   subtitle: 'Real estate marketplace',
-  period: 'August 2024 — Present',
+  period: 'August 2024 - Present',
   context: 'Product company · Proptech · Full-time role',
-  team: '4 FE · 4 BE · 3 DES · 1–2 PM',
+  team: '4 FE · 4 BE · 3 DES · 1-2 PM',
   role: 'Frontend Developer',
   summary:
-    'A proptech marketplace for buying and exploring homes in Vietnam — 25,000+ listings, short-video property browsing, home-loan services, and tools for real estate agents across web and mobile.',
+    'A proptech marketplace for buying and exploring homes in Vietnam, with 25,000+ listings, short-video property browsing, home-loan services, and tools for real estate agents across web and mobile.',
   contributions: [
-    "Migrated the broker-facing Agent application's frontend to TanStack Start, covering **80+ route modules**, while continuing development on the Next.js website.",
-    'Built HouseReels (**21K+** videos, **450K+** views) and the agent dashboard from zero to launch.',
+    agentMigration +
+      ' Continued development on the Next.js website during the migration.',
+    'Migrated API routers from tRPC to oRPC across admin, Agent, and Client apps.',
+    clientMigration +
+      ' The migration covered API groups including project, listing, tower, me, and investorProfile, plus WebViews for property search, video, payments, news, investor profiles, and the zoning map.',
+    houseReels,
     'Contributed to broker monetization flows, including payments, paid packages, and in-app purchases, generating around **10%** of company revenue.',
-    'Contributed to broker ad-management workflows supporting **250+** campaigns.',
-    'Optimized homepage rendering, with production before/after measurements showing **~25% fewer initial DOM elements** and **~40% smaller HTML documents**.',
+    'Contributed to broker ad-management workflows supporting **~300** campaigns.',
+    homepageRendering +
+      ' Addressed layout shifts and main-thread blocking, removed redundant RPC calls, and fixed oRPC batching.',
     'Reduced Next.js build output files by **67%**, measured in comparable local builds.',
     'Contributed to backend APIs using oRPC, Prisma, and Kysely; optimized API responses, reducing average serialized payload sizes by up to **39.4%**.',
-    'Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.',
+    videoUpload,
     'Developed data-heavy interfaces with React Query.',
-    'Helped revamp a sister automotive company’s app, improving user retention by **up to 50%**.',
-    "Improved HouseNow's Geolify score from **54** to **74**.",
+    "Implemented technical SEO and AI search for HouseNow, including metadata, canonical URLs, sitemaps, robots.txt, search landing pages by property type, location, price, and size, JSON-LD by page template, video SEO, and llms.txt. Improved HouseNow's Geolify score from **54** to **74**.",
     'Built internal tools for loan profiles, projects, transactions, videos, and promotions, plus investor dashboards for Masterise and agency partners.',
-    'Shipped property-search and agent workflows, including price boards, listing creation, lead management, community threads, and feng-shui home views.',
+    'Built the HouseNow × BIDV loan landing page and admin workflows for loan leads and applications for BIDV, MB, and VietinBank. Built a mobile Partner Loan Portal with appointments, status filters, and search.',
+    'Built SEO-ready landing and detail pages with lead forms for primary developments, social housing, and investor profiles such as Masterise Homes.',
+    'Built an agency portal with reports by price segment, staff and listing performance tables, agency profile editing, and video management. Built advertising and investor dashboards with charts and leaderboards.',
+    'Delivered residential land listings and Boost credit subscriptions across frontend and backend. Shipped Star Club Agent and a new News Feed.',
+    'Built admin workflows for agent management, lead routing, discount campaigns, QR wallet top-ups, and package sales. Made the admin interface responsive and upgraded it from Next.js 15 to 16.',
+    'Shipped property-search and agent workflows, including price boards, customer management, listing creation and editing, and feng-shui home views. Added comments, likes, and optimistic updates to the Thread/Homi community.',
   ],
   stack: [
     'Next.js',
@@ -45,6 +67,7 @@ const housenowProject = {
     'Prisma',
     'Kysely',
     'MySQL',
+    'PostgreSQL',
   ],
   source: 'https://www.housenow.com.vn',
   sourceKind: 'live',
@@ -56,7 +79,13 @@ const housenowProject = {
     width: 1440,
     height: 900,
     caption:
-      'The HouseNow web home — search across 25,000+ apartment listings.',
+      'The HouseNow web home supports search across 25,000+ apartment listings.',
+  },
+  mobileVisual: {
+    src: '/housenow/mobile-home.png',
+    alt: 'HouseNow mobile home showing property listings and video previews',
+    width: 379,
+    height: 877,
   },
   gallery: [
     {
@@ -80,11 +109,57 @@ const housenowProject = {
   ],
 } as const
 
+const carNowProject = {
+  slug: 'carnow',
+  title: 'CarNow',
+  subtitle: 'Car marketplace',
+  period: 'August 2024 - May 2026',
+  context: 'Full-time role · Automotive marketplace',
+  role: 'Frontend Developer',
+  summary:
+    "The Now Project's marketplace for new and used cars in Vietnam, with dealer profiles, car valuation, short videos, and NowAuto, a mobile app for car brokers and dealers.",
+  contributions: [
+    'Rebuilt the CarNow website, including the homepage, new and used car search with advanced filters, listing details, dealer profiles, and the video page.',
+    'Built the car valuation flow and results page, an on-road price calculator for new cars with trims, options, and registration fees, and a voucher page.',
+    'Implemented technical SEO for search, listing, and dealer profile pages, including internal link titles, sitemaps, and robots.txt.',
+    'Contributed to NowAuto, the mobile app for car brokers and dealers. Built tools for car listings with photo and video uploads, dealer inventory, lead details, and video boosting.',
+    'Added video-feed onboarding questions about make, body type, and color, and used the answers to help match leads with dealer inventory.',
+    carNowRetention,
+  ],
+  stack: [
+    'Next.js',
+    'TanStack Router',
+    'React Query',
+    'React Native (Expo)',
+    'Tailwind CSS',
+    'tRPC',
+    'oRPC',
+    'Prisma',
+    'MySQL',
+  ],
+  source: 'https://www.carnow.com.vn/',
+  sourceKind: 'live',
+  sourceLabel: 'View live product',
+  sourceLongLabel: 'Explore the live product',
+  heroVisual: {
+    src: '/carnow/home.png',
+    alt: 'CarNow desktop homepage with search filters for new and used cars',
+    width: 1440,
+    height: 788,
+  },
+  mobileVisual: {
+    src: '/carnow/mobile-search.png',
+    alt: 'CarNow mobile search results showing dealer suggestions and car listings',
+    width: 346,
+    height: 747,
+  },
+} as const
+
 const pakislotProject = {
   slug: 'paki-slot',
   title: 'PakiSlot',
   subtitle: 'Parking lot management system',
-  period: 'October 2023 — May 2024',
+  period: 'October 2023 - May 2024',
   context: 'Computer Science capstone project',
   team: '3-person team',
   role: 'Frontend Web Developer',
@@ -121,6 +196,12 @@ const pakislotProject = {
     caption:
       'The manager dashboard brings daily parking operations and business signals into one view.',
   },
+  mobileVisual: {
+    src: '/paki-slot/login_screen.png',
+    alt: 'PakiSlot mobile login screen',
+    width: 849,
+    height: 1863,
+  },
   gallery: [
     {
       variant: 'wide',
@@ -149,7 +230,11 @@ const pakislotProject = {
   ],
 } as const
 
-export const projects = [housenowProject, pakislotProject] as const
+export const projects = [
+  housenowProject,
+  carNowProject,
+  pakislotProject,
+] as const
 
 interface Experience {
   label: string
@@ -169,20 +254,25 @@ export const experiences: Experience[] = [
     company: 'HouseNow JSC',
     companyUrl: 'https://www.housenow.com.vn',
     role: 'Frontend Developer',
-    period: 'August 2024 — Present',
+    period: 'August 2024 - Present',
     type: 'Full-time',
     highlights: [
       'Product company building a real estate platform averaging **32K** monthly active signed-in accounts across its applications.',
-      "Migrated the broker-facing Agent application's frontend to TanStack Start.",
+      agentMigration,
+      clientMigration +
+        ' Migrated key WebViews for search, video, and payments.',
       'Reduced Next.js build output files by **67%**, measured in comparable local builds.',
-      'Built HouseReels (**21K+** videos, **450K+** views) and the agent dashboard from zero to launch, plus investor dashboards for Masterise and agency partners.',
-      'Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.',
+      houseReels +
+        ' Built advertising and investor dashboards with charts and leaderboards, including dashboards for Masterise and agency partners.',
+      videoUpload,
       'Contributed to broker monetization flows, including payments, paid packages, and in-app purchases, generating around **10%** of company revenue.',
-      'Contributed to broker ad-management workflows supporting **250+** campaigns.',
+      'Contributed to broker ad-management workflows supporting **~300** campaigns.',
       'Contributed to backend APIs using oRPC, Prisma, and Kysely; optimized API responses, reducing average serialized payload sizes by up to **39.4%**.',
-      'Optimized homepage rendering, with production before/after measurements showing **~25% fewer initial DOM elements** and **~40% smaller HTML documents**.',
-      'Helped revamp a sister automotive company’s app, improving user retention by **up to 50%**.',
-      "Improved HouseNow's Geolify score from **54** to **74**.",
+      homepageRendering,
+      "Implemented technical SEO, search landing pages, JSON-LD, video SEO, and llms.txt. Improved HouseNow's Geolify score from **54** to **74**.",
+      'Delivered residential land listings and Boost credit subscriptions across frontend and backend. Built the HouseNow × BIDV landing page, admin loan workflows, and the mobile Partner Loan Portal.',
+      'Contributed to CarNow, a sister project at The Now Project. Built marketplace features for car search, valuation, and on-road pricing, worked on technical SEO, and contributed to NowAuto, the mobile app for car brokers and dealers. ' +
+        carNowRetention,
     ],
     source: 'https://www.housenow.com.vn',
     sourceLabel: 'Visit the live product',
@@ -191,7 +281,7 @@ export const experiences: Experience[] = [
     label: 'Earlier experience',
     company: 'Truong Minh Thinh Technology JSC',
     role: 'Frontend Intern',
-    period: 'June 2023 — August 2023',
+    period: 'June 2023 - August 2023',
     type: 'Full-time internship',
     highlights: [
       'Set up Webpack projects with SCSS, Tailwind CSS, and custom fonts.',
@@ -206,9 +296,9 @@ export const experiences: Experience[] = [
 ]
 
 export const education = {
-  school: 'VNU — Ho Chi Minh City University of Technology',
+  school: 'VNU - Ho Chi Minh City University of Technology',
   degree: 'Bachelor of Computer Science',
-  period: 'September 2020 — November 2024',
+  period: 'September 2020 - November 2024',
   gpa: '8.34 / 10',
 } as const
 
@@ -228,6 +318,7 @@ export const skills = {
     'Zod',
     'Tailwind CSS',
     'shadcn/ui',
+    'SEO & structured data (JSON-LD)',
   ],
   backend: [
     'Node.js',
@@ -238,7 +329,17 @@ export const skills = {
     'SQL / MySQL',
     'PostgreSQL',
   ],
-  tools: ['Git', 'GitHub', 'Figma', 'Linear', 'Visual Studio Code'],
+  tools: [
+    'Git',
+    'GitHub',
+    'Figma',
+    'Linear',
+    'Visual Studio Code',
+    'Vercel',
+    'AWS',
+    'Bunny Stream',
+    'Google Cloud / YouTube Data API',
+  ],
   'AI coding tools': [
     'Claude Code',
     'Codex',
@@ -328,7 +429,7 @@ export const sideProjects: SideProject[] = [
     source: 'https://github.com/ngvihoa/chibi-bluff',
     thumbnail: {
       src: '/side-projects/chibi-bluff.png',
-      alt: 'Chibi Bluff mascot logo — Giang Hồ Nhí Nhố',
+      alt: 'Chibi Bluff mascot logo, Giang Hồ Nhí Nhố',
     },
   },
   {

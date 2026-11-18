@@ -32,7 +32,7 @@ export function AboutIntroSection() {
             Curious by default. Intentional in execution.
           </h2>
           <p className="max-w-[650px] text-[1.12rem] leading-[1.8] text-[var(--ink-soft)]">
-            I’m Noah — Nguyễn Viết Hòa, a Software Developer based in Ho Chi
+            I’m Nguyễn Viết Hòa (Noah), a Software Developer based in Ho Chi
             Minh City with 2+ years of experience building web and mobile
             features with TypeScript, React, Next.js, TanStack Start, and React
             Native (Expo). My work at HouseNow spans property discovery and
