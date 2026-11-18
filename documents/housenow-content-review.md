@@ -77,3 +77,11 @@ Next.js · TanStack Start · TanStack Router · React Query · React Native · T
 - Contribution wording: “Contributed to ad-management features supporting 250+ campaigns.” The owner clarified that this was a contribution, not sole end-to-end ownership.
 - Monetization wording is kept in a separate bullet: “Contributed to monetization features, including payments and paid packages, generating around 10% of company revenue.” The campaign count is not presented as the source of that revenue figure.
 - The supplied impression count is omitted from CV and website copy at the owner's request.
+
+## CV refinement after peer review
+
+- The owner explicitly confirmed substantial oRPC experience and requested backend content in both the Frontend Developer and Software Developer CVs. Both now mention backend API contributions using oRPC, Prisma, and Kysely, including oRPC in Skills.
+- Broker payment/paid-package flows and in-app purchases use existing owner-approved portfolio content. Broker ad-management workflows retain contribution wording and the rounded 250+ campaign count, independently of the monetization revenue figure.
+- Each CV uses a platform-context line for 32K average monthly active signed-in accounts, then seven HouseNow bullets. Rendering and Geolify figures share a bullet; Agent migration and Next.js local build figures share another. Separate sentences retain their distinct scopes and measurement conditions.
+- Peer CV details such as 83% JavaScript reduction, wallet usage counts, 350K users, 40K peak MAU, and end-to-end cross-posting ownership are not adopted.
+- These refinements are CV-specific. Website content and the website AI tools section are unchanged.

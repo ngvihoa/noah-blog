@@ -22,6 +22,13 @@
 
 \begin{document}
 
+\ifdefined\cvFrontend
+\noindent Frontend developer with 2+ years building web and mobile interfaces with React, Next.js, TanStack Start, React Native, and TypeScript. Hands-on backend API work with oRPC, Prisma, and Kysely.
+\else
+\noindent Software developer with 2+ years of experience building web and mobile features with TypeScript, React, Next.js, and TanStack Start. Hands-on backend API and data-access work with oRPC, Prisma, and Kysely.
+\fi
+\par
+
 \begin{rSection}{Education}
 {\bf VNU - Ho Chi Minh City University of Technology}\hfill Sep 2020 -- Nov 2024\\
 Bachelor of Computer Science\hfill {\bf GPA:} 8.34/10
@@ -29,23 +36,22 @@ Bachelor of Computer Science\hfill {\bf GPA:} 8.34/10
 
 \begin{rSection}{Experiences}
 \begin{rSubsection}{HouseNow JSC}{Aug 2024 -- Present}{Frontend Developer}{Full-time}
-\item Developed frontend features across apps averaging \textbf{32K} monthly active signed-in accounts since Jan 2026.
+\item[] Real estate platform averaging \textbf{32K} monthly active signed-in accounts across its applications since Jan 2026.
 \item Built HouseReels (\textbf{21K+} videos, \textbf{450K+} views) and the agent dashboard from zero to launch.
-\item Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.
-\item Contributed to monetization features, including payments and paid packages, generating around \textbf{10\%} of \mbox{company revenue}.
-\item Contributed to ad-management features supporting \textbf{250+} campaigns.
 \ifdefined\cvFrontend
-\item Optimized homepage rendering, with production before/after measurements showing \textbf{$\sim$25\%} fewer initial DOM elements and \textbf{$\sim$40\%} smaller HTML documents.
-\item Improved HouseNow's Geolify SEO score from \textbf{54} to \textbf{74}.
-\item Helped migrate \textbf{80+} Agent route modules to TanStack Start while maintaining the Next.js website.
-\item Reduced Next.js build output files by \textbf{67\%}, measured in comparable local builds.
-\item Optimized API responses, reducing average serialized payload sizes by up to \textbf{39.4\%}.
+\item Optimized homepage rendering, with production before/after measurements showing \textbf{$\sim$25\%} fewer initial DOM elements and \textbf{$\sim$40\%} smaller HTML documents. Improved HouseNow's Geolify score from \textbf{54} to \textbf{74}.
+\item Helped migrate \textbf{80+} Agent route modules to TanStack Start. Reduced Next.js build output files by \textbf{67\%}, measured in comparable local builds.
+\item Contributed to broker monetization flows, including payments, paid packages, and in-app purchases, generating around \textbf{10\%} of \mbox{company revenue}.
+\item Contributed to broker ad-management workflows supporting \textbf{250+} campaigns.
+\item Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.
+\item Contributed to backend APIs using oRPC, Prisma, and Kysely; optimized API responses, reducing average serialized payload sizes by up to \textbf{39.4\%}.
 \else
-\item Optimized API responses, reducing average serialized payload sizes by up to \textbf{39.4\%}.
-\item Helped migrate \textbf{80+} Agent route modules to TanStack Start while maintaining the Next.js website.
-\item Optimized homepage rendering, with production before/after measurements showing \textbf{$\sim$25\%} fewer initial DOM elements and \textbf{$\sim$40\%} smaller HTML documents.
-\item Improved HouseNow's Geolify SEO score from \textbf{54} to \textbf{74}.
-\item Reduced Next.js build output files by \textbf{67\%}, measured in comparable local builds.
+\item Contributed to backend APIs using oRPC, Prisma, and Kysely; optimized API responses, reducing average serialized payload sizes by up to \textbf{39.4\%}.
+\item Contributed to broker monetization flows, including payments, paid packages, and in-app purchases, generating around \textbf{10\%} of \mbox{company revenue}.
+\item Contributed to broker ad-management workflows supporting \textbf{250+} campaigns.
+\item Helped migrate \textbf{80+} Agent route modules to TanStack Start. Reduced Next.js build output files by \textbf{67\%}, measured in comparable local builds.
+\item Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback.
+\item Optimized homepage rendering, with production before/after measurements showing \textbf{$\sim$25\%} fewer initial DOM elements and \textbf{$\sim$40\%} smaller HTML documents. Improved HouseNow's Geolify score from \textbf{54} to \textbf{74}.
 \fi
 \end{rSubsection}
 \begin{rSubsection}{Truong Minh Thinh Technology JSC}{Jun 2023 -- Aug 2023}{Frontend Intern}{Full-time}
@@ -58,12 +64,7 @@ Bachelor of Computer Science\hfill {\bf GPA:} 8.34/10
 \begin{rSubsection}{React Strudel Kit}{Sep 2026 -- Nov 2026}{}{}
 \item Built a TypeScript library for composing music patterns and connecting playback to React controls.
 \item {\bf Skills}: React, TypeScript, Strudel, Web Audio.
-\item \href{https://github.com/ngvihoa/react-strudel-kit}{GitHub} $\cdot$ {\bf Demo}: \cvurl{react-strudel-kit.vercel.app}{react-strudel-kit.vercel.app}
-\end{rSubsection}
-\begin{rSubsection}{PakiSlot}{Oct 2023 -- May 2024}{Parking lot management system $\cdot$ 3 members $\cdot$ Frontend web developer}{Capstone project}
-\item Developed parking-management dashboards and configurable parking maps.
-\item {\bf Skills}: Next.js (TypeScript), Tailwind CSS, Redux Toolkit, Firebase Realtime Database.
-\item \href{https://github.com/capstone-k20-219/capstone-k20-219-frontend-web}{GitHub}
+\item \href{https://github.com/ngvihoa/react-strudel-kit}{GitHub} $\cdot$ \href{https://react-strudel-kit.vercel.app}{Demo}
 \end{rSubsection}
 \end{rSection}
 
@@ -71,7 +72,7 @@ Bachelor of Computer Science\hfill {\bf GPA:} 8.34/10
 \begin{tabularx}{\linewidth}{@{}>{\bfseries}l@{\hspace{2.5ex}}X@{}}
 Languages: & TypeScript, JavaScript\\
 Frontend: & React, Next.js, TanStack Start, React Query, React Native, Tailwind CSS\\
-Backend: & Node.js, Express, Prisma, Kysely, SQL / MySQL\\
+Backend: & Node.js, Express, oRPC, Prisma, Kysely, SQL / MySQL, PostgreSQL\\
 AI tools: & Claude Code, Codex, Gemini, Amp, T3 Code
 \end{tabularx}
 \end{rSection}
