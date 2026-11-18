@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { BrandMark } from './brand-mark'
+import { CvDownloadMenu } from './cv-download-menu'
 import { profile } from '~/data/portfolio'
 
 export function SiteHeader() {
@@ -16,33 +17,40 @@ export function SiteHeader() {
           <span className="brand__role">{profile.role}</span>
         </Link>
 
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          <Link
-            className="nav-link"
-            activeProps={{ className: 'nav-link nav-link--active' }}
-            to="/projects"
-          >
-            Projects
-          </Link>
-          <Link
-            className="nav-link"
-            activeProps={{ className: 'nav-link nav-link--active' }}
-            to="/contact"
-          >
-            Contact
-          </Link>
-        </nav>
+        <div className="site-header__actions">
+          <nav className="desktop-nav" aria-label="Primary navigation">
+            <Link
+              className="nav-link"
+              activeProps={{ className: 'nav-link nav-link--active' }}
+              to="/projects"
+            >
+              Projects
+            </Link>
+            <Link
+              className="nav-link"
+              activeProps={{ className: 'nav-link nav-link--active' }}
+              to="/contact"
+            >
+              Contact
+            </Link>
+          </nav>
 
-        <button
-          className="menu-button"
-          type="button"
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-navigation"
-          aria-label={isMenuOpen ? 'Close navigation' : 'Open navigation'}
-          onClick={() => setIsMenuOpen((open) => !open)}
-        >
-          {isMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-        </button>
+          <button
+            className="menu-button"
+            type="button"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={isMenuOpen ? 'Close navigation' : 'Open navigation'}
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            {isMenuOpen ? (
+              <X aria-hidden="true" />
+            ) : (
+              <Menu aria-hidden="true" />
+            )}
+          </button>
+          <CvDownloadMenu onOpen={() => setIsMenuOpen(false)} />
+        </div>
       </div>
 
       {isMenuOpen ? (

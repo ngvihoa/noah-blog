@@ -1,6 +1,6 @@
 const focusItems = [
   { label: 'Building with', value: 'React, Next.js & TypeScript' },
-  { label: 'Growing toward', value: 'Full-stack development' },
+  { label: 'Working across', value: 'Frontend & backend APIs' },
   { label: 'Open to', value: 'Software & Frontend Developer roles' },
 ] as const
 

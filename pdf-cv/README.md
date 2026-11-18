@@ -39,7 +39,7 @@ Both current artifacts were built with the local `latex-author` skill's `build -
 - References lists Tran Phuoc Bao, Chief Technology Officer, with the owner-supplied phone number displayed as 0704 612 891, followed by Sang Le, Product Delivery Manager, with the supplied LinkedIn URL. Names are displayed without Vietnamese diacritics. Clickable link destinations preserve their original https:// and www. hostnames.
 ## Website downloads
 
-Both CVs are offered on the homepage and Contact page, with a separate download link for each role.
+Both CVs are offered in a header dropdown on every page, with a separate download link for each role. The Contact page also retains direct download links. The hero keeps its Projects and About actions.
 
 - `/cv/Nguyen-Viet-Hoa-Frontend-Developer-CV.pdf`
 - `/cv/Nguyen-Viet-Hoa-Software-Developer-CV.pdf`

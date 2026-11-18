@@ -1,7 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { ArrowRight } from 'lucide-react'
 import { Mascot } from 'page-mascot'
-import { CvDownloads } from '~/components/cv-downloads'
 import { profile } from '~/data/portfolio'
 import { AgileOrbit } from './agile-orbit'
 import { RoleSwitcher } from './role-switcher'
@@ -28,9 +27,9 @@ export function HeroSection() {
           Thoughtful software. Polished interfaces.
         </p>
         <p className="hero__intro">
-          Based in Ho Chi Minh City, I turn product ideas into clear, accessible
-          experiences with React, Next.js, TypeScript, and a growing full-stack
-          toolkit.
+          Based in Ho Chi Minh City, I build web and mobile products with 2+
+          years of experience across frontend development, backend APIs, and
+          data-access workflows.
         </p>
         <div className="hero__actions">
           <Link className="button button--primary" to="/projects">
@@ -40,7 +39,6 @@ export function HeroSection() {
             About my process
           </a>
         </div>
-        <CvDownloads className="mt-6" />
       </div>
       <AgileOrbit />
     </section>

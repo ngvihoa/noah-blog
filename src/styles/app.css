@@ -121,6 +121,86 @@ button {
   gap: 34px;
 }
 
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.cv-menu {
+  position: relative;
+}
+
+.cv-menu__trigger {
+  color: var(--ink);
+  list-style: none;
+  cursor: pointer;
+}
+
+.cv-menu__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.cv-menu .cv-menu__trigger:hover {
+  transform: none;
+  background: var(--surface);
+}
+
+.cv-menu[open] .cv-menu__trigger svg {
+  transform: rotate(180deg);
+}
+
+.cv-menu__label-mobile {
+  display: none;
+}
+
+.cv-menu__panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(292px, calc(100vw - 28px));
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-strong);
+  box-shadow: 0 12px 28px rgb(23 35 60 / 12%);
+}
+
+.cv-menu__download {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 10px;
+  border-radius: 8px;
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.cv-menu__download:hover,
+.cv-menu__download:focus-visible {
+  background: var(--canvas);
+}
+
+.cv-menu__format {
+  margin-left: auto;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+}
+
+.cv-menu__download svg {
+  width: 16px;
+  height: 16px;
+  color: var(--primary-dark);
+}
+
+.cv-menu__trigger:focus-visible,
+.cv-menu__download:focus-visible {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 3px;
+}
+
 .nav-link {
   position: relative;
   padding-block: 10px;
@@ -928,6 +1008,18 @@ h3 {
 
   .site-header__inner {
     min-height: 68px;
+  }
+
+  .site-header__actions {
+    gap: 10px;
+  }
+
+  .cv-menu__label-desktop {
+    display: none;
+  }
+
+  .cv-menu__label-mobile {
+    display: inline;
   }
 
   .brand__role,
