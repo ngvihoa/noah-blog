@@ -25,6 +25,7 @@ Both current artifacts were built with the local `latex-author` skill's `build -
 ## Content sources and review notes
 
 - Current portfolio data supplies roles, dates, technologies, project descriptions, and links. HouseNow metrics use the approved [content/evidence notes](../documents/housenow-content-review.md).
+- HouseNow is described as a product company. The visible platform-context sentence omits the measurement start date at the owner’s request; the reporting window is retained in these evidence notes.
 - Monthly activity is the user-confirmed average of 32K active signed-in accounts across the applications, January 2026–16 November 2026; not total website visitors or individually attributed growth.
 - DOM/HTML figures describe production before/after release measurements, not an isolated causal experiment. The 67% build result is local build output file counts, not time or bytes. RPC reduction refers to average serialized payloads on optimized RPC endpoints, not total network traffic or cost.
 - Education uses September 2020–November 2024 and GPA 8.34/10. The GPA is explicitly confirmed by the owner and agrees with the legacy CV; the current graduation date supersedes the legacy July 2024 date.

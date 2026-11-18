@@ -33,15 +33,16 @@ export function AboutIntroSection() {
           </h2>
           <p className="max-w-[650px] text-[1.12rem] leading-[1.8] text-[var(--ink-soft)]">
             I’m Noah — Nguyễn Viết Hòa, a Software Developer based in Ho Chi
-            Minh City with a strong frontend foundation. My work at HouseNow
-            spans web and mobile product experiences, from property discovery to
-            tools for real estate agents, with React, Next.js, and TypeScript.
+            Minh City with 2+ years of experience building web and mobile
+            features with TypeScript, React, Next.js, TanStack Start, and React
+            Native (Expo). My work at HouseNow spans property discovery and
+            tools for real estate agents.
           </p>
           <p className="max-w-[650px] text-[1.12rem] leading-[1.8] text-[var(--ink-soft)]">
             With a Computer Science background, I enjoy understanding how a
             product works and turning complex workflows into clear interfaces.
-            I’m growing toward full-stack development, building on hands-on
-            experience with backend APIs and SQL.
+            Alongside frontend development, I contribute to backend APIs and
+            data-access workflows using oRPC, Prisma, Kysely, and SQL.
           </p>
           <dl className="mt-[34px] grid grid-cols-2 gap-[18px] max-md:grid-cols-1">
             <div className="border-t border-(--line) pt-4">
