@@ -5,6 +5,7 @@
 - The owner describes more than 15 groups of API routers moved from Next.js to TanStack Start and oRPC for client-v2. This is distinct from the 80+ Agent frontend route modules and from the earlier tRPC-to-oRPC conversion across admin, Agent, and Client. The earlier conversion has no published router count.
 - HouseNow retains August 2024 as the start date, consistent with the CV and the supplied portfolio review. The supplied summary lists October 2024, which still needs reconciliation. CarNow's project period is August 2024 to May 2026 per the review. CarNow is project work under HouseNow JSC.
 - HouseReels figures still describe product scale. Launch wording now credits the team, with the upload and processing contributions described separately. The public campaign count uses the owner-requested estimate of ~300.
+- The owner updated the public platform metric to a peak of 40K+ monthly active signed-in accounts. The 32K average below documents the earlier reporting period.
 - CarNow's up-to-50% retention figure stays attached to the app revamp. CarNow web and NowAuto contributions are described separately. The review supplies the project scope, and the actual desktop and mobile screenshots are pending.
 - New HouseNow contribution details come from the owner summary and the supplied portfolio review. Work on layout shifts, main-thread blocking, RPC batching, and video processing is described without new performance measurements.
 

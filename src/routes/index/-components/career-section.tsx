@@ -1,9 +1,16 @@
 import { EmphasizedText } from '~/components/emphasized-text'
 import { ExternalLink } from 'lucide-react'
-import { education, experiences } from '~/data/portfolio'
+import {
+  academicAchievements,
+  education,
+  experiences,
+  professionalReferences,
+} from '~/data/portfolio'
 
-const cardClassName =
-  'rounded-[20px] bg-[var(--surface-strong)] p-[38px] shadow-[0_18px_50px_rgb(23_35_60/7%)] outline outline-1 outline-[rgb(23_35_60/6%)] max-md:px-6 max-md:py-7'
+const cardSurface =
+  'rounded-[20px] bg-[var(--surface-strong)] shadow-[0_18px_50px_rgb(23_35_60/7%)] outline outline-1 outline-[rgb(23_35_60/6%)]'
+const cardClassName = `${cardSurface} p-[38px] max-md:px-6 max-md:py-7`
+const supportingCardClassName = `${cardSurface} px-6 py-7 md:px-8 md:py-8`
 
 export function CareerSection() {
   return (
@@ -69,33 +76,70 @@ export function CareerSection() {
             ))}
           </div>
 
-          <article
-            className={`${cardClassName} self-start lg:sticky lg:top-[90px]`}
-          >
-            <p className="eyebrow">Education</p>
-            <h3 className="mb-2 text-[clamp(1.8rem,3vw,2.6rem)]">
-              {education.degree}
-            </h3>
-            <p>{education.school}</p>
-            <dl className="mt-11 grid gap-5">
-              <div className="border-t border-[var(--line)] pt-[18px]">
-                <dt className="mb-[5px] text-xs font-bold tracking-[0.11em] text-[var(--ink-soft)] uppercase md:text-sm">
-                  Period
-                </dt>
-                <dd className="m-0 text-xs font-bold md:text-sm">
-                  {education.period}
-                </dd>
-              </div>
-              <div className="border-t border-[var(--line)] pt-[18px]">
-                <dt className="mb-[5px] text-xs font-bold tracking-[0.11em] text-[var(--ink-soft)] uppercase md:text-sm">
-                  GPA
-                </dt>
-                <dd className="m-0 text-xs font-bold md:text-sm">
-                  {education.gpa}
-                </dd>
-              </div>
-            </dl>
-          </article>
+          <div className="flex self-start flex-col gap-[var(--space-card-gap)]">
+            <article className={cardClassName}>
+              <p className="eyebrow">Education</p>
+              <h3 className="mb-2 text-[clamp(1.8rem,3vw,2.6rem)]">
+                {education.degree}
+              </h3>
+              <p>{education.school}</p>
+              <dl className="mt-11 grid gap-5">
+                <div className="border-t border-[var(--line)] pt-[18px]">
+                  <dt className="mb-[5px] text-xs font-bold tracking-[0.11em] text-[var(--ink-soft)] uppercase md:text-sm">
+                    Period
+                  </dt>
+                  <dd className="m-0 text-xs font-bold md:text-sm">
+                    {education.period}
+                  </dd>
+                </div>
+                <div className="border-t border-[var(--line)] pt-[18px]">
+                  <dt className="mb-[5px] text-xs font-bold tracking-[0.11em] text-[var(--ink-soft)] uppercase md:text-sm">
+                    GPA
+                  </dt>
+                  <dd className="m-0 text-xs font-bold md:text-sm">
+                    {education.gpa}
+                  </dd>
+                </div>
+              </dl>
+            </article>
+            <article className={supportingCardClassName}>
+              <h3 className="mb-5">Academic achievements</h3>
+              <ul className="m-0 list-none p-0">
+                {academicAchievements.map(({ title, detail }) => (
+                  <li
+                    className="border-t border-[var(--line)] py-3 last:pb-0"
+                    key={title}
+                  >
+                    <p className="m-0 font-semibold">{title}</p>
+                    <p className="m-0 text-sm text-[var(--ink-soft)]">
+                      {detail}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </article>
+            <article className={supportingCardClassName}>
+              <h3 className="mb-5">References</h3>
+              <ul className="m-0 list-none p-0">
+                {professionalReferences.map(({ name, role, contact }) => (
+                  <li
+                    className="border-t border-[var(--line)] py-3 last:pb-0"
+                    key={name}
+                  >
+                    <p className="m-0 font-semibold">{name}</p>
+                    <p className="m-0 text-sm text-[var(--ink-soft)]">{role}</p>
+                    <a
+                      className="text-link mt-1 text-sm"
+                      href={contact.href}
+                      aria-label={`${contact.label} · ${name}`}
+                    >
+                      {contact.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
         </div>
       </div>
     </section>

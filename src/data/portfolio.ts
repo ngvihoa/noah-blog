@@ -257,7 +257,7 @@ export const experiences: Experience[] = [
     period: 'August 2024 - Present',
     type: 'Full-time',
     highlights: [
-      'Product company building a real estate platform averaging **32K** monthly active signed-in accounts across its applications.',
+      'Product company building a real estate platform that peaked at **40K+** monthly active signed-in accounts across its applications.',
       agentMigration,
       clientMigration +
         ' Migrated key WebViews for search, video, and payments.',
@@ -302,6 +302,30 @@ export const education = {
   gpa: '8.34 / 10',
 } as const
 
+export const academicAchievements = [
+  { title: 'OISP Scholarship', detail: 'Awarded for four semesters' },
+  {
+    title: 'Academic Incentive Scholarship',
+    detail: 'Awarded for two semesters',
+  },
+] as const
+
+export const professionalReferences = [
+  {
+    name: 'Tran Phuoc Bao',
+    role: 'Chief Technology Officer at HouseNow',
+    contact: { href: 'tel:0704612891', label: '0704 612 891' },
+  },
+  {
+    name: 'Sang Le',
+    role: 'Product Design & Delivery Manager at HouseNow',
+    contact: {
+      href: 'https://www.linkedin.com/in/sangle1507/',
+      label: 'LinkedIn',
+    },
+  },
+] as const
+
 export const skills = {
   frontend: [
     'HTML',
@@ -318,7 +342,7 @@ export const skills = {
     'Zod',
     'Tailwind CSS',
     'shadcn/ui',
-    'SEO & structured data (JSON-LD)',
+    'Technical SEO',
   ],
   backend: [
     'Node.js',

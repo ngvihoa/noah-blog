@@ -52,7 +52,7 @@ const skillIcons: Record<Skill, LucideIcon> = {
   Zod: Diamond,
   'Tailwind CSS': Waves,
   'shadcn/ui': Component,
-  'SEO & structured data (JSON-LD)': Braces,
+  'Technical SEO': CodeXml,
   'Node.js': Hexagon,
   Express: Server,
   oRPC: ArrowLeftRight,
@@ -102,9 +102,7 @@ export function SkillsInterestsSection() {
               <ul className="m-0 grid list-none grid-cols-2 gap-x-4 gap-y-3 p-0 lg:grid-cols-4">
                 {items.map((item) => {
                   const Icon = skillIcons[item]
-                  const wide =
-                    item === 'SEO & structured data (JSON-LD)' ||
-                    item === 'Google Cloud / YouTube Data API'
+                  const wide = item === 'Google Cloud / YouTube Data API'
 
                   return (
                     <li
