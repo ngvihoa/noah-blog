@@ -10,6 +10,7 @@
 % Avoid a full-width header box plus parskip's extra paragraph-fill minimum.
 \setlength{\parfillskip}{0pt plus 1fil}
 \setlength{\parskip}{4.5pt plus 1pt}
+\linespread{1.04}
 \ifdefined\cvFrontend
   \newcommand{\targetRole}{Frontend Developer}
 \else
@@ -30,8 +31,8 @@
 \newcommand{\homepagePerformance}{Optimized homepage rendering. Production before/after measurements showed \textbf{$\sim$25\%} fewer initial DOM elements and \textbf{$\sim$40\%} smaller HTML documents.}
 \newcommand{\houseNowSEO}{Implemented technical SEO, search landing pages, JSON-LD, video SEO, and llms.txt. Improved HouseNow's Geolify score from \textbf{54} to \textbf{74}.}
 \newcommand{\houseNowAPIs}{Contributed to backend APIs with oRPC, Prisma, and Kysely. Migrated tRPC routers to oRPC and reduced average serialized payloads by up to \textbf{39.4\%} on optimized endpoints.}
-\newcommand{\videoUpload}{Optimized video upload from file selection and transfer to processing and playback. Added Bunny Stream transcoding status updates and YouTube publishing with Google OAuth.}
-\newcommand{\carNowWork}{Built car search, valuation, and on-road pricing for CarNow, worked on technical SEO, and contributed to NowAuto, a mobile app for car brokers and dealers. Helped revamp the CarNow app, improving retention by up to \textbf{50\%}.}
+\newcommand{\houseReels}{Co-built and launched HouseReels (\textbf{21K+} videos, \textbf{450K+} views). Improved video upload from file selection and transfer through processing and playback, added Bunny Stream transcoding status updates, and integrated YouTube publishing with Google OAuth.}
+\newcommand{\brokerMonetization}{Contributed to broker payments, paid packages, and in-app purchases, which together accounted for around \textbf{10\%} of company revenue. Also contributed to ad-management workflows supporting \textbf{$\sim$300} campaigns.}
 
 \begin{document}
 
@@ -48,41 +49,34 @@ Bachelor of Computer Science\hfill {\bf GPA:} 8.34/10
 \end{rSection}
 
 \begin{rSection}{Experiences}
-\begin{rSubsection}{HouseNow JSC}{Aug 2024 - Present}{Frontend Developer}{Full-time}
+\begin{rSubsection}{HouseNow JSC}{Aug 2024 - Present}{Full-Stack Developer}{Full-time}
 \item[] Product company building a real estate platform that peaked at \textbf{40K+} monthly active signed-in accounts across its applications.
-\item Co-built and launched HouseReels (\textbf{21K+} videos, \textbf{450K+} views) and the agent dashboard.
+\item \houseReels
 \ifdefined\cvFrontend
 \item \homepagePerformance{} \houseNowSEO
 \item \agentMigration{} \clientMigration
 \item Reduced Next.js build output files by \textbf{67\%}, measured in comparable local builds.
-\item Contributed to broker monetization flows, including payments, paid packages, and in-app purchases, generating around \textbf{10\%} of \mbox{company revenue}.
-\item Contributed to broker ad-management workflows supporting \textbf{$\sim$300} campaigns.
-\item \videoUpload
+\item \brokerMonetization
 \item \houseNowAPIs
-\item Built the HouseNow \(\times\) BIDV landing page and the mobile Partner Loan Portal. Made the admin interface responsive.
+\item Built the agent dashboard, the HouseNow \(\times\) BIDV landing page, and the mobile Partner Loan Portal. Made the admin interface responsive.
 \else
 \item \houseNowAPIs
 \item \agentMigration{} \clientMigration
-\item Contributed to broker monetization flows, including payments, paid packages, and in-app purchases, generating around \textbf{10\%} of \mbox{company revenue}.
-\item Contributed to broker ad-management workflows supporting \textbf{$\sim$300} campaigns.
-\item Delivered residential land listings and Boost credit subscriptions across frontend and backend. Built loan management workflows and an agency portal with business reports.
+\item \brokerMonetization
+\item Delivered residential land listings and Boost credit subscriptions across frontend and backend. Built the agent dashboard, loan management workflows, and an agency portal with business reports.
 \item Reduced Next.js build output files by \textbf{67\%}, measured in comparable local builds.
-\item \videoUpload
 \item \homepagePerformance{} \houseNowSEO
 \fi
-\item \carNowWork
+\end{rSubsection}
+\begin{rSubsection}{CarNow VN}{Aug 2024 - May 2026}{Full-Stack Developer}{Sister project at The Now Project}
+\item Rebuilt CarNow's Next.js marketplace, including search, advanced filters, listing details, dealer profiles, and video. Implemented dynamic XML sitemaps and crawl rules.
+\item Improved used-car valuation and built a new-car on-road price calculator for trims, options, and location-specific registration fees.
+\item Built dealer inventory analytics and lead matching in NowAuto, contributing to the frontend, tRPC APIs, and data layer.
+\item Helped revamp the CarNow app, improving user retention by up to \textbf{50\%}.
 \end{rSubsection}
 \begin{rSubsection}{Truong Minh Thinh Technology JSC}{Jun 2023 - Aug 2023}{Frontend Intern}{Full-time}
 \item Implemented responsive interfaces from Figma designs across two projects.
 \item Converted a fitness website from a Webpack setup to Angular 15.
-\end{rSubsection}
-\end{rSection}
-
-\begin{rSection}{Personal Projects}
-\begin{rSubsection}{React Strudel Kit}{Sep 2026 - Nov 2026}{}{}
-\item Built a TypeScript library for composing music patterns and connecting playback to React controls.
-\item {\bf Skills}: React, TypeScript, Strudel, Web Audio.
-\item \href{https://github.com/ngvihoa/react-strudel-kit}{GitHub} $\cdot$ \href{https://react-strudel-kit.vercel.app}{Demo}
 \end{rSubsection}
 \end{rSection}
 

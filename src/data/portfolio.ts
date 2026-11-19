@@ -29,7 +29,7 @@ const housenowProject = {
   period: 'August 2024 - Present',
   context: 'Product company · Proptech · Full-time role',
   team: '4 FE · 4 BE · 3 DES · 1-2 PM',
-  role: 'Frontend Developer',
+  role: 'Full-Stack Developer',
   summary:
     'A proptech marketplace for buying and exploring homes in Vietnam, with 25,000+ listings, short-video property browsing, home-loan services, and tools for real estate agents across web and mobile.',
   contributions: [
@@ -115,7 +115,7 @@ const carNowProject = {
   subtitle: 'Car marketplace',
   period: 'August 2024 - May 2026',
   context: 'Full-time role · Automotive marketplace',
-  role: 'Frontend Developer',
+  role: 'Full-Stack Developer',
   summary:
     "The Now Project's marketplace for new and used cars in Vietnam, with dealer profiles, car valuation, short videos, and NowAuto, a mobile app for car brokers and dealers.",
   contributions: [
@@ -253,7 +253,7 @@ export const experiences: Experience[] = [
     label: 'Experience',
     company: 'HouseNow JSC',
     companyUrl: 'https://www.housenow.com.vn',
-    role: 'Frontend Developer',
+    role: 'Full-Stack Developer',
     period: 'August 2024 - Present',
     type: 'Full-time',
     highlights: [
