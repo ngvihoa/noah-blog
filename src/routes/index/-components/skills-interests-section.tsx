@@ -34,6 +34,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { skills } from '~/data/portfolio'
+import { Reveal } from '~/components/reveal'
 
 type Skill = (typeof skills)[keyof typeof skills][number]
 
@@ -84,12 +85,12 @@ export function SkillsInterestsSection() {
       aria-label="Skills"
     >
       <div className="page-shell">
-        <div className="section-heading">
+        <Reveal className="section-heading">
           <div>
             <p className="eyebrow">Toolbox</p>
             <h2>Skills I work with</h2>
           </div>
-        </div>
+        </Reveal>
         <div>
           {Object.entries(skills).map(([group, items]) => (
             <div

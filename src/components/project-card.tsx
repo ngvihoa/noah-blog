@@ -2,6 +2,7 @@ import { EmphasizedText } from '~/components/emphasized-text'
 import { useId, useState } from 'react'
 import { ChevronDown, ExternalLink, Github } from 'lucide-react'
 import type { projects } from '~/data/portfolio'
+import { Reveal } from '~/components/reveal'
 
 type Project = (typeof projects)[number]
 
@@ -33,7 +34,8 @@ export function ProjectCard({
   const detailsId = useId()
   const headingId = useId()
   return (
-    <article
+    <Reveal
+      as="article"
       id={project.slug}
       className={`project-card project-card--featured scroll-mt-24 ${visual.variant}`}
     >
@@ -138,6 +140,6 @@ export function ProjectCard({
           </div>
         </div>
       </section>
-    </article>
+    </Reveal>
   )
 }

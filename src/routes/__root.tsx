@@ -5,6 +5,7 @@ import {
   Scripts,
   createRootRoute,
 } from '@tanstack/react-router'
+import { MotionConfig } from 'motion/react'
 import type { ReactNode } from 'react'
 import { SiteFooter } from '~/components/site-footer'
 import { SiteHeader } from '~/components/site-header'
@@ -48,9 +49,11 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <RootDocument>
-      <SiteHeader />
-      <Outlet />
-      <SiteFooter />
+      <MotionConfig reducedMotion="user">
+        <SiteHeader />
+        <Outlet />
+        <SiteFooter />
+      </MotionConfig>
     </RootDocument>
   )
 }

@@ -18,7 +18,7 @@ export const Route = createFileRoute('/projects/')({
 function ProjectsPage() {
   return (
     <main>
-      <header className="page-shell content-page content-page--intro">
+      <header className="enter-up page-shell content-page content-page--intro">
         <p className="eyebrow">Selected work</p>
         <h1>Projects</h1>
         <p className="content-page__lead">

@@ -6,6 +6,7 @@ import {
   experiences,
   professionalReferences,
 } from '~/data/portfolio'
+import { Reveal } from '~/components/reveal'
 
 const cardSurface =
   'rounded-[20px] bg-[var(--surface-strong)] shadow-[0_18px_50px_rgb(23_35_60/7%)] outline outline-1 outline-[rgb(23_35_60/6%)]'
@@ -19,16 +20,20 @@ export function CareerSection() {
       aria-label="Experience and education"
     >
       <div className="page-shell">
-        <div className="section-heading">
+        <Reveal className="section-heading">
           <div>
             <p className="eyebrow">The journey so far</p>
             <h2>Experience &amp; education</h2>
           </div>
-        </div>
+        </Reveal>
         <div className="grid grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] gap-[var(--space-card-gap)] max-lg:grid-cols-1">
           <div className="grid gap-[var(--space-card-gap)] lg:block! lg:space-y-[var(--space-card-gap)]">
             {experiences.map((experience) => (
-              <article className={cardClassName} key={experience.company}>
+              <Reveal
+                as="article"
+                className={cardClassName}
+                key={experience.company}
+              >
                 <p className="eyebrow">{experience.label}</p>
                 <div className="flex items-start justify-between gap-8 max-md:flex-col">
                   <div>
@@ -76,12 +81,12 @@ export function CareerSection() {
                 >
                   {experience.sourceLabel} <ExternalLink aria-hidden="true" />
                 </a>
-              </article>
+              </Reveal>
             ))}
           </div>
 
           <div className="flex self-start flex-col gap-[var(--space-card-gap)]">
-            <article className={cardClassName}>
+            <Reveal as="article" className={cardClassName} delay={0.08}>
               <p className="eyebrow">Education</p>
               <h3 className="mb-2 text-[clamp(1.8rem,3vw,2.6rem)]">
                 {education.degree}
@@ -105,8 +110,12 @@ export function CareerSection() {
                   </dd>
                 </div>
               </dl>
-            </article>
-            <article className={supportingCardClassName}>
+            </Reveal>
+            <Reveal
+              as="article"
+              className={supportingCardClassName}
+              delay={0.16}
+            >
               <h3 className="mb-5">Academic achievements</h3>
               <ul className="m-0 list-none p-0">
                 {academicAchievements.map(({ title, detail }) => (
@@ -121,8 +130,12 @@ export function CareerSection() {
                   </li>
                 ))}
               </ul>
-            </article>
-            <article className={supportingCardClassName}>
+            </Reveal>
+            <Reveal
+              as="article"
+              className={supportingCardClassName}
+              delay={0.24}
+            >
               <h3 className="mb-5">References</h3>
               <ul className="m-0 list-none p-0">
                 {professionalReferences.map(({ name, role, contact }) => (
@@ -142,7 +155,7 @@ export function CareerSection() {
                   </li>
                 ))}
               </ul>
-            </article>
+            </Reveal>
           </div>
         </div>
       </div>
