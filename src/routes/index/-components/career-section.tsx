@@ -67,8 +67,12 @@ export function CareerSection() {
                 <a
                   className="text-link mt-7"
                   href={experience.source}
-                  target="_blank"
-                  rel="noreferrer"
+                  target={
+                    experience.source.startsWith('/') ? undefined : '_blank'
+                  }
+                  rel={
+                    experience.source.startsWith('/') ? undefined : 'noreferrer'
+                  }
                 >
                   {experience.sourceLabel} <ExternalLink aria-hidden="true" />
                 </a>

@@ -2,7 +2,7 @@ export const profile = {
   name: 'Nguyễn Viết Hòa',
   shortName: 'Viết Hòa',
   alias: 'Noah',
-  role: 'Software Developer',
+  role: 'Full-Stack Developer',
   location: 'Ho Chi Minh City',
   email: 'nvhoa29702@gmail.com',
   github: 'https://github.com/ngvihoa',
@@ -19,8 +19,6 @@ const videoUpload =
   'Optimized the end-to-end video upload flow, from file selection and transfer to processing and playback. Added Bunny Stream webhook updates, thumbnails while transcoding, and kept existing videos live until replacements were ready. Integrated publishing to YouTube with Google OAuth.'
 const homepageRendering =
   'Optimized homepage rendering, with production before/after measurements showing **~25% fewer initial DOM elements** and **~40% smaller HTML documents**.'
-const carNowRetention =
-  'Helped revamp the CarNow app, improving user retention by **up to 50%**.'
 
 const housenowProject = {
   slug: 'housenow',
@@ -124,7 +122,6 @@ const carNowProject = {
     'Implemented technical SEO for search, listing, and dealer profile pages, including internal link titles, sitemaps, and robots.txt.',
     'Contributed to NowAuto, the mobile app for car brokers and dealers. Built tools for car listings with photo and video uploads, dealer inventory, lead details, and video boosting.',
     'Added video-feed onboarding questions about make, body type, and color, and used the answers to help match leads with dealer inventory.',
-    carNowRetention,
   ],
   stack: [
     'Next.js',
@@ -137,10 +134,6 @@ const carNowProject = {
     'Prisma',
     'MySQL',
   ],
-  source: 'https://www.carnow.com.vn/',
-  sourceKind: 'live',
-  sourceLabel: 'View live product',
-  sourceLongLabel: 'Explore the live product',
   heroVisual: {
     src: '/carnow/home.png',
     alt: 'CarNow desktop homepage with search filters for new and used cars',
@@ -257,10 +250,8 @@ export const experiences: Experience[] = [
     period: 'August 2024 - Present',
     type: 'Full-time',
     highlights: [
-      'Product company building a real estate platform that peaked at **40K+** monthly active signed-in accounts across its applications.',
-      agentMigration,
-      clientMigration +
-        ' Migrated key WebViews for search, video, and payments.',
+      'Product company building a real estate platform that peaked at **40K+ MAU** across its applications.',
+      'Migrated the Agent and Client apps to TanStack Start, including frontend routes and mobile WebViews. Ported API routers in both apps to oRPC and integrated API proxying and session handling.',
       'Reduced Next.js build output files by **67%**, measured in comparable local builds.',
       houseReels +
         ' Built advertising and investor dashboards with charts and leaderboards, including dashboards for Masterise and agency partners.',
@@ -271,11 +262,23 @@ export const experiences: Experience[] = [
       homepageRendering,
       "Implemented technical SEO, search landing pages, JSON-LD, video SEO, and llms.txt. Improved HouseNow's Geolify score from **54** to **74**.",
       'Delivered residential land listings and Boost credit subscriptions across frontend and backend. Built the HouseNow × BIDV landing page, admin loan workflows, and the mobile Partner Loan Portal.',
-      'Contributed to CarNow, a sister project at The Now Project. Built marketplace features for car search, valuation, and on-road pricing, worked on technical SEO, and contributed to NowAuto, the mobile app for car brokers and dealers. ' +
-        carNowRetention,
     ],
     source: 'https://www.housenow.com.vn',
     sourceLabel: 'Visit the live product',
+  },
+  {
+    label: 'Experience',
+    company: 'CarNow VN',
+    role: carNowProject.role,
+    period: carNowProject.period,
+    type: 'Full-time',
+    highlights: [
+      "Rebuilt CarNow's Next.js marketplace across search, advanced filtering, listing details, dealer profiles, and video. Implemented dynamic XML sitemaps and crawl rules.",
+      'Improved used-car valuation and built a new-car on-road price calculator for trims, options, and location-specific registration fees.',
+      'Built dealer inventory analytics and lead matching in NowAuto, contributing to the frontend, tRPC APIs, and data layer.',
+    ],
+    source: `/projects#${carNowProject.slug}`,
+    sourceLabel: 'View project',
   },
   {
     label: 'Earlier experience',

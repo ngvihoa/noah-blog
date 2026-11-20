@@ -26,9 +26,8 @@
 \address{\targetRole}
 \address{{\small 0983 786 674 $\cdot$ \href{mailto:nvhoa29702@gmail.com}{nvhoa29702@gmail.com} $\cdot$ \href{https://www.noah.io.vn/}{Portfolio} $\cdot$ \href{https://www.linkedin.com/in/nvhoa29b02/}{LinkedIn} $\cdot$ \href{https://github.com/ngvihoa}{GitHub}}}
 
-\newcommand{\agentMigration}{Migrated the broker-facing Agent frontend to TanStack Start, covering \textbf{80+} route modules.}
-\newcommand{\clientMigration}{Moved \textbf{15+} API router groups from Next.js to TanStack Start and oRPC for client-v2. Migrated mobile WebViews and connected both apps with an API proxy and session integration.}
-\newcommand{\homepagePerformance}{Optimized homepage rendering. Production before/after measurements showed \textbf{$\sim$25\%} fewer initial DOM elements and \textbf{$\sim$40\%} smaller HTML documents.}
+\newcommand{\architectureMigration}{Migrated the Agent and Client apps to TanStack Start, including frontend routes and mobile WebViews. Ported API routers in both apps to oRPC and integrated API proxying and session handling.}
+\newcommand{\homepagePerformance}{Optimized homepage rendering, reducing initial DOM elements by \textbf{$\sim$25\%} and HTML document size by \textbf{$\sim$40\%}.}
 \newcommand{\houseNowSEO}{Implemented technical SEO, search landing pages, JSON-LD, video SEO, and llms.txt. Improved HouseNow's Geolify score from \textbf{54} to \textbf{74}.}
 \newcommand{\houseNowAPIs}{Contributed to backend APIs with oRPC, Prisma, and Kysely. Migrated tRPC routers to oRPC and reduced average serialized payloads by up to \textbf{39.4\%} on optimized endpoints.}
 \newcommand{\houseReels}{Co-built and launched HouseReels (\textbf{21K+} videos, \textbf{450K+} views). Improved video upload from file selection and transfer through processing and playback, added Bunny Stream transcoding status updates, and integrated YouTube publishing with Google OAuth.}
@@ -50,29 +49,28 @@ Bachelor of Computer Science\hfill {\bf GPA:} 8.34/10
 
 \begin{rSection}{Experiences}
 \begin{rSubsection}{HouseNow JSC}{Aug 2024 - Present}{Full-Stack Developer}{Full-time}
-\item[] Product company building a real estate platform that peaked at \textbf{40K+} monthly active signed-in accounts across its applications.
+\item[] Product company building a real estate platform that peaked at \textbf{40K+ MAU} across its applications.
 \item \houseReels
 \ifdefined\cvFrontend
 \item \homepagePerformance{} \houseNowSEO
-\item \agentMigration{} \clientMigration
-\item Reduced Next.js build output files by \textbf{67\%}, measured in comparable local builds.
+\item \architectureMigration
+\item Reduced the number of Next.js build output files by \textbf{67\%}.
 \item \brokerMonetization
 \item \houseNowAPIs
-\item Built the agent dashboard, the HouseNow \(\times\) BIDV landing page, and the mobile Partner Loan Portal. Made the admin interface responsive.
+\item Built the agent dashboard, responsive admin tools, the HouseNow \(\times\) BIDV landing page, and the mobile Partner Loan Portal.
 \else
 \item \houseNowAPIs
-\item \agentMigration{} \clientMigration
+\item \architectureMigration
 \item \brokerMonetization
 \item Delivered residential land listings and Boost credit subscriptions across frontend and backend. Built the agent dashboard, loan management workflows, and an agency portal with business reports.
-\item Reduced Next.js build output files by \textbf{67\%}, measured in comparable local builds.
+\item Reduced the number of Next.js build output files by \textbf{67\%}.
 \item \homepagePerformance{} \houseNowSEO
 \fi
 \end{rSubsection}
-\begin{rSubsection}{CarNow VN}{Aug 2024 - May 2026}{Full-Stack Developer}{Sister project at The Now Project}
+\begin{rSubsection}{CarNow VN}{Aug 2024 - May 2026}{Full-Stack Developer}{Full-time}
 \item Rebuilt CarNow's Next.js marketplace, including search, advanced filters, listing details, dealer profiles, and video. Implemented dynamic XML sitemaps and crawl rules.
 \item Improved used-car valuation and built a new-car on-road price calculator for trims, options, and location-specific registration fees.
 \item Built dealer inventory analytics and lead matching in NowAuto, contributing to the frontend, tRPC APIs, and data layer.
-\item Helped revamp the CarNow app, improving user retention by up to \textbf{50\%}.
 \end{rSubsection}
 \begin{rSubsection}{Truong Minh Thinh Technology JSC}{Jun 2023 - Aug 2023}{Frontend Intern}{Full-time}
 \item Implemented responsive interfaces from Figma designs across two projects.
@@ -85,7 +83,7 @@ Bachelor of Computer Science\hfill {\bf GPA:} 8.34/10
 Languages: & TypeScript, JavaScript\\
 Frontend: & React, Next.js, TanStack Start, React Native (Expo), React Query, TanStack Table, React Hook Form, Zod, Tailwind CSS, shadcn/ui, Technical SEO\\
 Backend: & Node.js, Express, oRPC, Prisma, Kysely, SQL / MySQL, PostgreSQL\\
-AI tools: & Claude Code, Codex, Gemini, Amp, T3 Code
+AI workflow: & Explore codebases, draft changes, and review diffs with Claude Code and Codex.
 \end{tabularx}
 \end{rSection}
 

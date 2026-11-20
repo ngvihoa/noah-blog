@@ -34,7 +34,8 @@ export function ProjectCard({
   const headingId = useId()
   return (
     <article
-      className={`project-card project-card--featured ${visual.variant}`}
+      id={project.slug}
+      className={`project-card project-card--featured scroll-mt-24 ${visual.variant}`}
     >
       <figure className="project-card__visual project-card__visual--product">
         <span className="project-card__visual-label">{visual.label}</span>
@@ -96,19 +97,21 @@ export function ProjectCard({
             {expanded ? 'Hide details' : 'View details'}
             <ChevronDown aria-hidden="true" />
           </button>
-          <a
-            className="text-link text-link--muted"
-            href={project.source}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {project.sourceLabel}{' '}
-            {project.sourceKind === 'github' ? (
-              <Github aria-hidden="true" />
-            ) : (
-              <ExternalLink aria-hidden="true" />
-            )}
-          </a>
+          {'source' in project && (
+            <a
+              className="text-link text-link--muted"
+              href={project.source}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {project.sourceLabel}{' '}
+              {project.sourceKind === 'github' ? (
+                <Github aria-hidden="true" />
+              ) : (
+                <ExternalLink aria-hidden="true" />
+              )}
+            </a>
+          )}
         </div>
       </div>
       <section

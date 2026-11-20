@@ -3,7 +3,6 @@ import { ArrowRight } from 'lucide-react'
 import { Mascot } from 'page-mascot'
 import { profile } from '~/data/portfolio'
 import { AgileOrbit } from './agile-orbit'
-import { RoleSwitcher } from './role-switcher'
 
 export function HeroSection() {
   return (
@@ -22,7 +21,7 @@ export function HeroSection() {
             size={104}
           />
         </div>
-        <RoleSwitcher />
+        <h1 id="hero-title">{profile.role}</h1>
         <p className="mb-[22px] max-w-[500px] [font-family:var(--display)] text-[clamp(1.15rem,2vw,1.45rem)] font-bold tracking-[-0.02em] text-[var(--primary-dark)]">
           Thoughtful software. Polished interfaces.
         </p>

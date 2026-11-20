@@ -1,10 +1,9 @@
 // Canonicals always identify the public site, including local/preview builds.
 // Do not derive them from the request host or legacy deployment variables.
 export const siteUrl = 'https://www.noah.io.vn'
-export const siteTitle =
-  'Nguyễn Viết Hòa (Noah) | Software & Frontend Developer'
+export const siteTitle = 'Nguyễn Viết Hòa (Noah) | Full-Stack Developer'
 export const siteDescription =
-  'Nguyễn Viết Hòa (Noah), a software developer in Ho Chi Minh City with 2+ years building web/mobile products and backend APIs. Open to software and frontend roles.'
+  'Nguyễn Viết Hòa (Noah), a full-stack developer in Ho Chi Minh City with 2+ years building web/mobile products and backend APIs.'
 
 const siteName = 'Nguyễn Viết Hòa (Noah)'
 const ogImage = `${siteUrl}/og/og-default.png`
@@ -68,7 +67,7 @@ export const siteHead = {
         '@id': `${siteUrl}/#person`,
         name: 'Nguyễn Viết Hòa',
         alternateName: 'Noah',
-        jobTitle: 'Software Developer',
+        jobTitle: 'Full-Stack Developer',
         email: 'mailto:nvhoa29702@gmail.com',
         url: `${siteUrl}/`,
         image: `${siteUrl}/images/viet-hoa-profile.jpg`,
