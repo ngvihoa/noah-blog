@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router'
 import { ArrowRight } from 'lucide-react'
 import { projects, sideProjects } from '~/data/portfolio'
 import { ProjectCard } from '~/components/project-card'
+import { Reveal } from '~/components/reveal'
 
 export function FeaturedProjectSection() {
   return (
@@ -9,7 +10,7 @@ export function FeaturedProjectSection() {
       className="section page-shell flex flex-col justify-center lg:min-h-svh"
       aria-labelledby="projects-title"
     >
-      <div className="section-heading">
+      <Reveal className="section-heading">
         <div>
           <p className="eyebrow">Featured collection</p>
           <h2 id="projects-title">Selected projects</h2>
@@ -19,7 +20,7 @@ export function FeaturedProjectSection() {
           {sideProjects.length > 0 && ` + ${sideProjects.length} side projects`}
           <ArrowRight aria-hidden="true" />
         </Link>
-      </div>
+      </Reveal>
 
       <div className="project-grid project-grid--featured lg:block! lg:space-y-[var(--space-card-gap)]">
         {projects.map((project, index) => (

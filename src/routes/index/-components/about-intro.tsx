@@ -1,4 +1,5 @@
 import { profile } from '~/data/portfolio'
+import { Reveal } from '~/components/reveal'
 
 export function AboutIntroSection() {
   return (
@@ -27,10 +28,12 @@ export function AboutIntroSection() {
           />
         </div>
         <div>
-          <p className="eyebrow">About me</p>
-          <h2 id="about-title">
-            Curious by default. Intentional in execution.
-          </h2>
+          <Reveal>
+            <p className="eyebrow">About me</p>
+            <h2 id="about-title">
+              Curious by default. Intentional in execution.
+            </h2>
+          </Reveal>
           <p className="max-w-[650px] text-[1.12rem] leading-[1.8] text-[var(--ink-soft)]">
             I’m Nguyễn Viết Hòa (Noah), a Full-Stack Developer based in Ho Chi
             Minh City with 2+ years of experience building web and mobile

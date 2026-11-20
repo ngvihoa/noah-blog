@@ -16,6 +16,7 @@ import {
   type SideProjectStatus,
 } from '~/data/portfolio'
 import { cn } from '~/lib/utils'
+import { Reveal } from '~/components/reveal'
 
 /** Filters only appear once the collection is big enough to need them. */
 const FILTER_THRESHOLD = 6
@@ -197,7 +198,8 @@ const cardBase =
 export function SideProjectCard({ project }: { project: SideProject }) {
   if (project.pinned) {
     return (
-      <article
+      <Reveal
+        as="article"
         className={cn(
           cardBase,
           'grid gap-4 sm:col-span-2 md:grid-cols-[1.2fr_1fr]',
@@ -218,12 +220,12 @@ export function SideProjectCard({ project }: { project: SideProject }) {
           <StackChips stack={project.stack} />
           <ProjectLinks project={project} />
         </div>
-      </article>
+      </Reveal>
     )
   }
 
   return (
-    <article className={cn(cardBase, 'flex flex-col')}>
+    <Reveal as="article" className={cn(cardBase, 'flex flex-col')}>
       <ProjectThumb project={project} />
       <div className="flex flex-1 flex-col gap-2.5 px-1.5 pt-3 pb-1.5">
         <StatusLine project={project} />
@@ -236,7 +238,7 @@ export function SideProjectCard({ project }: { project: SideProject }) {
         <StackChips stack={project.stack} />
         <ProjectLinks project={project} />
       </div>
-    </article>
+    </Reveal>
   )
 }
 
@@ -268,7 +270,7 @@ export function SideProjectsSection() {
       className="scroll-mt-[96px] pt-[var(--space-section)]"
       aria-labelledby="side-projects-title"
     >
-      <div className="section-heading max-md:flex-col max-md:items-start">
+      <Reveal className="section-heading max-md:flex-col max-md:items-start">
         <div>
           <p className="eyebrow">Playground</p>
           <h2 id="side-projects-title">Side projects</h2>
@@ -300,7 +302,7 @@ export function SideProjectsSection() {
             ))}
           </div>
         )}
-      </div>
+      </Reveal>
 
       <div className="grid grid-cols-1 gap-[var(--space-card-gap)] sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((project) => (

@@ -329,6 +329,21 @@ h3 {
   gap: 12px;
 }
 
+/* Page-load entrance in CSS so it plays from the first paint, before hydration. */
+@media (prefers-reduced-motion: no-preference) {
+  .enter-up {
+    animation: enter-up 600ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(var(--enter-step, 0) * 80ms);
+  }
+}
+
+@keyframes enter-up {
+  from {
+    opacity: 0;
+    translate: 0 20px;
+  }
+}
+
 .button {
   display: inline-flex;
   min-height: 48px;
