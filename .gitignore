@@ -13,3 +13,5 @@ prompts/
 .vercel/
 
 /public/cv/
+
+.amp/portals/*

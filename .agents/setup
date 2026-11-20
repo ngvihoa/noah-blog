@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+# Prepares a fresh orb: Node 24 (package.json engines), npm dependencies,
+# and Tectonic + Poppler for building and reviewing the LaTeX CVs in pdf-cv/.
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$repo_root"
+
+NODE_VERSION=24.22.3
+TECTONIC_VERSION=0.17.0
+node_dir="$HOME/.local/node-v$NODE_VERSION"
+bin_dir="$HOME/.local/bin"
+
+step() { printf '\n==> %s\n' "$*"; SECONDS=0; }
+done_step() { printf '    (%ss)\n' "$SECONDS"; }
+
+step "System packages (poppler-utils)"
+if ! command -v pdftoppm >/dev/null; then
+  sudo apt-get update -qq
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq poppler-utils
+fi
+done_step
+
+step "Node.js $NODE_VERSION"
+if [ ! -x "$node_dir/bin/node" ]; then
+  tmp="$(mktemp -d)"
+  curl -fsSL "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" \
+    | tar -xJ -C "$tmp"
+  mkdir -p "$HOME/.local"
+  mv "$tmp/node-v$NODE_VERSION-linux-x64" "$node_dir"
+  rmdir "$tmp"
+fi
+profile_marker="# noah-blog: Node.js $NODE_VERSION and ~/.local/bin"
+if ! grep -Fqx "$profile_marker" "$HOME/.bash_profile" 2>/dev/null; then
+  cat >> "$HOME/.bash_profile" <<PROFILE
+
+$profile_marker
+export PATH="$node_dir/bin:$bin_dir:\$PATH"
+PROFILE
+fi
+export PATH="$node_dir/bin:$bin_dir:$PATH"
+node --version
+done_step
+
+step "Tectonic $TECTONIC_VERSION"
+if [ "$(tectonic --version 2>/dev/null || true)" != "Tectonic $TECTONIC_VERSION" ]; then
+  mkdir -p "$bin_dir"
+  curl -fsSL "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%40$TECTONIC_VERSION/tectonic-$TECTONIC_VERSION-x86_64-unknown-linux-musl.tar.gz" \
+    | tar -xz -C "$bin_dir" tectonic
+fi
+done_step
+
+step "npm dependencies"
+if [ -f node_modules/.package-lock.json ] && npm ls --depth=0 >/dev/null 2>&1 \
+  && [ node_modules/.package-lock.json -nt package-lock.json ]; then
+  echo "    node_modules already matches package-lock.json"
+else
+  npm ci --no-audit --no-fund
+fi
+done_step
+
+step "Warm Tectonic package cache with the CV builds"
+cv_build="$(mktemp -d)"
+(cd pdf-cv && for tex in cv.tex cv-frontend.tex; do
+  tectonic -X compile --outdir "$cv_build" "$tex" >/dev/null
+done)
+rm -rf "$cv_build"
+done_step
+
+step "Sync CV PDFs into public/cv"
+npm run --silent cv:sync
+done_step
