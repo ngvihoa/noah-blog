@@ -36,6 +36,9 @@ const housenowProject = {
     'Migrated API routers from tRPC to oRPC across admin, Agent, and Client apps.',
     clientMigration +
       ' The migration covered API groups including project, listing, tower, me, and investorProfile, plus WebViews for property search, video, payments, news, investor profiles, and the zoning map.',
+    'Scoped the migration with AI agents using Linear specs, previously migrated routes, and behavior requirements. Had agents trace API dependencies from the UI and implement changes in small groups of related pages, moving only the APIs those features used and updating existing callers while the original frontend was still active.',
+    'Copied UI to the new codebase while preserving existing implementations for QA. Set up CI to flag frontend changes that affected copied pages and notify their authors, plus a scheduled agent that synced changes and notified me to review the diff.',
+    'Prepared version-based routing in React Native and used an OTA update to switch users to the new codebase after the full frontend migration and its supporting changes were live in production.',
     houseReels,
     'Contributed to broker monetization flows, including payments, paid packages, and in-app purchases, generating around **10%** of company revenue.',
     'Contributed to broker ad-management workflows supporting **~300** campaigns.',
