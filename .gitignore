@@ -15,3 +15,4 @@ prompts/
 /public/cv/
 
 .amp/portals/*
+.t3-workflow/local/
