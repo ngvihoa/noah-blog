@@ -1,14 +1,10 @@
 import { createServerFn } from '@tanstack/react-start'
+import { cvVaultHeaders } from './cv-vault-headers'
 
 export const loadCvVault = createServerFn({ method: 'GET' }).handler(
   async () => {
     const { setResponseHeaders } = await import('@tanstack/react-start/server')
-    const { privateCvHeaders, readCvOwner } =
-      await import('./cv-vault-auth.server')
-    setResponseHeaders(new Headers(privateCvHeaders))
-    const owner = await readCvOwner()
-    if (!owner.configured) return { state: 'unconfigured' } as const
-    if (!owner.authorized) return { state: 'signed-out' } as const
+    setResponseHeaders(new Headers(cvVaultHeaders))
     try {
       const { listCvCases } = await import('./cv-vault-repo.server')
       const data = await listCvCases()

@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 import { loadCvVault } from '~/lib/cv-vault'
+import { cvVaultHeaders } from '~/lib/cv-vault-headers'
 
 export const Route = createFileRoute('/admin/cv')({
   head: () => ({
@@ -9,24 +10,13 @@ export const Route = createFileRoute('/admin/cv')({
       { name: 'robots', content: 'noindex, nofollow' },
     ],
   }),
-  headers: () => ({
-    'Cache-Control': 'private, no-store, max-age=0',
-    'Referrer-Policy': 'no-referrer',
-    Vary: 'Cookie',
-  }),
-  validateSearch: (search: Record<string, unknown>) => ({
-    signin:
-      search.signin === 'denied' || search.signin === 'failed'
-        ? search.signin
-        : undefined,
-  }),
+  headers: () => cvVaultHeaders,
   loader: () => loadCvVault(),
   component: CvVault,
 })
 
 function CvVault() {
   const vault = Route.useLoaderData()
-  const { signin } = Route.useSearch()
   const [query, setQuery] = useState('')
   const [preview, setPreview] = useState<{ url: string; name: string } | null>(
     null,
@@ -43,31 +33,7 @@ function CvVault() {
 
   return (
     <main className="page-shell pt-16 pb-24">
-      <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-        <h1>CV vault</h1>
-        {(vault.state === 'ready' || vault.state === 'unavailable') && (
-          <form action="/api/cv-vault/logout" method="post">
-            <button type="submit" className="button button--secondary">
-              Sign out
-            </button>
-          </form>
-        )}
-      </div>
-      {vault.state === 'unconfigured' && <p>The CV vault is unavailable.</p>}
-      {vault.state === 'signed-out' && (
-        <>
-          {signin && (
-            <p role="alert">
-              {signin === 'denied'
-                ? 'This account does not have access.'
-                : 'Sign-in failed. Please try again.'}
-            </p>
-          )}
-          <a className="button button--primary" href="/api/cv-vault/login">
-            Sign in with Google
-          </a>
-        </>
-      )}
+      <h1 className="mb-8">CV vault</h1>
       {vault.state === 'unavailable' && (
         <p role="alert">The vault repository is temporarily unavailable.</p>
       )}

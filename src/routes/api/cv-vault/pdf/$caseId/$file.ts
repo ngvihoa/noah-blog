@@ -1,18 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { cvVaultHeaders } from '~/lib/cv-vault-headers'
 
 export const Route = createFileRoute('/api/cv-vault/pdf/$caseId/$file')({
   server: {
     handlers: {
       GET: async ({ request, params }) => {
-        const { privateCvHeaders, readCvOwner } =
-          await import('~/lib/cv-vault-auth.server')
-        const { authorized } = await readCvOwner()
         const headers = {
-          ...privateCvHeaders,
+          ...cvVaultHeaders,
           'X-Content-Type-Options': 'nosniff',
         }
-        if (!authorized)
-          return new Response('Not found.', { status: 404, headers })
         try {
           const { readCvPdf } = await import('~/lib/cv-vault-repo.server')
           const bytes = await readCvPdf(params.caseId, params.file)

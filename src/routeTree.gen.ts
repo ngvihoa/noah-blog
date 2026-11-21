@@ -15,7 +15,6 @@ import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as AdminCvRouteImport } from './routes/admin/cv'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
-import { Route as ApiCvVaultActionRouteImport } from './routes/api/cv-vault/$action'
 import { Route as ApiCvVaultPdfCaseIdFileRouteImport } from './routes/api/cv-vault/pdf/$caseId/$file'
 
 const IndexRouteRoute = IndexRouteRouteImport.update({
@@ -48,11 +47,6 @@ const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => ProjectsRoute,
 } as any)
-const ApiCvVaultActionRoute = ApiCvVaultActionRouteImport.update({
-  id: '/api/cv-vault/$action',
-  path: '/api/cv-vault/$action',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ApiCvVaultPdfCaseIdFileRoute = ApiCvVaultPdfCaseIdFileRouteImport.update({
   id: '/api/cv-vault/pdf/$caseId/$file',
   path: '/api/cv-vault/pdf/$caseId/$file',
@@ -66,7 +60,6 @@ export interface FileRoutesByFullPath {
   '/admin/cv': typeof AdminCvRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/': typeof ProjectsIndexRoute
-  '/api/cv-vault/$action': typeof ApiCvVaultActionRoute
   '/api/cv-vault/pdf/$caseId/$file': typeof ApiCvVaultPdfCaseIdFileRoute
 }
 export interface FileRoutesByTo {
@@ -75,7 +68,6 @@ export interface FileRoutesByTo {
   '/admin/cv': typeof AdminCvRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects': typeof ProjectsIndexRoute
-  '/api/cv-vault/$action': typeof ApiCvVaultActionRoute
   '/api/cv-vault/pdf/$caseId/$file': typeof ApiCvVaultPdfCaseIdFileRoute
 }
 export interface FileRoutesById {
@@ -86,7 +78,6 @@ export interface FileRoutesById {
   '/admin/cv': typeof AdminCvRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/': typeof ProjectsIndexRoute
-  '/api/cv-vault/$action': typeof ApiCvVaultActionRoute
   '/api/cv-vault/pdf/$caseId/$file': typeof ApiCvVaultPdfCaseIdFileRoute
 }
 export interface FileRouteTypes {
@@ -98,7 +89,6 @@ export interface FileRouteTypes {
     | '/admin/cv'
     | '/projects/$slug'
     | '/projects/'
-    | '/api/cv-vault/$action'
     | '/api/cv-vault/pdf/$caseId/$file'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -107,7 +97,6 @@ export interface FileRouteTypes {
     | '/admin/cv'
     | '/projects/$slug'
     | '/projects'
-    | '/api/cv-vault/$action'
     | '/api/cv-vault/pdf/$caseId/$file'
   id:
     | '__root__'
@@ -117,7 +106,6 @@ export interface FileRouteTypes {
     | '/admin/cv'
     | '/projects/$slug'
     | '/projects/'
-    | '/api/cv-vault/$action'
     | '/api/cv-vault/pdf/$caseId/$file'
   fileRoutesById: FileRoutesById
 }
@@ -126,7 +114,6 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRouteWithChildren
   AdminCvRoute: typeof AdminCvRoute
-  ApiCvVaultActionRoute: typeof ApiCvVaultActionRoute
   ApiCvVaultPdfCaseIdFileRoute: typeof ApiCvVaultPdfCaseIdFileRoute
 }
 
@@ -174,13 +161,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsSlugRouteImport
       parentRoute: typeof ProjectsRoute
     }
-    '/api/cv-vault/$action': {
-      id: '/api/cv-vault/$action'
-      path: '/api/cv-vault/$action'
-      fullPath: '/api/cv-vault/$action'
-      preLoaderRoute: typeof ApiCvVaultActionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/api/cv-vault/pdf/$caseId/$file': {
       id: '/api/cv-vault/pdf/$caseId/$file'
       path: '/api/cv-vault/pdf/$caseId/$file'
@@ -210,7 +190,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRouteWithChildren,
   AdminCvRoute: AdminCvRoute,
-  ApiCvVaultActionRoute: ApiCvVaultActionRoute,
   ApiCvVaultPdfCaseIdFileRoute: ApiCvVaultPdfCaseIdFileRoute,
 }
 export const routeTree = rootRouteImport

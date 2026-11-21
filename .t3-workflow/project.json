@@ -16,8 +16,8 @@
     { "id": "build", "kind": "command", "command": "npm run build", "required": true },
     {
       "id": "cv-access",
-      "kind": "browser",
-      "command": "Verify the private CV dashboard and direct PDF access while signed out, signed in as a non-owner, and signed in as the owner.",
+      "kind": "human",
+      "command": "Open /admin/cv directly with the vault configured. Verify listing, inline PDF preview, and byte-identical download from the private repository, and confirm the dashboard is absent from public navigation and the sitemap.",
       "required": true
     }
   ],

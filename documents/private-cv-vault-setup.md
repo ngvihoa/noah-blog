@@ -1,6 +1,6 @@
 # Private CV vault setup
 
-The public portfolio serves its general CVs from the existing download URLs. The private GitHub checkout is the write location for tailored CVs. The owner dashboard at `/admin/cv` only reads committed data.
+The public portfolio serves its general CVs from the existing download URLs. The private GitHub checkout is the write location for tailored CVs. The dashboard at `/admin/cv` only reads committed data.
 
 ## Save a case
 
@@ -34,13 +34,9 @@ Ask the agent to save each export under a distinct filename in this checkout. Re
 
 ## Enable the portfolio dashboard
 
-Set these as server-side environment variables on the portfolio deployment. Use a separate OAuth client and fixture repo for development if you need them.
+Set these as server-side environment variables. Use a fixture repo for preview testing.
 
-- `CV_VAULT_ORIGIN` is the exact origin, for example `https://www.noah.io.vn`, with no trailing slash.
-- `CV_VAULT_GOOGLE_CLIENT_ID` and `CV_VAULT_GOOGLE_CLIENT_SECRET` identify a Google OAuth web application. Register `<origin>/api/cv-vault/callback` as its authorized redirect URI.
-- `CV_VAULT_OWNER_SUB` is the Google `sub` identifier from a verified identity token for the owner. It is not the email address.
-- `CV_VAULT_SESSION_SECRET` is a unique random signing key of at least 32 bytes. Keep it separate from the Google secret.
 - `CV_VAULT_GITHUB_REPO` is the private repository's `owner/name`.
 - `CV_VAULT_GITHUB_TOKEN` is an expiring fine-grained token scoped to that repository with Contents read permission. Rotate it before expiration.
 
-Verify the dashboard and a copied PDF URL in three sessions: signed out, signed in with a different Google account, and signed in as the owner. Test preview and download with a synthetic PDF before storing real cases. Check public CV links while signed out.
+Open `/admin/cv` directly and test listing, preview, and download with a synthetic PDF. Check that portfolio navigation and the sitemap omit the route and that the existing public CV links work. Anyone who opens the dashboard URL can view and download the connected repo's CVs.
