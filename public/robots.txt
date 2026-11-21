@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin/cv
+Disallow: /api/cv-vault/
 
 Sitemap: https://www.noah.io.vn/sitemap.xml
