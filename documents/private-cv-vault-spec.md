@@ -9,7 +9,7 @@ The portfolio owner can save and recover the exact PDF sent for a specific job o
 ## Owner workflow
 
 1. Create an application case in a separate private GitHub repository. A case has a stable ID, company, position, and creation date. An application link and a short private note are optional. Repeat openings can be separate cases.
-2. The owner or their agent saves each new version PDF to that case's directory in the private checkout. Review the PDF and commit the version and its metadata together, then push through the normal Git workflow. Give every version a distinct filename and retain previous versions. Record its creation date and an optional label.
+2. The owner or their agent keeps a single working draft per case. Review and revise the same PDF and editable source until the owner explicitly asks to finalize it or retain a separate snapshot. At that point, record a distinct version filename, creation date, and optional label. Preserve previously finalized versions. Commit the PDF and any metadata changes together when asked to save them to Git.
 3. When a version is sent to an employer, record its filename as the case's sent version in Git. Adding another version preserves this selection.
 4. Open `/admin/cv` by URL. Search by company or position, browse versions, see which PDF was sent, preview a PDF, and download its original bytes.
 
@@ -24,6 +24,7 @@ The portfolio owner can save and recover the exact PDF sent for a specific job o
 ## Acceptance checks
 
 - A private-repo fixture with two cases and multiple versions appears when opening the dashboard URL. Search works by company and position. Adding a later PDF by Git leaves the older PDF available and preserves the sent marker.
+- Revising a working draft keeps its filename and does not add an entry to version history. Finalizing or retaining a snapshot creates a separate version.
 - Preview and download return the selected PDF, and a round-trip download matches the committed bytes.
 - The dashboard and PDF responses send no-index and no-store headers. The portfolio does not link to the dashboard.
 - An invalid case record, out-of-scope file path, non-PDF content, or missing file never exposes arbitrary repository contents. A missing PDF produces a visible error without hiding valid versions.

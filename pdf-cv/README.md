@@ -5,7 +5,7 @@ Two one-page English CVs, each with one target role:
 - **Nguyen-Viet-Hoa-Software-Developer-CV.pdf** — entrypoint **cv.tex**; product features and API work appear earlier.
 - **Nguyen-Viet-Hoa-Frontend-Developer-CV.pdf** — entrypoint **cv-frontend.tex**, which uses **cv.tex** with the frontend variant enabled; rendering, migration, and build improvements appear earlier.
 
-Both use the existing **resume.cls**. HouseNow JSC and CarNow VN list the Full-Stack Developer role. The legacy **cv_4.tex** is retained unchanged. The contact line labels the personal website "Portfolio", and LinkedIn and GitHub links display their service names. All clickable destinations retain their original URLs.
+Both use the existing **resume.cls**. HouseNow JSC lists Full-Stack Developer and CarNow VN lists Frontend Developer. The legacy **cv_4.tex** is retained unchanged. The contact line labels the personal website "Portfolio", and LinkedIn and GitHub links display their service names. All clickable destinations retain their original URLs.
 
 ## Build
 

@@ -116,7 +116,7 @@ const carNowProject = {
   subtitle: 'Car marketplace',
   period: 'August 2024 - May 2026',
   context: 'Full-time role · Automotive marketplace',
-  role: 'Full-Stack Developer',
+  role: 'Frontend Developer',
   summary:
     "The Now Project's marketplace for new and used cars in Vietnam, with dealer profiles, car valuation, short videos, and NowAuto, a mobile app for car brokers and dealers.",
   contributions: [

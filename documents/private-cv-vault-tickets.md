@@ -10,7 +10,7 @@ Plan v3 for [spec v3](private-cv-vault-spec.md).
 ## Tickets
 
 1. **Save case versions using Git**  
-   Blockers: none. Define the private repo layout and case metadata, provide synthetic examples, and document how the owner or agent adds a case, creates distinct PDF versions, and records which version was sent. Verify a second PDF can be added without overwriting the first or changing the sent marker. Verify the target repo is private before putting any case data in it.
+   Blockers: none. Define the private repo layout and case metadata, provide synthetic examples, and document how the owner or agent edits a single working draft, saves a distinct version when the owner asks, and records which version was sent. Verify draft revisions leave the version list unchanged and a new finalized version preserves previous versions and the sent marker. Verify the target repo is private before putting any case data in it.
 2. **Open the dashboard by direct URL**
    Blockers: none. Add the dashboard route without a portfolio navigation link. Set no-index and no-store headers.
 3. **Find cases and read version history on the dashboard**  

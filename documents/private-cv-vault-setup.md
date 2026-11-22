@@ -30,7 +30,9 @@ cases/example-full-stack/
 
 Company, position, creation date, and the versions array are required. The link, note, sent marker, and version labels are optional. Store dates as YYYY-MM-DD. Use lowercase letters, digits, and hyphens for case IDs, and simple ASCII filenames ending in `.pdf`. Keep files at or below 4 MiB for dashboard preview/download.
 
-Ask the agent to save each export under a distinct filename in this checkout. Review the rendered PDF, add an entry under `versions`, and commit the JSON and PDF together. Set `sentVersion` only after you send that file. Push to the vault's default branch to make the change visible on the dashboard.
+Keep one working draft per case. For a new case, use `draft.pdf` and one editable source. During review, regenerate that PDF in place. If the case already has an unfinalized PDF listed in `versions`, keep using its filename and update its source in place. A draft edit adds no new version entry. Git can track draft changes under the same filename.
+
+Add a distinct version filename and metadata entry only when the owner explicitly asks to finalize a version or retain a separate snapshot. Preserve finalized and sent PDFs. Set `sentVersion` only after the owner sends the selected file. Commit the PDF and any metadata changes together when asked to save them to Git. The dashboard reads the vault's default branch.
 
 ## Enable the portfolio dashboard
 
