@@ -1,6 +1,6 @@
 # How I work with AI section
 
-Spec v2
+Spec v3
 
 ## Outcome
 
@@ -35,6 +35,13 @@ The steps follow the agent workflow in `.agents/skills/t3-agent-workflow`: clari
 - Mobile: the steps stack vertically, with a vertical connector between number circles and the approval marks on that connector. Nothing overflows horizontally at 360px.
 - Uses the existing tokens (`--primary`, `--primary-dark`, `--ink`, `--ink-soft`, `--line`, `--canvas`), the `.section`, `.section-heading`, `.eyebrow`, and `h2` styles, and `Reveal` for the scroll-in fade like other sections.
 
+## Motion
+
+- When the steps first scroll into view, they play once in order: step 1 fades up, then the connector to the next step draws, and each next step fades up as the line reaches it.
+- On a connector with an approval mark, the line pauses halfway while the lock pops in with a small spring, then finishes. The whole sequence takes about four seconds.
+- The line grows rightward on desktop and downward on mobile.
+- With `prefers-reduced-motion: reduce`, everything renders in its final state without animation.
+
 ## Accessibility
 
 - Steps are an ordered list, so their order is announced.
@@ -47,6 +54,7 @@ The steps follow the agent workflow in `.agents/skills/t3-agent-workflow`: clari
 - The hero's "About my process" button scrolls to the new section.
 - Approval marks appear in exactly the three positions listed, and each shows its tooltip on hover and focus without overflowing the viewport at 360px.
 - No horizontal scrolling at 360px.
+- The entrance sequence plays once in order on desktop and mobile, and reduced motion shows the final state immediately.
 - `npm run typecheck` and `npm run build` pass.
 
 ## Out of scope
