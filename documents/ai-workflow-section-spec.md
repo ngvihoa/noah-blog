@@ -1,6 +1,6 @@
 # How I work with AI section
 
-Spec v1
+Spec v2
 
 ## Outcome
 
@@ -24,7 +24,7 @@ Visitors to the homepage can see, in a few seconds, how Noah delivers a feature 
   3. Build: "Agents code, test-first."
   4. Review & QA: "Checked against the spec."
   5. Ship: "I decide when it goes live."
-- An approval mark (lock icon) sits on the connector after Clarify & spec, after Break down, and after Review & QA. A legend below the steps reads "My approval".
+- An approval mark (lock icon) sits on the connector after Clarify & spec, after Break down, and after Review & QA. There is no legend. Each mark shows a tooltip on hover, keyboard focus, or tap: "I approve the spec", "I approve the task plan", and "I sign off before shipping".
 - No tool list, per-step detail panel, or role badges. The content should stay light enough to scan without interaction.
 
 The steps follow the agent workflow in `.agents/skills/t3-agent-workflow`: clarification and spec with approval, ticket breakdown with a separate approval, test-first implementation, review against standards and spec plus QA, and shipping only on Noah's explicit decision.
@@ -38,14 +38,14 @@ The steps follow the agent workflow in `.agents/skills/t3-agent-workflow`: clari
 ## Accessibility
 
 - Steps are an ordered list, so their order is announced.
-- Each approval mark has an accessible label ("Needs my approval"); the decorative icon is hidden from assistive technology.
+- Each approval mark is a focusable button whose tooltip text is its accessible description; the lock icon itself is hidden from assistive technology.
 - The section is labelled by its title.
 
 ## Acceptance checks
 
 - The section renders after Career and before Skills on the homepage, at desktop and mobile widths, matching the layout above.
 - The hero's "About my process" button scrolls to the new section.
-- Approval marks appear in exactly the three positions listed.
+- Approval marks appear in exactly the three positions listed, and each shows its tooltip on hover and focus without overflowing the viewport at 360px.
 - No horizontal scrolling at 360px.
 - `npm run typecheck` and `npm run build` pass.
 
