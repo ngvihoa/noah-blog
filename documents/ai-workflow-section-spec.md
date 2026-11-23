@@ -1,6 +1,6 @@
 # How I work with AI section
 
-Spec v3
+Spec v4
 
 ## Outcome
 
@@ -18,12 +18,12 @@ Visitors to the homepage can see, in a few seconds, how Noah delivers a feature 
 - Eyebrow: "How I work with AI".
 - Title: "I steer. Agents build."
 - Supporting line: "Nothing moves forward without my approval."
-- Five numbered steps, each with a name and one short line:
-  1. Clarify & spec: "I define what and why."
-  2. Break down: "Small tasks that can each be verified."
-  3. Build: "Agents code, test-first."
-  4. Review & QA: "Checked against the spec."
-  5. Ship: "I decide when it goes live."
+- Five steps, each with an icon in its circle, a name, and one short line. Icons replace step numbers; order comes from the connectors and the list order:
+  1. Clarify & spec (FileText): "I define what and why."
+  2. Break down (ListTree): "Small tasks that can each be verified."
+  3. Build (Bot): "Agents code, test-first."
+  4. Review & QA (ScanSearch): "Checked against the spec."
+  5. Ship (Rocket): "I decide when it goes live."
 - An approval mark (lock icon) sits on the connector after Clarify & spec, after Break down, and after Review & QA. There is no legend. Each mark shows a tooltip on hover, keyboard focus, or tap: "I approve the spec", "I approve the task plan", and "I sign off before shipping".
 - No tool list, per-step detail panel, or role badges. The content should stay light enough to scan without interaction.
 
@@ -37,7 +37,7 @@ The steps follow the agent workflow in `.agents/skills/t3-agent-workflow`: clari
 
 ## Motion
 
-- When the steps first scroll into view, they play once in order: step 1 fades up, then the connector to the next step draws, and each next step fades up as the line reaches it.
+- When the steps first scroll into view, they play once in order: step 1 fades up, then the connector to the next step draws, and each next step fades up as the line reaches it. Each step's circle fills from an outline to solid purple with a white icon as it appears.
 - On a connector with an approval mark, the line pauses halfway while the lock pops in with a small spring, then finishes. The whole sequence takes about four seconds.
 - The line grows rightward on desktop and downward on mobile.
 - With `prefers-reduced-motion: reduce`, everything renders in its final state without animation.

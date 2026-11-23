@@ -1,28 +1,44 @@
-import { Lock } from 'lucide-react'
+import {
+  Bot,
+  FileText,
+  ListTree,
+  Lock,
+  Rocket,
+  ScanSearch,
+  type LucideIcon,
+} from 'lucide-react'
 import { motion, useInView, useReducedMotion } from 'motion/react'
 import { useRef } from 'react'
 import { Reveal } from '~/components/reveal'
 
-type Step = { name: string; line: string; approval?: string }
+type Step = {
+  name: string
+  line: string
+  icon: LucideIcon
+  approval?: string
+}
 
 const steps: Step[] = [
   {
     name: 'Clarify & spec',
+    icon: FileText,
     line: 'I define what and why.',
     approval: 'I approve the spec',
   },
   {
     name: 'Break down',
+    icon: ListTree,
     line: 'Small tasks that can each be verified.',
     approval: 'I approve the task plan',
   },
-  { name: 'Build', line: 'Agents code, test-first.' },
+  { name: 'Build', line: 'Agents code, test-first.', icon: Bot },
   {
     name: 'Review & QA',
+    icon: ScanSearch,
     line: 'Checked against the spec.',
     approval: 'I sign off before shipping',
   },
-  { name: 'Ship', line: 'I decide when it goes live.' },
+  { name: 'Ship', line: 'I decide when it goes live.', icon: Rocket },
 ]
 
 // The connector after a step draws in this many seconds. A connector with an
@@ -136,9 +152,27 @@ export function AiWorkflowSection() {
                   </span>
                 </motion.span>
               )}
-              <span className="relative z-[1] mb-5 grid size-11 place-items-center rounded-full border-2 border-[var(--primary)] bg-[var(--canvas)] [font-family:var(--display)] font-extrabold text-[var(--primary-dark)] max-md:row-span-2 max-md:mb-0">
-                {index + 1}
-              </span>
+              {/* The circle fills in as the connector reaches its step. */}
+              <motion.span
+                className="relative z-[1] mb-5 grid size-11 place-items-center rounded-full border-2 border-[var(--primary)] bg-[var(--primary)] text-white max-md:row-span-2 max-md:mb-0 [&_svg]:size-5"
+                aria-hidden="true"
+                initial={
+                  animate
+                    ? { backgroundColor: '#fff9ed', color: '#5140cc' }
+                    : false
+                }
+                animate={
+                  shown
+                    ? { backgroundColor: '#6c5ce7', color: '#ffffff' }
+                    : undefined
+                }
+                transition={{
+                  duration: 0.3,
+                  delay: timeline[index].step + 0.2,
+                }}
+              >
+                <step.icon strokeWidth={2} />
+              </motion.span>
               <h3 className="mb-1.5! text-[1.25rem]! leading-tight max-md:mt-1">
                 {step.name}
               </h3>
