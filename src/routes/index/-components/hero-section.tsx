@@ -36,7 +36,7 @@ export function HeroSection() {
           <Link className="button button--primary" to="/projects">
             View projects <ArrowRight aria-hidden="true" />
           </Link>
-          <a className="button button--secondary" href="#about">
+          <a className="button button--secondary" href="#how-i-work">
             About my process
           </a>
         </div>

@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { seoHead, siteDescription, siteTitle } from '~/lib/seo'
 import { AboutIntroSection } from './-components/about-intro'
+import { AiWorkflowSection } from './-components/ai-workflow-section'
 import { CareerSection } from './-components/career-section'
 import { ContactCtaSection } from './-components/contact-cta-section'
 import { FeaturedProjectSection } from './-components/featured-project-section'
@@ -39,9 +40,12 @@ function HomePage() {
         <CareerSection />
       </StackedSection>
       <StackedSection layer={13}>
-        <SkillsInterestsSection />
+        <AiWorkflowSection />
       </StackedSection>
       <StackedSection layer={14}>
+        <SkillsInterestsSection />
+      </StackedSection>
+      <StackedSection layer={15}>
         <ContactCtaSection />
       </StackedSection>
     </main>
